@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - mouvàe</title>
+    <link rel="stylesheet" href="admin_styles_siv.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Gestion des Annonces et Infos Trafic</h1>
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('traffic')">Infos Trafic</button>
+            <button class="tab-button" onclick="showTab('announcement')">Annonces</button>
+        </div>
+        <div id="traffic-tab" class="tab-content">
+            <h2>Infos Trafic</h2>
+            <input type="text" id="traffic-line-input" placeholder="Ligne(s)">
+            <input type="text" id="traffic-date-input" placeholder="Dates">
+            <textarea id="traffic-detail-input" placeholder="Détail"></textarea>
+            <button onclick="addTrafficInfo()">Ajouter</button>
+            <div id="traffic-info-list">
+                <!-- Liste des infos trafic -->
+            </div>
+        </div>
+        <div id="announcement-tab" class="tab-content" style="display: none;">
+            <h2>Annonces</h2>
+            <textarea id="announcement-input" placeholder="Ajouter une annonce"></textarea>
+            <button onclick="addAnnouncement()">Ajouter</button>
+            <div id="announcement-list">
+                <!-- Liste des annonces -->
+            </div>
+        </div>
+    </div>
+    <script src="admin_script_siv.js"></script>
+</body>
+</html>

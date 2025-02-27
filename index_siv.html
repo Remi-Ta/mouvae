@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouvàe | Prochains passages</title>
+    <link rel="stylesheet" href="styles_siv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Daikon:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="info-display">
+        <div class="header" id="file-selection">
+            <h1 style="color: black;">Sélectionnez un fichier CSV :</h1>
+            <input type="file" id="file-input" accept=".csv">
+            <button id="load-button">Charger les données</button>
+        </div>
+        <div class="stop-selection" id="stop-selection" style="display: none;">
+            <label for="stop-select" style="color: black;">Sélectionnez un arrêt :</label>
+            <select id="stop-select">
+                <!-- Les options seront ajoutées dynamiquement ici -->
+            </select>
+            <button id="validate-button">Valider l'arrêt</button>
+        </div>
+        <div class="stop-header" id="stop-header" style="display: none;">
+            <div id="stop-name-time">
+                <span id="selected-stop"></span>
+                <span id="current-time"></span>
+            </div>
+        </div>
+        <div id="departure-labels" style="display: none;">
+            <div class="label-container">
+                <div>Ligne</div>
+                <div>Destination</div>
+                <div>Attente</div>
+            </div>
+        </div>
+        <div id="departure-info" style="display: none;">
+            <!-- Les informations de départ seront ajoutées ici -->
+        </div>
+        <div id="progress-bars-container" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+        </div>
+        <div id="info-container" style="display: none;">
+            <div id="traffic-info-header">mouvàe Info Trafic</div>
+            <div id="traffic-info-details">
+                <!-- Les informations trafic seront ajoutées ici -->
+            </div>
+            <div id="announcement-info-details" style="font-family: 'Daikon', sans-serif; font-size: 12px; color: black;">
+                <!-- Les annonces seront ajoutées ici -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="script_siv.js"></script>
+</body>
+</html>
