@@ -123,33 +123,40 @@ function updateStopInfo() {
         })
         .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
-    for (let i = 0; i < 8; i++) {
-        const departure = departuresToShow[i];
-        const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
-        const waitText = waitTime !== null && waitTime >= 0
-            ? waitTime === 0
-            ? "<span class='approaching'>À l'approche</span>"
-            : waitTime > 60
-            ? `${departure.Heure}`
-            : `${Math.round(waitTime)} min`
-            : '';
-
-        const item = document.createElement('div');
-        item.classList.add('departure-item');
-        item.innerHTML = departure ? `
-            <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
-            <div class="departure-destination">${departure.Destination}</div>
-            <div class="departure-wait-time">${waitText}</div>
-        ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-        departureInfoElement.appendChild(item);
-    }
-
-    // Si aucun départ, afficher "Service terminé."
     if (departuresToShow.length === 0 && numberOfDepartures === 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Service terminé.</div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
+
+        // Ajouter 7 lignes vides
+        for (let i = 1; i < 8; i++) {
+            const emptyItem = document.createElement('div');
+            emptyItem.classList.add('departure-item');
+            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(emptyItem);
+        }
+    } else {
+        for (let i = 0; i < 8; i++) {
+            const departure = departuresToShow[i];
+            const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
+            const waitText = waitTime !== null && waitTime >= 0
+                ? waitTime === 0
+                ? "<span class='approaching'>À l'approche</span>"
+                : waitTime > 60
+                ? `${departure.Heure}`
+                : `${Math.round(waitTime)} min`
+                : '';
+
+            const item = document.createElement('div');
+            item.classList.add('departure-item');
+            item.innerHTML = departure ? `
+                <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
+                <div class="departure-destination">${departure.Destination}</div>
+                <div class="departure-wait-time">${waitText}</div>
+            ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(item);
+        }
     }
 
     // Adapter le nombre de barres de progression et les centrer
@@ -260,9 +267,11 @@ function checkForSuspensions() {
         suspensionMessage.textContent = relevantSuspension.message;
         suspensionContainer.style.display = 'block';
         document.getElementById('departure-info').style.display = 'none';
+        document.getElementById('departure-labels').style.display = 'none';
     } else {
         suspensionContainer.style.display = 'none';
         document.getElementById('departure-info').style.display = 'block';
+        document.getElementById('departure-labels').style.display = 'block';
     }
 }
 
