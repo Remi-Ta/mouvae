@@ -283,7 +283,7 @@ body {
     font-size: 14px;
     font-family: 'Daikon', sans-serif;
     text-align: left;
-    height: 150px; /* Augmenter la hauteur pour contenir des messages plus longs */
+    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centrer verticalement */
