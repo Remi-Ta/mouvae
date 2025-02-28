@@ -295,14 +295,6 @@ body {
     margin: 2px 0; /* Petit espace entre les lignes */
 }
 
-#announcement-info-details {
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    text-align: center;
-    height: auto;
-    overflow-y: hidden;
-}
 
 #progress-bars-container {
     display: flex;
