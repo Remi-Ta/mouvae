@@ -370,10 +370,10 @@ body {
 
 #suspension-container {
     width: 760px; /* Largeur spécifiée */
-    height: 400px; /* Hauteur spécifiée */
+    height: 240px; /* Hauteur de 8 lignes */
     text-align: center;
     display: none; /* Masquer par défaut */
-    margin: 0 auto 10px auto; /* Centrer horizontalement et ajouter une marge en bas */
+    margin: 10px auto; /* Centrer horizontalement et ajouter une marge en haut et en bas */
 }
 
 .suspension-message {
