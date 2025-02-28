@@ -244,3 +244,18 @@ button:hover {
     background-color: white;
     color: #ff0000;
 }
+
+.line-checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.line-checkbox-container label {
+    margin-right: 10px;
+}
+
+.line-checkbox-container select {
+    width: auto;
+    flex-grow: 1;
+}
