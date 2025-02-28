@@ -54,20 +54,23 @@ function addSuspension() {
     const stops = Array.from(document.getElementById('suspension-stop-input').selectedOptions).map(option => option.value);
     const message = document.getElementById('suspension-message-input').value.trim();
 
+    const selectedStops = document.querySelectorAll('.selected-stop-item');
+    const suspensions = [];
+
+    selectedStops.forEach(stopItem => {
+        const stopName = stopItem.querySelector('span').textContent;
+        const lines = stopItem.querySelector('.line-checkbox-container input[type="checkbox"]').checked
+            ? Array.from(stopItem.querySelector('.line-checkbox-container select').selectedOptions).map(option => option.value)
+            : [];
+        suspensions.push({ stop: stopName, lines });
+    });
+
     if (period && stops.length > 0 && message) {
-        suspensionsMouvae.push({ period, stops, message });
+        suspensionsMouvae.push({ period, stops: suspensions, message });
         localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
         resetSuspensionForm();
         updateSuspensionList();
     }
-}
-
-function resetSuspensionForm() {
-    document.getElementById('suspension-period-input').value = 'lav_sco';
-    document.getElementById('suspension-stop-input').innerHTML = '';
-    document.getElementById('suspension-message-input').value = '';
-    document.getElementById('suspension-stop-selection').style.display = 'none';
-    updateSelectedStopsList();
 }
 
 function loadStops() {
@@ -129,7 +132,7 @@ function updateSuspensionList() {
         item.classList.add('info-item');
         item.innerHTML = `
             <p><strong>Période:</strong> ${suspension.period}</p>
-            <p><strong>Arrêts:</strong> ${suspension.stops.join(', ')}</p>
+            <p><strong>Arrêts:</strong> ${suspension.stops.map(stop => stop.stop).join(', ')}</p>
             <p><strong>Message:</strong> ${suspension.message}</p>
             <button class="edit" onclick="editSuspension(${index})">Modifier</button>
             <button class="delete" onclick="deleteSuspension(${index})">Supprimer</button>
@@ -161,17 +164,14 @@ function editSuspension(index) {
     document.getElementById('suspension-period-input').value = suspension.period;
     const stopSelect = document.getElementById('suspension-stop-input');
     stopSelect.innerHTML = '';
-    availableStops.forEach(stop => {
+    suspension.stops.forEach(stop => {
         const option = document.createElement('option');
-        option.value = stop;
-        option.textContent = stop;
-        if (suspension.stops.includes(stop)) {
-            option.selected = true;
-        }
+        option.value = stop.stop;
+        option.textContent = stop.stop;
+        option.selected = true;
         stopSelect.appendChild(option);
     });
     document.getElementById('suspension-message-input').value = suspension.message;
-    document.getElementById('suspension-stop-selection').style.display = 'block';
     suspensionsMouvae.splice(index, 1);
     localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
     updateSuspensionList();
@@ -206,6 +206,14 @@ function updateSelectedStopsList() {
         item.innerHTML = `
             <span>${stop}</span>
             <button onclick="removeSelectedStop('${stop}')">×</button>
+            <div class="line-checkbox-container">
+                <label>
+                    <input type="checkbox"> Lignes spécifiques
+                </label>
+                <select multiple disabled>
+                    <!-- Options des lignes seront ajoutées dynamiquement -->
+                </select>
+            </div>
         `;
         selectedStopsList.appendChild(item);
     });
@@ -221,9 +229,17 @@ function removeSelectedStop(stop) {
     updateSelectedStopsList();
 }
 
+function resetSuspensionForm() {
+    document.getElementById('suspension-period-input').value = 'lav_sco';
+    document.getElementById('suspension-stop-input').innerHTML = '';
+    document.getElementById('suspension-message-input').value = '';
+    document.getElementById('suspension-stop-selection').style.display = 'none';
+    updateSelectedStopsList();
+}
+
+document.getElementById('suspension-stop-input').addEventListener('change', updateSelectedStopsList);
+
 // Initialisation
 updateTrafficInfoList();
 updateAnnouncementList();
 updateSuspensionList();
-
-document.getElementById('suspension-stop-input').addEventListener('change', updateSelectedStopsList);
