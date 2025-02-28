@@ -1,41 +1,48 @@
-document.getElementById('load-button').addEventListener('click', handleFileUpload);
 document.getElementById('validate-button').addEventListener('click', showStopInfo);
 
-let departuresData = [];
+let departuresData = {};
 let selectedStop = '';
 let displayedTime = null; // Stocker l'heure affichée
 let currentDepartureSet = 0; // Index pour la rotation des départs
 let progressInterval; // Interval pour la progression des barres
+let numberOfTables = 3; // Par défaut, 3 tableaux
+let selectedPeriod = '';
 
-function handleFileUpload() {
-    const fileInput = document.getElementById('file-input');
-    const file = fileInput.files[0];
-    if (file) {
-        Papa.parse(file, {
-            header: true,
-            dynamicTyping: true,
-            complete: function(results) {
-                departuresData = results.data;
-                populateStopSelect();
+function loadPeriod(period) {
+    selectedPeriod = period;
+    fetch(`data/${period}.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
             }
-        });
-    }
+            return response.json();
+        })
+        .then(data => {
+            departuresData[period] = data;
+            console.log(`Données chargées pour la période ${period}:`, data);
+            populateStopSelect();
+            document.getElementById('file-selection').style.display = 'none';
+            document.getElementById('stop-selection').style.display = 'block';
+        })
+        .catch(error => console.error('Erreur lors du chargement des données:', error));
 }
 
 function populateStopSelect() {
     const stopSelect = document.getElementById('stop-select');
     stopSelect.innerHTML = ''; // Clear previous options
-    document.getElementById('stop-selection').style.display = 'block'; // Show the stop selection
 
-    const stops = [...new Set(departuresData.map(departure => departure.Arret))].sort((a, b) =>
-        a.localeCompare(b, undefined, { sensitivity: 'accent' })
-    );
+    const stops = [...new Set(departuresData[selectedPeriod].map(departure => departure.Arret))].sort(compareStops);
     stops.forEach(stop => {
         const option = document.createElement('option');
         option.value = stop;
         option.textContent = stop;
         stopSelect.appendChild(option);
     });
+}
+
+function compareStops(a, b) {
+    const cleanString = str => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    return cleanString(a).localeCompare(cleanString(b));
 }
 
 function showStopInfo() {
@@ -45,7 +52,6 @@ function showStopInfo() {
         clearInterval(progressInterval); // Arrêter l'intervalle précédent
         resetProgressBars(); // Réinitialiser les barres de progression
         updateStopInfo();
-        document.getElementById('file-selection').style.display = 'none';
         document.title = `mouvàe | ${selectedStop} | Prochains passages`;
         document.getElementById('progress-bars-container').style.display = 'flex';
         document.getElementById('info-container').style.display = 'block';
@@ -76,8 +82,8 @@ function updateStopInfo() {
 
     departureInfoElement.innerHTML = '';
 
-    // Combine departures for the current day
-    let allDepartures = departuresData
+    // Filtrer les départs pour la journée actuelle seulement
+    let allDepartures = departuresData[selectedPeriod]
         .filter(departure => departure.Arret === selectedStop)
         .map(departure => {
             let [hours, minutes] = departure.Heure.split(':').map(Number);
@@ -85,62 +91,73 @@ function updateStopInfo() {
             departureTime.setHours(hours, minutes, 0, 0);
             return { ...departure, departureTime };
         })
+        .filter(departure => departure.departureTime >= displayedTime) // Inclure les départs dont l'heure est passée d'une minute
         .sort((a, b) => a.departureTime - b.departureTime);
 
-    // Filter departures for the current day only
-    const todayDepartures = allDepartures.filter(departure => {
-        const departureDate = new Date(departure.departureTime);
-        const today = new Date();
-        return departureDate.getDate() === today.getDate() && departure.departureTime >= displayedTime;
-    });
+    // Calculer le nombre de départs prochains
+    const numberOfDepartures = allDepartures.length;
 
-    const totalDepartures = todayDepartures.length;
-    let maxSets = 1;
-
-    if (totalDepartures > 16) {
-        maxSets = 3;
-    } else if (totalDepartures > 8) {
-        maxSets = 2;
+    // Déterminer le nombre de tableaux à afficher
+    if (numberOfDepartures >= 17) {
+        numberOfTables = 3;
+    } else if (numberOfDepartures >= 9) {
+        numberOfTables = 2;
+    } else {
+        numberOfTables = 1;
     }
 
-    const departuresToShow = todayDepartures.slice(currentDepartureSet * 8, (currentDepartureSet + 1) * 8);
+    // Afficher 8 lignes, même si certaines sont vides
+    const departuresToShow = allDepartures
+        .filter(departure => {
+            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
+            return waitTime >= 0;
+        })
+        .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
-    if (departuresToShow.length === 0 && currentDepartureSet === 0) {
+    for (let i = 0; i < 8; i++) {
+        const departure = departuresToShow[i];
+        const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
+        const waitText = waitTime !== null && waitTime >= 0
+            ? waitTime === 0
+            ? "<span class='approaching'>À l'approche</span>"
+            : waitTime > 60
+            ? `${departure.Heure}`
+            : `${Math.round(waitTime)} min`
+            : '';
+
         const item = document.createElement('div');
         item.classList.add('departure-item');
-        item.textContent = "Service terminé.";
+        item.innerHTML = departure ? `
+            <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
+            <div class="departure-destination">${departure.Destination}</div>
+            <div class="departure-wait-time">${waitText}</div>
+        ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
-    } else {
-        departuresToShow.forEach(departure => {
-            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
-            const waitText = waitTime === 0
-                ? "<span class='approaching'>À l'approche</span>"
-                : waitTime > 60
-                ? `${departure.Heure}`
-                : `${Math.round(waitTime)} min`;
+    }
 
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = `
-                <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
-                <div class="departure-destination">${departure.Destination}</div>
-                <div class="departure-wait-time">${waitText}</div>
-            `;
-            departureInfoElement.appendChild(item);
-        });
+    // Si aucun départ, afficher "Service terminé."
+    if (departuresToShow.length === 0 && numberOfDepartures === 0) {
+        const item = document.createElement('div');
+        item.classList.add('departure-item');
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Service terminé.</div><div class="departure-wait-time"></div>';
+        departureInfoElement.appendChild(item);
+    }
 
-        // Add empty lines if there are fewer than 8 departures
-        const emptyLines = 8 - departuresToShow.length;
-        for (let i = 0; i < emptyLines; i++) {
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.style.height = '50px'; // Set height for empty lines
-            departureInfoElement.appendChild(item);
-        }
+    // Adapter le nombre de barres de progression et les centrer
+    const progressBarsContainer = document.getElementById('progress-bars-container');
+    progressBarsContainer.innerHTML = ''; // Clear previous bars
+    progressBarsContainer.style.justifyContent = 'center'; // Center the bars
+    for (let i = 0; i < numberOfTables; i++) {
+        const progressBar = document.createElement('div');
+        progressBar.classList.add('progress-bar');
+        const progressBarFill = document.createElement('div');
+        progressBarFill.classList.add('progress-bar-fill');
+        progressBar.appendChild(progressBarFill);
+        progressBarsContainer.appendChild(progressBar);
     }
 
     // Update progress bars
-    startProgressBars(maxSets);
+    startProgressBars();
 }
 
 function updateDateTime() {
@@ -162,20 +179,20 @@ function updateDateTime() {
 function startTrafficInfoCycle() {
     let index = 0;
     const trafficInfoDetails = document.getElementById('traffic-info-details');
-    const trafficInfosMouvae = JSON.parse(localStorage.getItem('trafficInfosMouvae')) || [];
-    const announcementsMouvae = JSON.parse(localStorage.getItem('announcementsMouvae')) || [];
+    const trafficInfos = JSON.parse(localStorage.getItem('trafficInfosMouvae')) || [];
+    const announcements = JSON.parse(localStorage.getItem('announcementsMouvae')) || [];
 
     function updateInfo() {
-        if (trafficInfosMouvae.length > 0 || announcementsMouvae.length > 0) {
-            if (index % 2 === 0 && trafficInfosMouvae.length > 0) {
-                const info = trafficInfosMouvae[Math.floor(index / 2) % trafficInfosMouvae.length];
+        if (trafficInfos.length > 0 || announcements.length > 0) {
+            if (index % 2 === 0 && trafficInfos.length > 0) {
+                const info = trafficInfos[Math.floor(index / 2) % trafficInfos.length];
                 trafficInfoDetails.innerHTML = `
                     <p><strong>Ligne(s) : </strong> ${info.line}</p>
                     <p><strong>Dates : </strong> ${info.date}</p>
                     <p>${info.detail}</p>
                 `;
-            } else if (announcementsMouvae.length > 0) {
-                const announcement = announcementsMouvae[Math.floor(index / 2) % announcementsMouvae.length];
+            } else if (announcements.length > 0) {
+                const announcement = announcements[Math.floor(index / 2) % announcements.length];
                 trafficInfoDetails.innerHTML = `<p>${announcement}</p>`;
             }
             index = (index + 1);
@@ -190,59 +207,24 @@ function startTrafficInfoCycle() {
 }
 
 function startDepartureRotation() {
-    const totalDepartures = departuresData.filter(departure => departure.Arret === selectedStop).length;
-    let maxSets = 1;
-
-    if (totalDepartures > 16) {
-        maxSets = 3;
-    } else if (totalDepartures > 8) {
-        maxSets = 2;
-    }
-
     progressInterval = setInterval(() => {
-        currentDepartureSet = (currentDepartureSet + 1) % maxSets; // Rotate between sets of departures
+        currentDepartureSet = (currentDepartureSet + 1) % numberOfTables; // Rotate between the number of tables
         updateStopInfo();
     }, 10000); // Change every 10 seconds
 }
 
-function startProgressBars(maxSets) {
-    const progressBarsContainer = document.getElementById('progress-bars-container');
-    progressBarsContainer.innerHTML = ''; // Clear previous bars
-
-    for (let i = 0; i < maxSets; i++) {
-        const progressBar = document.createElement('div');
-        progressBar.classList.add('progress-bar');
-        const progressBarFill = document.createElement('div');
-        progressBarFill.classList.add('progress-bar-fill');
-        progressBar.appendChild(progressBarFill);
-        progressBarsContainer.appendChild(progressBar);
-    }
-
+function startProgressBars() {
     const progressBars = document.querySelectorAll('.progress-bar-fill');
     progressBars.forEach((bar, index) => {
         bar.style.width = '0%';
-        bar.style.transition = 'width 10s linear'; // Enable smooth transition
+        bar.style.transition = 'width 10s linear';
         if (index === currentDepartureSet) {
+            bar.style.width = '100%';
             bar.style.backgroundColor = '#001b69';
-            setTimeout(() => {
-                bar.style.width = '100%';
-            }, 100); // Short delay to restart the animation
         } else {
             bar.style.backgroundColor = '#ccc';
         }
     });
-
-    // Reset and start the progress bar animation
-    setTimeout(() => {
-        progressBars.forEach((bar, index) => {
-            if (index === currentDepartureSet) {
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = '100%';
-                }, 100); // Short delay to restart the animation
-            }
-        });
-    }, 10000); // Reset after 10 seconds
 }
 
 function resetProgressBars() {

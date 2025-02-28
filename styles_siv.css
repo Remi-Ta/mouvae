@@ -10,13 +10,13 @@ body {
 }
 
 .info-display {
-    background-color: #f0f0f0; /* Fond gris clair */
+    background-color: #f0f0f0;
     padding: 20px;
     border-radius: 15px; /* Arrondir les coins */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 800px;
-    color: black; /* Texte en noir */
+    color: white;
 }
 
 .header, .stop-selection {
@@ -51,7 +51,6 @@ body {
     text-align: center;
     flex-grow: 1;
     font-size: 22px; /* Réduire la taille de la police */
-    color: #fffafa; /* Texte en blanc cassé */
 }
 
 #current-time {
@@ -60,7 +59,7 @@ body {
     border-radius: 5px; /* Réduire l'arrondi des coins */
     font-size: 16px;
     font-weight: 600; /* SemiBold */
-    color: #fffafa; /* Texte en blanc cassé */
+    color: #fffafa;
 }
 
 #departure-labels {
@@ -86,7 +85,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px 0; /* Optimiser la hauteur avec un padding de 5px */
-    font-size: 16px;
+    font-size: 18px;
     margin: 1px 0; /* Espace entre les lignes */
     border-radius: 5px; /* Coins arrondis */
     width: 100%; /* Assurer que la largeur est identique */
@@ -119,13 +118,11 @@ body {
     font-family: 'Daikon ExtraBold', sans-serif;
     flex-grow: 1;
     text-align: center;
-    font-size: 18px;
 }
 
 .departure-wait-time {
     font-family: 'Daikon ExtraBold', sans-serif;
     margin: 0 10px; /* Marge avant et après */
-    font-size: 18px;
 }
 
 #traffic-info-container {
@@ -138,7 +135,7 @@ body {
     padding: 5px;
     border-radius: 5px; /* Réduire l'arrondi des coins */
     text-align: center;
-    color: #fffafa; /* Texte en blanc cassé */
+    color: #fffafa;
     font-size: 14px;
     font-family: 'Daikon ExtraBold', sans-serif;
     margin-bottom: 5px;
@@ -174,18 +171,18 @@ body {
 
 #progress-bars-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px; /* Espacement entre les barres */
     margin: 10px 0;
 }
 
 .progress-bar {
-    width: 150px;
+    width: 30%;
     height: 3px;
     background-color: #ccc;
     border-radius: 3px;
     overflow: hidden;
+    margin: 0 10px; /* Ajoutez une marge de 10px entre les barres */
 }
 
 .progress-bar-fill {
