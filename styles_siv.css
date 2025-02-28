@@ -1,3 +1,115 @@
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
 body {
     font-family: 'Daikon', sans-serif;
     background-color: #f0f0f0;
@@ -260,4 +372,23 @@ body {
 #validate-button:hover {
     background-color: #fffafa;
     color: #00e8ff;
+}
+
+#suspension-container {
+    width: 100%;
+    text-align: center;
+}
+
+.suspension-message {
+    background-color: white;
+    color: black;
+    font-family: 'Daikon', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 5px;
+    height: 240px; /* Hauteur de 8 lignes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

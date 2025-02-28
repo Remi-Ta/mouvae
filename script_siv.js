@@ -67,6 +67,7 @@ function showStopInfo() {
         startTrafficInfoCycle();
         startDepartureRotation();
         startProgressBars();
+        checkForSuspensions(); // Vérifier les suspensions de desserte
     }
 }
 
@@ -241,6 +242,28 @@ function resetProgressBars() {
         bar.style.width = '0%';
         bar.style.backgroundColor = '#ccc';
     });
+}
+
+function checkForSuspensions() {
+    const suspensions = JSON.parse(localStorage.getItem('suspensionsMouvae')) || [];
+    const suspensionContainer = document.getElementById('suspension-container');
+    const suspensionMessage = document.getElementById('suspension-message');
+
+    const currentPeriod = selectedPeriod;
+    const selectedStop = document.getElementById('stop-select').value;
+
+    const relevantSuspension = suspensions.find(suspension =>
+        suspension.period === currentPeriod && suspension.stops.includes(selectedStop)
+    );
+
+    if (relevantSuspension) {
+        suspensionMessage.textContent = relevantSuspension.message;
+        suspensionContainer.style.display = 'block';
+        document.getElementById('departure-info').style.display = 'none';
+    } else {
+        suspensionContainer.style.display = 'none';
+        document.getElementById('departure-info').style.display = 'block';
+    }
 }
 
 // Mettre à jour la date et l'heure toutes les secondes pour un suivi plus précis

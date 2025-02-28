@@ -12,6 +12,7 @@
         <div class="tabs">
             <button class="tab-button" onclick="showTab('traffic')">Infos Trafic</button>
             <button class="tab-button" onclick="showTab('announcement')">Annonces</button>
+            <button class="tab-button" onclick="showTab('suspension')">Suspensions</button>
         </div>
         <div id="traffic-tab" class="tab-content">
             <h2>Infos Trafic</h2>
@@ -31,8 +32,24 @@
                 <!-- Liste des annonces -->
             </div>
         </div>
+        <div id="suspension-tab" class="tab-content" style="display: none;">
+            <h2>Suspensions de Desserte</h2>
+            <select id="suspension-period-input">
+                <option value="lav_sco">Lundi au Vendredi - Période scolaire</option>
+                <option value="lav_vac">Lundi au Vendredi - Vacances scolaires</option>
+                <option value="sam">Samedi - Toute l'année</option>
+                <option value="dim">Dimanche - Toute l'année</option>
+            </select>
+            <select id="suspension-stop-input" multiple>
+                <!-- Options d'arrêts seront ajoutées dynamiquement -->
+            </select>
+            <textarea id="suspension-message-input" placeholder="Message à afficher"></textarea>
+            <button onclick="addSuspension()">Ajouter</button>
+            <div id="suspension-list">
+                <!-- Liste des suspensions -->
+            </div>
+        </div>
     </div>
-    <button id="scroll-to-top-button" onclick="scrollToTop()">Haut de page</button>
     <script src="admin_script_siv.js"></script>
 </body>
 </html>

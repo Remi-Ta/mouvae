@@ -1,11 +1,123 @@
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Daikon';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
 body {
     font-family: 'Daikon', sans-serif;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    align-items: flex-start;
+    height: auto;
+    margin: 20px;
     color: black;
 }
 
@@ -31,6 +143,7 @@ body {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
 }
 
 .tab-button:hover {
@@ -42,9 +155,9 @@ body {
     display: none;
 }
 
-input[type="text"], textarea {
-    width: calc(100% - 40px); /* Ajuste la largeur pour inclure les marges */
-    margin: 10px 20px; /* Marge uniforme à gauche et à droite */
+input[type="text"], textarea, select {
+    width: calc(100% - 40px);
+    margin: 10px 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -61,15 +174,16 @@ button {
     cursor: pointer;
     font-family: 'Daikon', sans-serif;
     font-size: 14px;
+    font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-    background-color: white;
-    color: #00e8ff;
+    background-color: #001b69;
+    color: white;
 }
 
-#traffic-info-list, #announcement-list {
+#traffic-info-list, #announcement-list, #suspension-list {
     margin-top: 20px;
 }
 
@@ -82,31 +196,13 @@ button:hover {
 }
 
 .info-item p {
-    margin: 2px 0; /* Petit espace entre les lignes */
+    margin: 2px 0;
 }
 
 .info-item button.edit {
-    background-color: #ffa500; /* Jaune/Orange */
+    background-color: #ffa500;
 }
 
 .info-item button.delete {
-    background-color: #ff0000; /* Rouge */
-}
-
-#scroll-to-top-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #00e8ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: none;
-}
-
-#scroll-to-top-button:hover {
-    background-color: white;
-    color: #00e8ff;
+    background-color: #ff0000;
 }
