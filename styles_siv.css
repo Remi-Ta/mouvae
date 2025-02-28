@@ -369,20 +369,22 @@ body {
 }
 
 #suspension-container {
-    width: 100%;
+    width: 760px; /* Largeur spécifiée */
+    height: 400px; /* Hauteur spécifiée */
     text-align: center;
     display: none; /* Masquer par défaut */
+    margin: 0 auto 10px auto; /* Centrer horizontalement et ajouter une marge en bas */
 }
 
 .suspension-message {
-    background-color: white;
+    background-color: #e9e9e9;
     color: black;
     font-family: 'Daikon', sans-serif;
     font-size: 16px;
     font-weight: bold;
     padding: 20px;
     border-radius: 5px;
-    height: 240px; /* Hauteur de 8 lignes */
+    height: 100%; /* Utiliser toute la hauteur du conteneur */
     display: flex;
     justify-content: center;
     align-items: center;
