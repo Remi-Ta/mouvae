@@ -80,7 +80,6 @@ function updateStopInfo() {
 
     selectedStopElement.textContent = selectedStop;
     stopHeader.style.display = 'flex';
-    departureInfoElement.style.display = 'block';
     departureLabels.style.display = 'block';
 
     const currentTime = new Date();
