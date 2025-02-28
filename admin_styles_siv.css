@@ -206,3 +206,39 @@ button:hover {
 .info-item button.delete {
     background-color: #ff0000;
 }
+
+.info-item button:hover {
+    background-color: white;
+    color: #001b69;
+}
+
+#selected-stops-list {
+    margin-top: 10px;
+}
+
+.selected-stop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.selected-stop-item button {
+    background-color: #ff0000;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.selected-stop-item button:hover {
+    background-color: white;
+    color: #ff0000;
+}

@@ -40,9 +40,15 @@
                 <option value="sam">Samedi - Toute l'année</option>
                 <option value="dim">Dimanche - Toute l'année</option>
             </select>
-            <select id="suspension-stop-input" multiple>
-                <!-- Options d'arrêts seront ajoutées dynamiquement -->
-            </select>
+            <button onclick="loadStops()">Charger les arrêts</button>
+            <div id="suspension-stop-selection" style="display: none;">
+                <select id="suspension-stop-input" multiple>
+                    <!-- Options d'arrêts seront ajoutées dynamiquement -->
+                </select>
+                <div id="selected-stops-list">
+                    <!-- Liste des arrêts sélectionnés -->
+                </div>
+            </div>
             <textarea id="suspension-message-input" placeholder="Message à afficher"></textarea>
             <button onclick="addSuspension()">Ajouter</button>
             <div id="suspension-list">

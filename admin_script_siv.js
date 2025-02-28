@@ -1,6 +1,7 @@
 let trafficInfosMouvae = JSON.parse(localStorage.getItem('trafficInfosMouvae')) || [];
 let announcementsMouvae = JSON.parse(localStorage.getItem('announcementsMouvae')) || [];
 let suspensionsMouvae = JSON.parse(localStorage.getItem('suspensionsMouvae')) || [];
+let availableStops = [];
 
 function showTab(tabId) {
     const trafficTab = document.getElementById('traffic-tab');
@@ -59,6 +60,25 @@ function addSuspension() {
         document.getElementById('suspension-message-input').value = '';
         updateSuspensionList();
     }
+}
+
+function loadStops() {
+    const period = document.getElementById('suspension-period-input').value;
+    fetch(`https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/${period}.json`)
+        .then(response => response.json())
+        .then(data => {
+            availableStops = [...new Set(data.map(item => item.Arret))].sort();
+            const stopSelect = document.getElementById('suspension-stop-input');
+            stopSelect.innerHTML = '';
+            availableStops.forEach(stop => {
+                const option = document.createElement('option');
+                option.value = stop;
+                option.textContent = stop;
+                stopSelect.appendChild(option);
+            });
+            document.getElementById('suspension-stop-selection').style.display = 'block';
+        })
+        .catch(error => console.error('Erreur lors du chargement des arrêts:', error));
 }
 
 function updateTrafficInfoList() {
@@ -164,7 +184,34 @@ function deleteSuspension(index) {
     updateSuspensionList();
 }
 
+function updateSelectedStopsList() {
+    const selectedStopsList = document.getElementById('selected-stops-list');
+    selectedStopsList.innerHTML = '';
+    const selectedStops = Array.from(document.getElementById('suspension-stop-input').selectedOptions).map(option => option.value);
+    selectedStops.forEach(stop => {
+        const item = document.createElement('div');
+        item.classList.add('selected-stop-item');
+        item.innerHTML = `
+            <span>${stop}</span>
+            <button onclick="removeSelectedStop('${stop}')">×</button>
+        `;
+        selectedStopsList.appendChild(item);
+    });
+}
+
+function removeSelectedStop(stop) {
+    const stopSelect = document.getElementById('suspension-stop-input');
+    Array.from(stopSelect.selectedOptions).forEach(option => {
+        if (option.value === stop) {
+            option.selected = false;
+        }
+    });
+    updateSelectedStopsList();
+}
+
 // Initialisation
 updateTrafficInfoList();
 updateAnnouncementList();
 updateSuspensionList();
+
+document.getElementById('suspension-stop-input').addEventListener('change', updateSelectedStopsList);

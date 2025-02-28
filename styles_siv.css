@@ -283,7 +283,7 @@ body {
     font-size: 14px;
     font-family: 'Daikon', sans-serif;
     text-align: left;
-    height: 80px; /* Taille fixe pour le conteneur */
+    height: 150px; /* Augmenter la hauteur pour contenir des messages plus longs */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centrer verticalement */
