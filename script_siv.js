@@ -2,17 +2,17 @@ document.getElementById('validate-button').addEventListener('click', showStopInf
 
 let departuresData = {};
 let selectedStop = '';
-let displayedTime = null; // Stocker l'heure affichée
+let displayedTime = new Date(); // Initialiser displayedTime correctement
 let currentDepartureSet = 0; // Index pour la rotation des départs
 let progressInterval; // Interval pour la progression des barres
 let numberOfTables = 3; // Par défaut, 3 tableaux
 let selectedPeriod = '';
 
 const urls = {
-    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/lav_sco.json',
-    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/lav_vac.json',
-    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/sam.json',
-    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/dim.json'
+    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/lav_sco.json',
+    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/lav_vac.json',
+    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/sam.json',
+    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/dim.json'
 };
 
 function loadPeriod(period) {
@@ -85,7 +85,6 @@ function updateStopInfo() {
     const currentTime = new Date();
     const currentHours = currentTime.getHours().toString().padStart(2, '0');
     const currentMinutes = currentTime.getMinutes().toString().padStart(2, '0');
-    displayedTime = new Date();
     displayedTime.setHours(currentHours, currentMinutes, 0, 0);
     currentTimeElement.textContent = `${currentHours}:${currentMinutes}`;
 
