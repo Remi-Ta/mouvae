@@ -10,7 +10,14 @@ let selectedPeriod = '';
 
 function loadPeriod(period) {
     selectedPeriod = period;
-    fetch(`data/${period}.json`)
+    const urls = {
+        'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/lav_sco.json',
+        'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/lav_vac.json',
+        'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/sam.json',
+        'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/dim.json'
+    };
+
+    fetch(urls[period])
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
