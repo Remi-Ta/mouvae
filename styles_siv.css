@@ -280,10 +280,10 @@ body {
     color: black;
     padding: 5px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 13px;
     font-family: 'Daikon', sans-serif;
     text-align: left;
-    height: 110px; /* Réduire la hauteur */
+    height: 100px; /* Réduire la hauteur */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centrer verticalement */
@@ -371,6 +371,7 @@ body {
 #suspension-container {
     width: 100%;
     text-align: center;
+    display: none; /* Masquer par défaut */
 }
 
 .suspension-message {
