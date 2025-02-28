@@ -9,10 +9,10 @@ let numberOfTables = 3; // Par défaut, 3 tableaux
 let selectedPeriod = '';
 
 const urls = {
-    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/lav_sco.json',
-    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/lav_vac.json',
-    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/sam.json',
-    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/data/dim.json'
+    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/lav_sco.json',
+    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/lav_vac.json',
+    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/sam.json',
+    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/a7b34ac783f595e1ad610055c63f83244910cb79/dim.json'
 };
 
 function loadPeriod(period) {
