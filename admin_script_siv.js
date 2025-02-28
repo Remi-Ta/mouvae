@@ -57,9 +57,17 @@ function addSuspension() {
     if (period && stops.length > 0 && message) {
         suspensionsMouvae.push({ period, stops, message });
         localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
-        document.getElementById('suspension-message-input').value = '';
+        resetSuspensionForm();
         updateSuspensionList();
     }
+}
+
+function resetSuspensionForm() {
+    document.getElementById('suspension-period-input').value = 'lav_sco';
+    document.getElementById('suspension-stop-input').innerHTML = '';
+    document.getElementById('suspension-message-input').value = '';
+    document.getElementById('suspension-stop-selection').style.display = 'none';
+    updateSelectedStopsList();
 }
 
 function loadStops() {
@@ -153,17 +161,21 @@ function editSuspension(index) {
     document.getElementById('suspension-period-input').value = suspension.period;
     const stopSelect = document.getElementById('suspension-stop-input');
     stopSelect.innerHTML = '';
-    suspension.stops.forEach(stop => {
+    availableStops.forEach(stop => {
         const option = document.createElement('option');
         option.value = stop;
         option.textContent = stop;
-        option.selected = true;
+        if (suspension.stops.includes(stop)) {
+            option.selected = true;
+        }
         stopSelect.appendChild(option);
     });
     document.getElementById('suspension-message-input').value = suspension.message;
+    document.getElementById('suspension-stop-selection').style.display = 'block';
     suspensionsMouvae.splice(index, 1);
     localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
     updateSuspensionList();
+    updateSelectedStopsList();
 }
 
 function deleteTrafficInfo(index) {
