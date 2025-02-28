@@ -236,6 +236,8 @@ button:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .selected-stop-item button:hover {
