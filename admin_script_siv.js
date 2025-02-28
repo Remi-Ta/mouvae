@@ -50,8 +50,8 @@ function updateTrafficInfoList() {
             <p><strong>Ligne(s):</strong> ${info.line}</p>
             <p><strong>Dates:</strong> ${info.date}</p>
             <p><strong>Détail:</strong> ${info.detail}</p>
-            <button onclick="editTrafficInfo(${index})">Modifier</button>
-            <button onclick="deleteTrafficInfo(${index})">Supprimer</button>
+            <button class="edit" onclick="editTrafficInfo(${index})">Modifier</button>
+            <button class="delete" onclick="deleteTrafficInfo(${index})">Supprimer</button>
         `;
         list.appendChild(item);
     });
@@ -65,8 +65,8 @@ function updateAnnouncementList() {
         item.classList.add('info-item');
         item.innerHTML = `
             <p>${announcement}</p>
-            <button onclick="editAnnouncement(${index})">Modifier</button>
-            <button onclick="deleteAnnouncement(${index})">Supprimer</button>
+            <button class="edit" onclick="editAnnouncement(${index})">Modifier</button>
+            <button class="delete" onclick="deleteAnnouncement(${index})">Supprimer</button>
         `;
         list.appendChild(item);
     });
@@ -101,6 +101,19 @@ function deleteAnnouncement(index) {
     localStorage.setItem('announcementsMouvae', JSON.stringify(announcementsMouvae));
     updateAnnouncementList();
 }
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.onscroll = function() {
+    const scrollButton = document.getElementById('scroll-to-top-button');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollButton.style.display = 'block';
+    } else {
+        scrollButton.style.display = 'none';
+    }
+};
 
 // Initialisation
 updateTrafficInfoList();

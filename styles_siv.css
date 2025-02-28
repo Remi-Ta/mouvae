@@ -23,6 +23,27 @@ body {
     margin-bottom: 20px;
 }
 
+.header button {
+    background-color: #001b69;
+    color: #fffafa; /* Couleur du texte */
+    font-family: 'Daikon', sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.header button:hover {
+    background-color: #fffafa;
+    color: #001b69;
+}
+
 .stop-header, .departure-item, #traffic-info-header, #traffic-info-details, #progress-bars-container {
     width: 100%; /* Assurer que la largeur est identique */
     box-sizing: border-box;
@@ -203,4 +224,40 @@ body {
     50%, 100% {
         opacity: 0;
     }
+}
+
+.stop-selection {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre les éléments */
+}
+
+.stop-selection label {
+    margin: 0; /* Supprimer la marge */
+    white-space: nowrap; /* Empêcher le texte de passer à la ligne */
+}
+
+#stop-select {
+    width: 200px; /* Réduire la largeur du sélecteur */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Daikon', sans-serif;
+}
+
+#validate-button {
+    background-color: #00e8ff;
+    color: #fffafa;
+    font-family: 'Daikon', sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 6px 12px; /* Réduire le padding */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#validate-button:hover {
+    background-color: #fffafa;
+    color: #00e8ff;
 }
