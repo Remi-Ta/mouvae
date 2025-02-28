@@ -283,11 +283,13 @@ body {
     font-size: 14px;
     font-family: 'Daikon', sans-serif;
     text-align: left;
-    height: 130px;
+    height: 110px; /* Réduire la hauteur */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centrer verticalement */
+    margin-bottom: 5px; /* Réduire la marge en bas */
 }
+
 
 #traffic-info-details p {
     margin: 2px 0; /* Petit espace entre les lignes */
