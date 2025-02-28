@@ -217,8 +217,8 @@ function startTrafficInfoCycle() {
     // Initial update
     updateInfo();
 
-    // Update every 12 seconds
-    setInterval(updateInfo, 12000);
+    // Update every 17 seconds
+    setInterval(updateInfo, 17000);
 }
 
 function startDepartureRotation() {
