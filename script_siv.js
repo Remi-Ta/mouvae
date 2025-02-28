@@ -259,14 +259,34 @@ function checkForSuspensions() {
     const selectedStop = document.getElementById('stop-select').value;
 
     const relevantSuspension = suspensions.find(suspension =>
-        suspension.period === currentPeriod && suspension.stops.includes(selectedStop)
+        suspension.period === currentPeriod && suspension.stops.some(stop => stop.stop === selectedStop)
     );
 
     if (relevantSuspension) {
-        suspensionMessage.textContent = relevantSuspension.message;
-        suspensionContainer.style.display = 'block';
-        document.getElementById('departure-info').style.display = 'none';
-        document.getElementById('departure-labels').style.display = 'none';
+        const specificLines = relevantSuspension.stops.find(stop => stop.stop === selectedStop).lines;
+        if (specificLines.length > 0) {
+            // Masquer les départs des lignes spécifiques
+            const departureInfoElement = document.getElementById('departure-info');
+            const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
+                const line = item.querySelector('.line-box').textContent;
+                return !specificLines.includes(line);
+            });
+            departureInfoElement.innerHTML = '';
+            departuresToShow.forEach(item => departureInfoElement.appendChild(item));
+
+            // Ajouter 8 lignes vides si nécessaire
+            while (departureInfoElement.children.length < 8) {
+                const emptyItem = document.createElement('div');
+                emptyItem.classList.add('departure-item');
+                emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+                departureInfoElement.appendChild(emptyItem);
+            }
+        } else {
+            suspensionMessage.textContent = relevantSuspension.message;
+            suspensionContainer.style.display = 'block';
+            document.getElementById('departure-info').style.display = 'none';
+            document.getElementById('departure-labels').style.display = 'none';
+        }
     } else {
         suspensionContainer.style.display = 'none';
         document.getElementById('departure-info').style.display = 'block';
