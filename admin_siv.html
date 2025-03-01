@@ -35,14 +35,20 @@
         <div id="suspension-tab" class="tab-content" style="display: none;">
             <h2>Suspensions de Desserte</h2>
             <div id="suspension-period-selection">
-                <label><input type="checkbox" value="lav_sco"> Lundi au Vendredi - Période scolaire</label>
-                <label><input type="checkbox" value="lav_vac"> Lundi au Vendredi - Vacances scolaires</label>
-                <label><input type="checkbox" value="sam"> Samedi - Toute l'année</label>
-                <label><input type="checkbox" value="dim"> Dimanche - Toute l'année</label>
+                <label>Périodes :</label>
+                <select id="suspension-period-select" multiple>
+                    <option value="lav_sco">Lundi au Vendredi - Période scolaire</option>
+                    <option value="lav_vac">Lundi au Vendredi - Vacances scolaires</option>
+                    <option value="sam">Samedi - Toute l'année</option>
+                    <option value="dim">Dimanche - Toute l'année</option>
+                </select>
             </div>
             <button onclick="loadStops()">Charger les arrêts</button>
             <div id="suspension-stop-selection" style="display: none;">
-                <div id="suspension-stop-list"></div>
+                <label>Arrêts :</label>
+                <select id="suspension-stop-select" multiple>
+                    <!-- Options d'arrêts seront ajoutées dynamiquement -->
+                </select>
                 <div id="selected-stops-list"></div>
             </div>
             <textarea id="suspension-message-input" placeholder="Message à afficher"></textarea>
