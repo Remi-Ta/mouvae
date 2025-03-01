@@ -1,17 +1,18 @@
 const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+const ghPagesBaseUrl = 'https://remi-ta.github.io/mouvae'; // Remplacez par l'URL de votre dépôt GitHub Pages
 
 async function fetchTrafficInfos() {
-    const response = await fetch(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json`);
+    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`);
     return await response.json();
 }
 
 async function fetchAnnouncements() {
-    const response = await fetch(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json`);
+    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/annonces.json`);
     return await response.json();
 }
 
 async function fetchSuspensions() {
-    const response = await fetch(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json`);
+    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`);
     return await response.json();
 }
 
@@ -53,7 +54,7 @@ async function addTrafficInfo() {
 
     if (line && date && detail) {
         trafficInfosMouvae.push({ line, date, detail });
-        await saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json`, trafficInfosMouvae);
+        await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`, trafficInfosMouvae);
         document.getElementById('traffic-line-input').value = '';
         document.getElementById('traffic-date-input').value = '';
         document.getElementById('traffic-detail-input').value = '';
@@ -66,7 +67,7 @@ async function addAnnouncement() {
     const value = input.value.trim();
     if (value) {
         announcementsMouvae.push(value);
-        await saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json`, announcementsMouvae);
+        await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/annonces.json`, announcementsMouvae);
         input.value = '';
         updateAnnouncementList();
     }
@@ -90,7 +91,7 @@ async function addSuspension() {
 
     if (periods.length > 0 && stops.length > 0 && message) {
         suspensionsMouvae.push({ periods, stops: suspensions, message });
-        await saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json`, suspensionsMouvae);
+        await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`, suspensionsMouvae);
         resetSuspensionForm();
         updateSuspensionList();
     }
@@ -98,7 +99,7 @@ async function addSuspension() {
 
 async function loadStops() {
     const periods = Array.from(document.getElementById('suspension-period-select').selectedOptions).map(option => option.value);
-    const response = await fetch(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/${periods[0]}.json`);
+    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/${periods[0]}.json`);
     const data = await response.json();
     availableStops = [...new Set(data.map(item => item.Arret))].sort();
     const stopSelect = document.getElementById('suspension-stop-select');
@@ -170,7 +171,7 @@ function editTrafficInfo(index) {
     document.getElementById('traffic-date-input').value = info.date;
     document.getElementById('traffic-detail-input').value = info.detail;
     trafficInfosMouvae.splice(index, 1);
-    saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json`, trafficInfosMouvae);
+    saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`, trafficInfosMouvae);
     updateTrafficInfoList();
 }
 
@@ -178,7 +179,7 @@ function editAnnouncement(index) {
     const input = document.getElementById('announcement-input');
     input.value = announcementsMouvae[index];
     announcementsMouvae.splice(index, 1);
-    saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json`, announcementsMouvae);
+    saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/annonces.json`, announcementsMouvae);
     updateAnnouncementList();
 }
 
@@ -196,26 +197,26 @@ function editSuspension(index) {
     });
     document.getElementById('suspension-message-input').value = suspension.message;
     suspensionsMouvae.splice(index, 1);
-    saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json`, suspensionsMouvae);
+    saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`, suspensionsMouvae);
     updateSuspensionList();
     updateSelectedStopsList();
 }
 
 async function deleteTrafficInfo(index) {
     trafficInfosMouvae.splice(index, 1);
-    await saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json`, trafficInfosMouvae);
+    await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`, trafficInfosMouvae);
     updateTrafficInfoList();
 }
 
 async function deleteAnnouncement(index) {
     announcementsMouvae.splice(index, 1);
-    await saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json`, announcementsMouvae);
+    await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/annonces.json`, announcementsMouvae);
     updateAnnouncementList();
 }
 
 async function deleteSuspension(index) {
     suspensionsMouvae.splice(index, 1);
-    await saveToGitHub(`${corsProxy}https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json`, suspensionsMouvae);
+    await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`, suspensionsMouvae);
     updateSuspensionList();
 }
 
