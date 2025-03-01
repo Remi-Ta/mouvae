@@ -57,24 +57,23 @@ async function updateInfo() {
     // ...
 }
 
-function loadPeriod(period) {
+async function loadPeriod(period) {
     selectedPeriod = period;
     console.log(`Chargement des données pour la période ${period}...`);
-    fetch(urls[period])
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            departuresData[period] = data;
-            console.log(`Données chargées pour la période ${period}:`, data);
-            populateStopSelect();
-            document.getElementById('file-selection').style.display = 'none';
-            document.getElementById('stop-selection').style.display = 'block';
-        })
-        .catch(error => console.error('Erreur lors du chargement des données:', error));
+    try {
+        const response = await fetch(urls[period]);
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        departuresData[period] = data;
+        console.log(`Données chargées pour la période ${period}:`, data);
+        populateStopSelect();
+        document.getElementById('file-selection').style.display = 'none';
+        document.getElementById('stop-selection').style.display = 'block';
+    } catch (error) {
+        console.error('Erreur lors du chargement des données:', error);
+    }
 }
 
 function populateStopSelect() {
@@ -224,7 +223,7 @@ function updateDateTime() {
     }
 }
 
-function startTrafficInfoCycle() {
+async function startTrafficInfoCycle() {
     let index = 0;
     const trafficInfoDetails = document.getElementById('traffic-info-details');
     const trafficInfos = await fetchTrafficInfos();
