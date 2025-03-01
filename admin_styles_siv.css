@@ -259,3 +259,12 @@ button:hover {
     width: auto;
     flex-grow: 1;
 }
+
+#suspension-period-selection label, #suspension-stop-list label, .line-checkbox-container label {
+    display: block;
+    margin: 5px 0;
+}
+
+#suspension-period-selection, #suspension-stop-list, .line-checkbox-container {
+    margin-bottom: 20px;
+}
