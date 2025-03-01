@@ -34,26 +34,20 @@
         </div>
         <div id="suspension-tab" class="tab-content" style="display: none;">
             <h2>Suspensions de Desserte</h2>
-            <select id="suspension-period-input">
-                <option value="lav_sco">Lundi au Vendredi - Période scolaire</option>
-                <option value="lav_vac">Lundi au Vendredi - Vacances scolaires</option>
-                <option value="sam">Samedi - Toute l'année</option>
-                <option value="dim">Dimanche - Toute l'année</option>
-            </select>
+            <div id="suspension-period-selection">
+                <label><input type="checkbox" value="lav_sco"> Lundi au Vendredi - Période scolaire</label>
+                <label><input type="checkbox" value="lav_vac"> Lundi au Vendredi - Vacances scolaires</label>
+                <label><input type="checkbox" value="sam"> Samedi - Toute l'année</label>
+                <label><input type="checkbox" value="dim"> Dimanche - Toute l'année</label>
+            </div>
             <button onclick="loadStops()">Charger les arrêts</button>
             <div id="suspension-stop-selection" style="display: none;">
-                <select id="suspension-stop-input" multiple>
-                    <!-- Options d'arrêts seront ajoutées dynamiquement -->
-                </select>
-                <div id="selected-stops-list">
-                    <!-- Liste des arrêts sélectionnés -->
-                </div>
+                <div id="suspension-stop-list"></div>
+                <div id="selected-stops-list"></div>
             </div>
             <textarea id="suspension-message-input" placeholder="Message à afficher"></textarea>
             <button onclick="addSuspension()">Ajouter</button>
-            <div id="suspension-list">
-                <!-- Liste des suspensions -->
-            </div>
+            <div id="suspension-list"></div>
         </div>
     </div>
     <script src="admin_script_siv.js"></script>
