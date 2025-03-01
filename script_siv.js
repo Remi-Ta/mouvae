@@ -16,18 +16,36 @@ const urls = {
 };
 
 async function fetchTrafficInfos() {
-    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
-    return response.json();
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
+        const data = await response.json();
+        return data.length ? data : [];
+    } catch (error) {
+        console.error('Erreur lors du chargement des infos trafic:', error);
+        return [];
+    }
 }
 
 async function fetchAnnouncements() {
-    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
-    return response.json();
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
+        const data = await response.json();
+        return data.length ? data : [];
+    } catch (error) {
+        console.error('Erreur lors du chargement des annonces:', error);
+        return [];
+    }
 }
 
 async function fetchSuspensions() {
-    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
-    return response.json();
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
+        const data = await response.json();
+        return data.length ? data : [];
+    } catch (error) {
+        console.error('Erreur lors du chargement des suspensions:', error);
+        return [];
+    }
 }
 
 async function updateInfo() {
@@ -209,8 +227,8 @@ function updateDateTime() {
 function startTrafficInfoCycle() {
     let index = 0;
     const trafficInfoDetails = document.getElementById('traffic-info-details');
-    const trafficInfos = JSON.parse(localStorage.getItem('trafficInfosMouvae')) || [];
-    const announcements = JSON.parse(localStorage.getItem('announcementsMouvae')) || [];
+    const trafficInfos = await fetchTrafficInfos();
+    const announcements = await fetchAnnouncements();
 
     function updateInfo() {
         if (trafficInfos.length > 0 || announcements.length > 0) {
