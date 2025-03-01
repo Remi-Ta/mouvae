@@ -110,7 +110,6 @@
     font-style: italic;
 }
 
-
 body {
     font-family: 'Daikon', sans-serif;
     background-color: #f0f0f0;
@@ -261,11 +260,15 @@ button:hover {
     flex-grow: 1;
 }
 
-#suspension-period-selection label, #suspension-stop-list label, .line-checkbox-container label {
+#suspension-period-selection label, #suspension-stop-selection label {
     display: block;
     margin: 5px 0;
 }
 
-#suspension-period-selection, #suspension-stop-list, .line-checkbox-container {
-    margin-bottom: 20px;
+#suspension-period-selection select, #suspension-stop-selection select {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
