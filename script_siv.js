@@ -2,18 +2,42 @@ document.getElementById('validate-button').addEventListener('click', showStopInf
 
 let departuresData = {};
 let selectedStop = '';
-let displayedTime = new Date(); // Initialiser displayedTime correctement
-let currentDepartureSet = 0; // Index pour la rotation des départs
-let progressInterval; // Interval pour la progression des barres
-let numberOfTables = 3; // Par défaut, 3 tableaux
+let displayedTime = new Date();
+let currentDepartureSet = 0;
+let progressInterval;
+let numberOfTables = 3;
 let selectedPeriod = '';
 
 const urls = {
-    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/lav_sco.json',
-    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/lav_vac.json',
-    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/sam.json',
-    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/dim.json'
+    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/lav_sco.json',
+    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/lav_vac.json',
+    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/sam.json',
+    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/dim.json'
 };
+
+async function fetchTrafficInfos() {
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
+    return response.json();
+}
+
+async function fetchAnnouncements() {
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
+    return response.json();
+}
+
+async function fetchSuspensions() {
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
+    return response.json();
+}
+
+async function updateInfo() {
+    const trafficInfos = await fetchTrafficInfos();
+    const announcements = await fetchAnnouncements();
+    const suspensions = await fetchSuspensions();
+
+    // Mettre à jour les informations sur la page
+    // ...
+}
 
 function loadPeriod(period) {
     selectedPeriod = period;
@@ -37,7 +61,7 @@ function loadPeriod(period) {
 
 function populateStopSelect() {
     const stopSelect = document.getElementById('stop-select');
-    stopSelect.innerHTML = ''; // Clear previous options
+    stopSelect.innerHTML = '';
 
     const stops = [...new Set(departuresData[selectedPeriod].map(departure => departure.Arret))].sort(compareStops);
     stops.forEach(stop => {
@@ -57,9 +81,9 @@ function compareStops(a, b) {
 function showStopInfo() {
     selectedStop = document.getElementById('stop-select').value;
     if (selectedStop) {
-        currentDepartureSet = 0; // Réinitialiser l'index des départs
-        clearInterval(progressInterval); // Arrêter l'intervalle précédent
-        resetProgressBars(); // Réinitialiser les barres de progression
+        currentDepartureSet = 0;
+        clearInterval(progressInterval);
+        resetProgressBars();
         updateStopInfo();
         document.title = `mouvàe | ${selectedStop} | Prochains passages`;
         document.getElementById('progress-bars-container').style.display = 'flex';
@@ -67,7 +91,7 @@ function showStopInfo() {
         startTrafficInfoCycle();
         startDepartureRotation();
         startProgressBars();
-        checkForSuspensions(); // Vérifier les suspensions de desserte
+        checkForSuspensions();
     }
 }
 
@@ -90,7 +114,6 @@ function updateStopInfo() {
 
     departureInfoElement.innerHTML = '';
 
-    // Filtrer les départs pour la journée actuelle seulement
     let allDepartures = departuresData[selectedPeriod]
         .filter(departure => departure.Arret === selectedStop)
         .map(departure => {
@@ -99,13 +122,11 @@ function updateStopInfo() {
             departureTime.setHours(hours, minutes, 0, 0);
             return { ...departure, departureTime };
         })
-        .filter(departure => departure.departureTime >= displayedTime) // Inclure les départs dont l'heure est passée d'une minute
+        .filter(departure => departure.departureTime >= displayedTime)
         .sort((a, b) => a.departureTime - b.departureTime);
 
-    // Calculer le nombre de départs prochains
     const numberOfDepartures = allDepartures.length;
 
-    // Déterminer le nombre de tableaux à afficher
     if (numberOfDepartures >= 17) {
         numberOfTables = 3;
     } else if (numberOfDepartures >= 9) {
@@ -114,7 +135,6 @@ function updateStopInfo() {
         numberOfTables = 1;
     }
 
-    // Afficher 8 lignes, même si certaines sont vides
     const departuresToShow = allDepartures
         .filter(departure => {
             const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
@@ -128,7 +148,6 @@ function updateStopInfo() {
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Service terminé.</div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
-        // Ajouter 7 lignes vides
         for (let i = 1; i < 8; i++) {
             const emptyItem = document.createElement('div');
             emptyItem.classList.add('departure-item');
@@ -158,10 +177,9 @@ function updateStopInfo() {
         }
     }
 
-    // Adapter le nombre de barres de progression et les centrer
     const progressBarsContainer = document.getElementById('progress-bars-container');
-    progressBarsContainer.innerHTML = ''; // Clear previous bars
-    progressBarsContainer.style.justifyContent = 'center'; // Center the bars
+    progressBarsContainer.innerHTML = '';
+    progressBarsContainer.style.justifyContent = 'center';
     for (let i = 0; i < numberOfTables; i++) {
         const progressBar = document.createElement('div');
         progressBar.classList.add('progress-bar');
@@ -171,7 +189,6 @@ function updateStopInfo() {
         progressBarsContainer.appendChild(progressBar);
     }
 
-    // Update progress bars
     startProgressBars();
 }
 
@@ -182,10 +199,8 @@ function updateDateTime() {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     currentTimeElement.textContent = `${hours}:${minutes}`;
 
-    // Update displayedTime
     displayedTime.setHours(hours, minutes, 0, 0);
 
-    // Update departures immediately after updating the time
     if (selectedStop) {
         updateStopInfo();
     }
@@ -214,18 +229,16 @@ function startTrafficInfoCycle() {
         }
     }
 
-    // Initial update
     updateInfo();
 
-    // Update every 17 seconds
     setInterval(updateInfo, 17000);
 }
 
 function startDepartureRotation() {
     progressInterval = setInterval(() => {
-        currentDepartureSet = (currentDepartureSet + 1) % numberOfTables; // Rotate between the number of tables
+        currentDepartureSet = (currentDepartureSet + 1) % numberOfTables;
         updateStopInfo();
-    }, 10000); // Change every 10 seconds
+    }, 10000);
 }
 
 function startProgressBars() {
@@ -250,8 +263,8 @@ function resetProgressBars() {
     });
 }
 
-function checkForSuspensions() {
-    const suspensions = JSON.parse(localStorage.getItem('suspensionsMouvae')) || [];
+async function checkForSuspensions() {
+    const suspensions = await fetchSuspensions();
     const suspensionContainer = document.getElementById('suspension-container');
     const suspensionMessage = document.getElementById('suspension-message');
 
@@ -259,13 +272,12 @@ function checkForSuspensions() {
     const selectedStop = document.getElementById('stop-select').value;
 
     const relevantSuspension = suspensions.find(suspension =>
-        suspension.period === currentPeriod && suspension.stops.some(stop => stop.stop === selectedStop)
+        suspension.periods.includes(currentPeriod) && suspension.stops.some(stop => stop.stop === selectedStop)
     );
 
     if (relevantSuspension) {
         const specificLines = relevantSuspension.stops.find(stop => stop.stop === selectedStop).lines;
         if (specificLines.length > 0) {
-            // Masquer les départs des lignes spécifiques
             const departureInfoElement = document.getElementById('departure-info');
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const line = item.querySelector('.line-box').textContent;
@@ -274,7 +286,6 @@ function checkForSuspensions() {
             departureInfoElement.innerHTML = '';
             departuresToShow.forEach(item => departureInfoElement.appendChild(item));
 
-            // Ajouter 8 lignes vides si nécessaire
             while (departureInfoElement.children.length < 8) {
                 const emptyItem = document.createElement('div');
                 emptyItem.classList.add('departure-item');
@@ -283,7 +294,7 @@ function checkForSuspensions() {
             }
         } else {
             suspensionMessage.textContent = relevantSuspension.message;
-            suspensionContainer.style.display = 'block';
+            suspensionContainer.style.display = 'flex';
             document.getElementById('departure-info').style.display = 'none';
             document.getElementById('departure-labels').style.display = 'none';
         }
@@ -294,8 +305,6 @@ function checkForSuspensions() {
     }
 }
 
-// Mettre à jour la date et l'heure toutes les secondes pour un suivi plus précis
 setInterval(updateDateTime, 1000);
 
-// Initialisation
 updateDateTime();
