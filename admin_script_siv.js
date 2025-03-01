@@ -1,7 +1,33 @@
-let trafficInfosMouvae = JSON.parse(localStorage.getItem('trafficInfosMouvae')) || [];
-let announcementsMouvae = JSON.parse(localStorage.getItem('announcementsMouvae')) || [];
-let suspensionsMouvae = JSON.parse(localStorage.getItem('suspensionsMouvae')) || [];
+let trafficInfosMouvae = [];
+let announcementsMouvae = [];
+let suspensionsMouvae = [];
 let availableStops = [];
+
+async function fetchTrafficInfos() {
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
+    return response.json();
+}
+
+async function fetchAnnouncements() {
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
+    return response.json();
+}
+
+async function fetchSuspensions() {
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
+    return response.json();
+}
+
+async function saveToGitHub(url, data) {
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    return response.json();
+}
 
 function showTab(tabId) {
     const trafficTab = document.getElementById('traffic-tab');
@@ -23,14 +49,14 @@ function showTab(tabId) {
     }
 }
 
-function addTrafficInfo() {
+async function addTrafficInfo() {
     const line = document.getElementById('traffic-line-input').value.trim();
     const date = document.getElementById('traffic-date-input').value.trim();
     const detail = document.getElementById('traffic-detail-input').value.trim();
 
     if (line && date && detail) {
         trafficInfosMouvae.push({ line, date, detail });
-        localStorage.setItem('trafficInfosMouvae', JSON.stringify(trafficInfosMouvae));
+        await saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json', trafficInfosMouvae);
         document.getElementById('traffic-line-input').value = '';
         document.getElementById('traffic-date-input').value = '';
         document.getElementById('traffic-detail-input').value = '';
@@ -38,20 +64,20 @@ function addTrafficInfo() {
     }
 }
 
-function addAnnouncement() {
+async function addAnnouncement() {
     const input = document.getElementById('announcement-input');
     const value = input.value.trim();
     if (value) {
         announcementsMouvae.push(value);
-        localStorage.setItem('announcementsMouvae', JSON.stringify(announcementsMouvae));
+        await saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json', announcementsMouvae);
         input.value = '';
         updateAnnouncementList();
     }
 }
 
-function addSuspension() {
-    const period = document.getElementById('suspension-period-input').value;
-    const stops = Array.from(document.getElementById('suspension-stop-input').selectedOptions).map(option => option.value);
+async function addSuspension() {
+    const periods = Array.from(document.querySelectorAll('#suspension-period-selection input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const stops = Array.from(document.querySelectorAll('#suspension-stop-list input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
     const message = document.getElementById('suspension-message-input').value.trim();
 
     const selectedStops = document.querySelectorAll('.selected-stop-item');
@@ -65,37 +91,38 @@ function addSuspension() {
         suspensions.push({ stop: stopName, lines });
     });
 
-    if (period && stops.length > 0 && message) {
-        suspensionsMouvae.push({ period, stops: suspensions, message });
-        localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
+    if (periods.length > 0 && stops.length > 0 && message) {
+        suspensionsMouvae.push({ periods, stops: suspensions, message });
+        await saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json', suspensionsMouvae);
         resetSuspensionForm();
         updateSuspensionList();
     }
 }
 
-function loadStops() {
-    const period = document.getElementById('suspension-period-input').value;
-    fetch(`https://raw.githubusercontent.com/Remi-Ta/mouvae/88f1c2e19e91b7354feaf5440fcd1acfe0c6abd6/${period}.json`)
-        .then(response => response.json())
-        .then(data => {
-            availableStops = [...new Set(data.map(item => item.Arret))].sort();
-            const stopSelect = document.getElementById('suspension-stop-input');
-            stopSelect.innerHTML = '';
-            availableStops.forEach(stop => {
-                const option = document.createElement('option');
-                option.value = stop;
-                option.textContent = stop;
-                stopSelect.appendChild(option);
-            });
-            document.getElementById('suspension-stop-selection').style.display = 'block';
-        })
-        .catch(error => console.error('Erreur lors du chargement des arrêts:', error));
+async function loadStops() {
+    const periods = Array.from(document.querySelectorAll('#suspension-period-selection input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const response = await fetch(`https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/${periods[0]}.json`);
+    const data = await response.json();
+    availableStops = [...new Set(data.map(item => item.Arret))].sort();
+    const stopList = document.getElementById('suspension-stop-list');
+    stopList.innerHTML = '';
+    availableStops.forEach(stop => {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = stop;
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(stop));
+        stopList.appendChild(label);
+    });
+    document.getElementById('suspension-stop-selection').style.display = 'block';
 }
 
-function updateTrafficInfoList() {
+async function updateTrafficInfoList() {
     const list = document.getElementById('traffic-info-list');
     list.innerHTML = '';
-    trafficInfosMouvae.forEach((info, index) => {
+    const trafficInfos = await fetchTrafficInfos();
+    trafficInfos.forEach((info, index) => {
         const item = document.createElement('div');
         item.classList.add('info-item');
         item.innerHTML = `
@@ -109,10 +136,11 @@ function updateTrafficInfoList() {
     });
 }
 
-function updateAnnouncementList() {
+async function updateAnnouncementList() {
     const list = document.getElementById('announcement-list');
     list.innerHTML = '';
-    announcementsMouvae.forEach((announcement, index) => {
+    const announcements = await fetchAnnouncements();
+    announcements.forEach((announcement, index) => {
         const item = document.createElement('div');
         item.classList.add('info-item');
         item.innerHTML = `
@@ -124,14 +152,15 @@ function updateAnnouncementList() {
     });
 }
 
-function updateSuspensionList() {
+async function updateSuspensionList() {
     const list = document.getElementById('suspension-list');
     list.innerHTML = '';
-    suspensionsMouvae.forEach((suspension, index) => {
+    const suspensions = await fetchSuspensions();
+    suspensions.forEach((suspension, index) => {
         const item = document.createElement('div');
         item.classList.add('info-item');
         item.innerHTML = `
-            <p><strong>Période:</strong> ${suspension.period}</p>
+            <p><strong>Périodes:</strong> ${suspension.periods.join(', ')}</p>
             <p><strong>Arrêts:</strong> ${suspension.stops.map(stop => stop.stop).join(', ')}</p>
             <p><strong>Message:</strong> ${suspension.message}</p>
             <button class="edit" onclick="editSuspension(${index})">Modifier</button>
@@ -147,7 +176,7 @@ function editTrafficInfo(index) {
     document.getElementById('traffic-date-input').value = info.date;
     document.getElementById('traffic-detail-input').value = info.detail;
     trafficInfosMouvae.splice(index, 1);
-    localStorage.setItem('trafficInfosMouvae', JSON.stringify(trafficInfosMouvae));
+    saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json', trafficInfosMouvae);
     updateTrafficInfoList();
 }
 
@@ -155,13 +184,13 @@ function editAnnouncement(index) {
     const input = document.getElementById('announcement-input');
     input.value = announcementsMouvae[index];
     announcementsMouvae.splice(index, 1);
-    localStorage.setItem('announcementsMouvae', JSON.stringify(announcementsMouvae));
+    saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json', announcementsMouvae);
     updateAnnouncementList();
 }
 
 function editSuspension(index) {
     const suspension = suspensionsMouvae[index];
-    document.getElementById('suspension-period-input').value = suspension.period;
+    document.getElementById('suspension-period-input').value = suspension.periods.join(', ');
     const stopSelect = document.getElementById('suspension-stop-input');
     stopSelect.innerHTML = '';
     suspension.stops.forEach(stop => {
@@ -173,33 +202,33 @@ function editSuspension(index) {
     });
     document.getElementById('suspension-message-input').value = suspension.message;
     suspensionsMouvae.splice(index, 1);
-    localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
+    saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json', suspensionsMouvae);
     updateSuspensionList();
     updateSelectedStopsList();
 }
 
-function deleteTrafficInfo(index) {
+async function deleteTrafficInfo(index) {
     trafficInfosMouvae.splice(index, 1);
-    localStorage.setItem('trafficInfosMouvae', JSON.stringify(trafficInfosMouvae));
+    await saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json', trafficInfosMouvae);
     updateTrafficInfoList();
 }
 
-function deleteAnnouncement(index) {
+async function deleteAnnouncement(index) {
     announcementsMouvae.splice(index, 1);
-    localStorage.setItem('announcementsMouvae', JSON.stringify(announcementsMouvae));
+    await saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json', announcementsMouvae);
     updateAnnouncementList();
 }
 
-function deleteSuspension(index) {
+async function deleteSuspension(index) {
     suspensionsMouvae.splice(index, 1);
-    localStorage.setItem('suspensionsMouvae', JSON.stringify(suspensionsMouvae));
+    await saveToGitHub('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json', suspensionsMouvae);
     updateSuspensionList();
 }
 
 function updateSelectedStopsList() {
     const selectedStopsList = document.getElementById('selected-stops-list');
     selectedStopsList.innerHTML = '';
-    const selectedStops = Array.from(document.getElementById('suspension-stop-input').selectedOptions).map(option => option.value);
+    const selectedStops = Array.from(document.querySelectorAll('#suspension-stop-list input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
     selectedStops.forEach(stop => {
         const item = document.createElement('div');
         item.classList.add('selected-stop-item');
@@ -220,26 +249,27 @@ function updateSelectedStopsList() {
 }
 
 function removeSelectedStop(stop) {
-    const stopSelect = document.getElementById('suspension-stop-input');
-    Array.from(stopSelect.selectedOptions).forEach(option => {
-        if (option.value === stop) {
-            option.selected = false;
+    const stopList = document.querySelectorAll('#suspension-stop-list input[type="checkbox"]');
+    stopList.forEach(checkbox => {
+        if (checkbox.value === stop) {
+            checkbox.checked = false;
         }
     });
     updateSelectedStopsList();
 }
 
 function resetSuspensionForm() {
-    document.getElementById('suspension-period-input').value = 'lav_sco';
-    document.getElementById('suspension-stop-input').innerHTML = '';
+    document.querySelectorAll('#suspension-period-selection input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    document.getElementById('suspension-stop-list').innerHTML = '';
     document.getElementById('suspension-message-input').value = '';
     document.getElementById('suspension-stop-selection').style.display = 'none';
     updateSelectedStopsList();
 }
 
-document.getElementById('suspension-stop-input').addEventListener('change', updateSelectedStopsList);
+document.getElementById('suspension-stop-list').addEventListener('change', updateSelectedStopsList);
 
-// Initialisation
 updateTrafficInfoList();
 updateAnnouncementList();
 updateSuspensionList();
