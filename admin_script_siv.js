@@ -5,17 +5,17 @@ let availableStops = [];
 
 async function fetchTrafficInfos() {
     const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
-    return response.json();
+    return await response.json();
 }
 
 async function fetchAnnouncements() {
     const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
-    return response.json();
+    return await response.json();
 }
 
 async function fetchSuspensions() {
     const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
-    return response.json();
+    return await response.json();
 }
 
 async function saveToGitHub(url, data) {
@@ -26,7 +26,7 @@ async function saveToGitHub(url, data) {
         },
         body: JSON.stringify(data),
     });
-    return response.json();
+    return await response.json();
 }
 
 function showTab(tabId) {
@@ -76,8 +76,8 @@ async function addAnnouncement() {
 }
 
 async function addSuspension() {
-    const periods = Array.from(document.querySelectorAll('#suspension-period-selection input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
-    const stops = Array.from(document.querySelectorAll('#suspension-stop-list input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const periods = Array.from(document.getElementById('suspension-period-select').selectedOptions).map(option => option.value);
+    const stops = Array.from(document.getElementById('suspension-stop-select').selectedOptions).map(option => option.value);
     const message = document.getElementById('suspension-message-input').value.trim();
 
     const selectedStops = document.querySelectorAll('.selected-stop-item');
@@ -100,20 +100,17 @@ async function addSuspension() {
 }
 
 async function loadStops() {
-    const periods = Array.from(document.querySelectorAll('#suspension-period-selection input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const periods = Array.from(document.getElementById('suspension-period-select').selectedOptions).map(option => option.value);
     const response = await fetch(`https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/${periods[0]}.json`);
     const data = await response.json();
     availableStops = [...new Set(data.map(item => item.Arret))].sort();
-    const stopList = document.getElementById('suspension-stop-list');
-    stopList.innerHTML = '';
+    const stopSelect = document.getElementById('suspension-stop-select');
+    stopSelect.innerHTML = '';
     availableStops.forEach(stop => {
-        const label = document.createElement('label');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.value = stop;
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(stop));
-        stopList.appendChild(label);
+        const option = document.createElement('option');
+        option.value = stop;
+        option.textContent = stop;
+        stopSelect.appendChild(option);
     });
     document.getElementById('suspension-stop-selection').style.display = 'block';
 }
@@ -190,8 +187,8 @@ function editAnnouncement(index) {
 
 function editSuspension(index) {
     const suspension = suspensionsMouvae[index];
-    document.getElementById('suspension-period-input').value = suspension.periods.join(', ');
-    const stopSelect = document.getElementById('suspension-stop-input');
+    document.getElementById('suspension-period-select').value = suspension.periods.join(', ');
+    const stopSelect = document.getElementById('suspension-stop-select');
     stopSelect.innerHTML = '';
     suspension.stops.forEach(stop => {
         const option = document.createElement('option');
@@ -228,7 +225,7 @@ async function deleteSuspension(index) {
 function updateSelectedStopsList() {
     const selectedStopsList = document.getElementById('selected-stops-list');
     selectedStopsList.innerHTML = '';
-    const selectedStops = Array.from(document.querySelectorAll('#suspension-stop-list input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const selectedStops = Array.from(document.getElementById('suspension-stop-select').selectedOptions).map(option => option.value);
     selectedStops.forEach(stop => {
         const item = document.createElement('div');
         item.classList.add('selected-stop-item');
@@ -249,26 +246,24 @@ function updateSelectedStopsList() {
 }
 
 function removeSelectedStop(stop) {
-    const stopList = document.querySelectorAll('#suspension-stop-list input[type="checkbox"]');
-    stopList.forEach(checkbox => {
-        if (checkbox.value === stop) {
-            checkbox.checked = false;
+    const stopSelect = document.getElementById('suspension-stop-select');
+    Array.from(stopSelect.selectedOptions).forEach(option => {
+        if (option.value === stop) {
+            option.selected = false;
         }
     });
     updateSelectedStopsList();
 }
 
 function resetSuspensionForm() {
-    document.querySelectorAll('#suspension-period-selection input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-    document.getElementById('suspension-stop-list').innerHTML = '';
+    document.getElementById('suspension-period-select').innerHTML = '';
+    document.getElementById('suspension-stop-select').innerHTML = '';
     document.getElementById('suspension-message-input').value = '';
     document.getElementById('suspension-stop-selection').style.display = 'none';
     updateSelectedStopsList();
 }
 
-document.getElementById('suspension-stop-list').addEventListener('change', updateSelectedStopsList);
+document.getElementById('suspension-stop-select').addEventListener('change', updateSelectedStopsList);
 
 updateTrafficInfoList();
 updateAnnouncementList();
