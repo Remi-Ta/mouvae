@@ -9,10 +9,10 @@ let numberOfTables = 3;
 let selectedPeriod = '';
 
 const urls = {
-    'lav_sco': 'https://github.com/Remi-Ta/mouvae/blob/3019a811bfa0115fcca9c8e7db1bfcbc30105ff0/lav_sco.json',
-    'lav_vac': 'https://github.com/Remi-Ta/mouvae/blob/3019a811bfa0115fcca9c8e7db1bfcbc30105ff0/lav_vac.json',
-    'sam': 'https://github.com/Remi-Ta/mouvae/blob/3019a811bfa0115fcca9c8e7db1bfcbc30105ff0/sam.json',
-    'dim': 'https://github.com/Remi-Ta/mouvae/blob/3019a811bfa0115fcca9c8e7db1bfcbc30105ff0/dim.json'
+    'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_sco.json',
+    'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_vac.json',
+    'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/sam.json',
+    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/dim.json'
 };
 
 async function fetchTrafficInfos() {
