@@ -170,7 +170,6 @@ function updateStopInfo() {
                 departureTime.setHours(hours, minutes, 0, 0);
                 return { ...departure, departureTime };
             })
-            .filter(departure => departure.departureTime >= displayedTime)
             .sort((a, b) => a.departureTime - b.departureTime);
 
         const numberOfDepartures = allDepartures.length;
