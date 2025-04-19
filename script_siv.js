@@ -48,6 +48,28 @@ async function fetchSuspensions() {
     }
 }
 
+async function fetchCalendrier() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/calendrier.json');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erreur lors du chargement du calendrier:', error);
+        return [];
+    }
+}
+
+async function fetchArrets() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/arrets.json');
+        const data = await response.json();
+        return Object.keys(data);
+    } catch (error) {
+        console.error('Erreur lors du chargement des arrêts:', error);
+        return [];
+    }
+}
+
 async function updateInfo() {
     const trafficInfos = await fetchTrafficInfos();
     const announcements = await fetchAnnouncements();
@@ -57,37 +79,45 @@ async function updateInfo() {
     // ...
 }
 
-async function loadPeriod(period) {
-    selectedPeriod = period;
-    console.log(`Chargement des données pour la période ${period}...`);
-    try {
-        const response = await fetch(urls[period]);
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+async function loadPeriod() {
+    const calendrier = await fetchCalendrier();
+    const today = new Date().toLocaleDateString('fr-FR');
+    const periodEntry = calendrier.find(entry => entry.date === today);
+
+    if (periodEntry && periodEntry.periode) {
+        selectedPeriod = periodEntry.periode;
+        console.log(`Chargement des données pour la période ${selectedPeriod}...`);
+        try {
+            const response = await fetch(urls[selectedPeriod]);
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            const data = await response.json();
+            departuresData[selectedPeriod] = data;
+            console.log(`Données chargées pour la période ${selectedPeriod}:`, data);
+            populateStopSelect();
+            document.getElementById('stop-selection').style.display = 'block';
+        } catch (error) {
+            console.error('Erreur lors du chargement des données:', error);
         }
-        const data = await response.json();
-        departuresData[period] = data;
-        console.log(`Données chargées pour la période ${period}:`, data);
-        populateStopSelect();
-        document.getElementById('file-selection').style.display = 'none';
+    } else {
+        console.log('Aucun départ prévu aujourd\'hui.');
         document.getElementById('stop-selection').style.display = 'block';
-    } catch (error) {
-        console.error('Erreur lors du chargement des données:', error);
     }
 }
 
-function populateStopSelect() {
+async function populateStopSelect() {
     const stopSelect = document.getElementById('stop-select');
+    const arrets = await fetchArrets();
     stopSelect.innerHTML = '';
 
-    const stops = [...new Set(departuresData[selectedPeriod].map(departure => departure.Arret))].sort(compareStops);
-    stops.forEach(stop => {
+    arrets.sort(compareStops).forEach(stop => {
         const option = document.createElement('option');
         option.value = stop;
         option.textContent = stop;
         stopSelect.appendChild(option);
     });
-    console.log(`Arrêts chargés pour la période ${selectedPeriod}:`, stops);
+    console.log(`Arrêts chargés:`, arrets);
 }
 
 function compareStops(a, b) {
@@ -131,38 +161,87 @@ function updateStopInfo() {
 
     departureInfoElement.innerHTML = '';
 
-    let allDepartures = departuresData[selectedPeriod]
-        .filter(departure => departure.Arret === selectedStop)
-        .map(departure => {
-            let [hours, minutes] = departure.Heure.split(':').map(Number);
-            const departureTime = new Date();
-            departureTime.setHours(hours, minutes, 0, 0);
-            return { ...departure, departureTime };
-        })
-        .filter(departure => departure.departureTime >= displayedTime)
-        .sort((a, b) => a.departureTime - b.departureTime);
+    if (selectedPeriod) {
+        let allDepartures = departuresData[selectedPeriod]
+            .filter(departure => departure.Arret === selectedStop)
+            .map(departure => {
+                let [hours, minutes] = departure.Heure.split(':').map(Number);
+                const departureTime = new Date();
+                departureTime.setHours(hours, minutes, 0, 0);
+                return { ...departure, departureTime };
+            })
+            .filter(departure => departure.departureTime >= displayedTime)
+            .sort((a, b) => a.departureTime - b.departureTime);
 
-    const numberOfDepartures = allDepartures.length;
+        const numberOfDepartures = allDepartures.length;
 
-    if (numberOfDepartures >= 17) {
-        numberOfTables = 3;
-    } else if (numberOfDepartures >= 9) {
-        numberOfTables = 2;
+        if (numberOfDepartures >= 17) {
+            numberOfTables = 3;
+        } else if (numberOfDepartures >= 9) {
+            numberOfTables = 2;
+        } else {
+            numberOfTables = 1;
+        }
+
+        const departuresToShow = allDepartures
+            .filter(departure => {
+                const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
+                return waitTime >= 0;
+            })
+            .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
+
+        if (departuresToShow.length === 0 && numberOfDepartures === 0) {
+            const item = document.createElement('div');
+            item.classList.add('departure-item');
+            item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Aucun départ prévu aujourd\'hui.</div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(item);
+
+            for (let i = 1; i < 8; i++) {
+                const emptyItem = document.createElement('div');
+                emptyItem.classList.add('departure-item');
+                emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+                departureInfoElement.appendChild(emptyItem);
+            }
+        } else {
+            for (let i = 0; i < 8; i++) {
+                const departure = departuresToShow[i];
+                const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
+                const waitText = waitTime !== null && waitTime >= 0
+                    ? waitTime === 0
+                    ? "<span class='approaching'>À l'approche</span>"
+                    : waitTime > 60
+                    ? `${departure.Heure}`
+                    : `${Math.round(waitTime)} min`
+                    : '';
+
+                const item = document.createElement('div');
+                item.classList.add('departure-item');
+                item.innerHTML = departure ? `
+                    <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
+                    <div class="departure-destination">${departure.Destination}</div>
+                    <div class="departure-wait-time">${waitText}</div>
+                ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+                departureInfoElement.appendChild(item);
+            }
+        }
+
+        const progressBarsContainer = document.getElementById('progress-bars-container');
+        progressBarsContainer.innerHTML = '';
+        progressBarsContainer.style.justifyContent = 'center';
+        for (let i = 0; i < numberOfTables; i++) {
+            const progressBar = document.createElement('div');
+            progressBar.classList.add('progress-bar');
+            const progressBarFill = document.createElement('div');
+            progressBarFill.classList.add('progress-bar-fill');
+            progressBar.appendChild(progressBarFill);
+            progressBarsContainer.appendChild(progressBar);
+        }
+
+        startProgressBars();
     } else {
-        numberOfTables = 1;
-    }
-
-    const departuresToShow = allDepartures
-        .filter(departure => {
-            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
-            return waitTime >= 0;
-        })
-        .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
-
-    if (departuresToShow.length === 0 && numberOfDepartures === 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Service terminé.</div><div class="departure-wait-time"></div>';
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Aucun départ prévu aujourd\'hui.</div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
         for (let i = 1; i < 8; i++) {
@@ -171,42 +250,7 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
-    } else {
-        for (let i = 0; i < 8; i++) {
-            const departure = departuresToShow[i];
-            const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
-            const waitText = waitTime !== null && waitTime >= 0
-                ? waitTime === 0
-                ? "<span class='approaching'>À l'approche</span>"
-                : waitTime > 60
-                ? `${departure.Heure}`
-                : `${Math.round(waitTime)} min`
-                : '';
-
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = departure ? `
-                <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
-                <div class="departure-destination">${departure.Destination}</div>
-                <div class="departure-wait-time">${waitText}</div>
-            ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(item);
-        }
     }
-
-    const progressBarsContainer = document.getElementById('progress-bars-container');
-    progressBarsContainer.innerHTML = '';
-    progressBarsContainer.style.justifyContent = 'center';
-    for (let i = 0; i < numberOfTables; i++) {
-        const progressBar = document.createElement('div');
-        progressBar.classList.add('progress-bar');
-        const progressBarFill = document.createElement('div');
-        progressBarFill.classList.add('progress-bar-fill');
-        progressBar.appendChild(progressBarFill);
-        progressBarsContainer.appendChild(progressBar);
-    }
-
-    startProgressBars();
 }
 
 function updateDateTime() {
@@ -325,3 +369,4 @@ async function checkForSuspensions() {
 setInterval(updateDateTime, 1000);
 
 updateDateTime();
+loadPeriod();
