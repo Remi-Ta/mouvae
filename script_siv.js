@@ -170,6 +170,7 @@ function updateStopInfo() {
                 departureTime.setHours(hours, minutes, 0, 0);
                 return { ...departure, departureTime };
             })
+            .filter(departure => departure.departureTime >= displayedTime)
             .sort((a, b) => a.departureTime - b.departureTime);
 
         const numberOfDepartures = allDepartures.length;
@@ -190,18 +191,6 @@ function updateStopInfo() {
             .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
         if (departuresToShow.length === 0 && numberOfDepartures === 0) {
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Aucun départ prévu aujourd\'hui.</div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(item);
-
-            for (let i = 1; i < 8; i++) {
-                const emptyItem = document.createElement('div');
-                emptyItem.classList.add('departure-item');
-                emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-                departureInfoElement.appendChild(emptyItem);
-            }
-        } else if (departuresToShow.length === 0) {
             const item = document.createElement('div');
             item.classList.add('departure-item');
             item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Service terminé.</div><div class="departure-wait-time"></div>';
@@ -252,7 +241,7 @@ function updateStopInfo() {
     } else {
         const item = document.createElement('div');
         item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Aucun départ prévu aujourd\'hui.</div><div class="departure-wait-time"></div>';
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination">Service terminé.</div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
         for (let i = 1; i < 8; i++) {
