@@ -9,18 +9,9 @@
 </head>
 <body>
     <div class="info-display">
-        <div class="header" id="file-selection">
-            <h1 style="color: black;">Sélectionnez une période :</h1>
-            <button onclick="loadPeriod('lav_sco')">Lundi au Vendredi - Période scolaire</button>
-            <button onclick="loadPeriod('lav_vac')">Lundi au Vendredi - Vacances scolaires</button>
-            <button onclick="loadPeriod('sam')">Samedi - Toute l'année</button>
-            <button onclick="loadPeriod('dim')">Dimanche - Toute l'année</button>
-        </div>
-        <div class="stop-selection" id="stop-selection" style="display: none;">
+        <div class="stop-selection" id="stop-selection">
             <label for="stop-select" style="color: black;">Sélectionnez un arrêt :</label>
-            <select id="stop-select">
-                <!-- Les options seront ajoutées dynamiquement ici -->
-            </select>
+            <select id="stop-select"></select>
             <button id="validate-button">Valider l'arrêt</button>
         </div>
         <div class="stop-header" id="stop-header" style="display: none;">
