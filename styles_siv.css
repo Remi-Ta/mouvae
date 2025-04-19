@@ -157,7 +157,7 @@ body {
 }
 
 #stop-select {
-    width: 300px; /* Augmenter la largeur du sélecteur */
+    width: 240px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
