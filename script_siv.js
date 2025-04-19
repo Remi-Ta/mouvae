@@ -342,7 +342,6 @@ async function checkForSuspensions() {
 
     const currentPeriod = selectedPeriod;
     const selectedStop = document.getElementById('stop-select').value;
-
     const relevantSuspension = suspensions.find(suspension =>
         suspension.periods.includes(currentPeriod) && suspension.stops.some(stop => stop.stop === selectedStop)
     );
