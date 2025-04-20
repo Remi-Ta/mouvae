@@ -59,17 +59,6 @@ async function fetchCalendrier() {
     }
 }
 
-async function fetchArrets() {
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/arrets.json');
-        const data = await response.json();
-        return Object.keys(data);
-    } catch (error) {
-        console.error('Erreur lors du chargement des arrêts:', error);
-        return [];
-    }
-}
-
 async function updateInfo() {
     const trafficInfos = await fetchTrafficInfos();
     const announcements = await fetchAnnouncements();
@@ -108,16 +97,21 @@ async function loadPeriod() {
 
 async function populateStopSelect() {
     const stopSelect = document.getElementById('stop-select');
-    const arrets = await fetchArrets();
+    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/arrets.json');
+    const data = await response.json();
+
+    // Extraire les noms d'arrêts uniques
+    const uniqueStops = [...new Set(data.map(item => item.nom_arret))];
+
     stopSelect.innerHTML = '';
 
-    arrets.sort(compareStops).forEach(stop => {
+    uniqueStops.sort(compareStops).forEach(stop => {
         const option = document.createElement('option');
         option.value = stop;
         option.textContent = stop;
         stopSelect.appendChild(option);
     });
-    console.log(`Arrêts chargés:`, arrets);
+    console.log(`Arrêts chargés:`, uniqueStops);
 }
 
 function compareStops(a, b) {
