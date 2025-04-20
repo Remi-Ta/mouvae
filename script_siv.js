@@ -14,8 +14,7 @@ const urls = {
     'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/sam.json',
     'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/dim.json',
     'navette_n10': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/navette_n10.json',
-    'melusine_jeu_ven_sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_jeu_ven_sam.json',
-    'melusine_dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_dim.json'
+    'melusine_jeu_ven_sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_jeu_ven_sam.json'
 };
 
 async function fetchTrafficInfos() {
@@ -121,9 +120,6 @@ async function loadPeriod() {
     }
     if (isThursday || isFriday || isSaturday) {
         await loadSpecialService('melusine_jeu_ven_sam', todayDateString);
-    }
-    if (isSunday) {
-        await loadSpecialService('melusine_dim', todayDateString);
     }
 }
 
@@ -238,13 +234,6 @@ function updateStopInfo() {
     }
     if (departuresData['melusine_jeu_ven_sam']) {
         allDepartures = allDepartures.concat(departuresData['melusine_jeu_ven_sam']
-            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
-            .map(departure => {
-                return { ...departure, departureTime: new Date(departure.departureTime) };
-            }));
-    }
-    if (departuresData['melusine_dim']) {
-        allDepartures = allDepartures.concat(departuresData['melusine_dim']
             .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
             .map(departure => {
                 return { ...departure, departureTime: new Date(departure.departureTime) };
