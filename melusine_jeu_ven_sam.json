@@ -10,16 +10,16 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine - Circuit 1",
-    "Arret": "Gare de Niort Parvis",
-    "Heure": "22:57",
+    "Arret": "Brèche",
+    "Heure": "22:00",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": "☾",
     "Destination": "Mélusine - Circuit 1",
-    "Arret": "Brèche",
-    "Heure": "22:00",
+    "Arret": "Gare de Niort Parvis",
+    "Heure": "22:57",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
   },
@@ -58,16 +58,16 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine - Circuit 2",
-    "Arret": "Gare de Niort Parvis",
-    "Heure": "22:57",
+    "Arret": "Brèche",
+    "Heure": "22:00",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": "☾",
     "Destination": "Mélusine - Circuit 2",
-    "Arret": "Brèche",
-    "Heure": "22:00",
+    "Arret": "Gare de Niort Parvis",
+    "Heure": "22:57",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
   },
