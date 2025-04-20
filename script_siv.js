@@ -12,7 +12,10 @@ const urls = {
     'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_sco.json',
     'lav_vac': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_vac.json',
     'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/sam.json',
-    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/dim.json'
+    'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/dim.json',
+    'navette_n10': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/navette_n10.json',
+    'melusine_jeu_ven_sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_jeu_ven_sam.json',
+    'melusine_dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_dim.json'
 };
 
 async function fetchTrafficInfos() {
@@ -70,8 +73,17 @@ async function updateInfo() {
 
 async function loadPeriod() {
     const calendrier = await fetchCalendrier();
-    const today = new Date().toLocaleDateString('fr-FR');
-    const periodEntry = calendrier.find(entry => entry.date === today);
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const todayDateString = today.toLocaleDateString('fr-FR');
+    const tomorrowDateString = tomorrow.toLocaleDateString('fr-FR');
+
+    const periodEntry = calendrier.find(entry => entry.date === todayDateString);
+    const isFriday = today.getDay() === 5;
+    const isThursday = today.getDay() === 4;
+    const isSaturday = today.getDay() === 6;
+    const isSunday = today.getDay() === 0;
 
     if (periodEntry && periodEntry.periode) {
         selectedPeriod = periodEntry.periode;
@@ -82,7 +94,16 @@ async function loadPeriod() {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             const data = await response.json();
-            departuresData[selectedPeriod] = data;
+            departuresData[selectedPeriod] = data.map(departure => {
+                const [hours, minutes] = departure.Heure.split(':').map(Number);
+                const departureTime = new Date();
+                departureTime.setHours(hours, minutes, 0, 0);
+                let adjustedDate = todayDateString;
+                if (hours < 3) { // Si l'heure est entre 00h00 et 02h59, considérer comme le lendemain
+                    adjustedDate = tomorrowDateString;
+                }
+                return { ...departure, departureTime, adjustedDate };
+            });
             console.log(`Données chargées pour la période ${selectedPeriod}:`, data);
             populateStopSelect();
             document.getElementById('stop-selection').style.display = 'block';
@@ -93,6 +114,42 @@ async function loadPeriod() {
         console.log('Aucun départ prévu aujourd\'hui.');
         document.getElementById('stop-selection').style.display = 'block';
     }
+
+    // Charger les services spéciaux si nécessaire
+    if (isFriday || (isThursday && isPublicHoliday(today))) {
+        await loadSpecialService('navette_n10', todayDateString);
+    }
+    if (isThursday || isFriday || isSaturday) {
+        await loadSpecialService('melusine_jeu_ven_sam', todayDateString);
+    }
+    if (isSunday) {
+        await loadSpecialService('melusine_dim', todayDateString);
+    }
+}
+
+async function loadSpecialService(service, adjustedDate) {
+    try {
+        const response = await fetch(urls[service]);
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        departuresData[service] = data.map(departure => {
+            const [hours, minutes] = departure.Heure.split(':').map(Number);
+            const departureTime = new Date();
+            departureTime.setHours(hours, minutes, 0, 0);
+            return { ...departure, departureTime, adjustedDate };
+        });
+        console.log(`Données chargées pour le service spécial ${service}:`, data);
+    } catch (error) {
+        console.error(`Erreur lors du chargement des données pour le service spécial ${service}:`, error);
+    }
+}
+
+function isPublicHoliday(date) {
+    // Implémentez cette fonction pour vérifier si une date est un jour férié
+    // Vous pouvez utiliser un fichier JSON ou une API pour obtenir les jours fériés
+    return false; // Par défaut, retourne false
 }
 
 async function populateStopSelect() {
@@ -155,95 +212,65 @@ function updateStopInfo() {
 
     departureInfoElement.innerHTML = '';
 
+    const todayDateString = currentTime.toLocaleDateString('fr-FR');
+    const tomorrowDateString = new Date(currentTime);
+    tomorrowDateString.setDate(tomorrowDateString.getDate() + 1);
+    tomorrowDateString.toLocaleDateString('fr-FR');
+
+    let allDepartures = [];
+
     if (selectedPeriod) {
-        let allDepartures = departuresData[selectedPeriod]
-            .filter(departure => departure.Arret === selectedStop)
+        allDepartures = departuresData[selectedPeriod]
+            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
             .map(departure => {
-                let [hours, minutes] = departure.Heure.split(':').map(Number);
-                const departureTime = new Date();
-                departureTime.setHours(hours, minutes, 0, 0);
-                return { ...departure, departureTime };
+                return { ...departure, departureTime: new Date(departure.departureTime) };
             })
             .sort((a, b) => a.departureTime - b.departureTime);
+    }
 
-        const numberOfDepartures = allDepartures.length;
+    // Ajouter les services spéciaux si disponibles
+    if (departuresData['navette_n10']) {
+        allDepartures = allDepartures.concat(departuresData['navette_n10']
+            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
+            .map(departure => {
+                return { ...departure, departureTime: new Date(departure.departureTime) };
+            }));
+    }
+    if (departuresData['melusine_jeu_ven_sam']) {
+        allDepartures = allDepartures.concat(departuresData['melusine_jeu_ven_sam']
+            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
+            .map(departure => {
+                return { ...departure, departureTime: new Date(departure.departureTime) };
+            }));
+    }
+    if (departuresData['melusine_dim']) {
+        allDepartures = allDepartures.concat(departuresData['melusine_dim']
+            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
+            .map(departure => {
+                return { ...departure, departureTime: new Date(departure.departureTime) };
+            }));
+    }
 
-        if (numberOfDepartures >= 17) {
-            numberOfTables = 3;
-        } else if (numberOfDepartures >= 9) {
-            numberOfTables = 2;
-        } else {
-            numberOfTables = 1;
-        }
+    allDepartures.sort((a, b) => a.departureTime - b.departureTime);
 
-        const departuresToShow = allDepartures
-            .filter(departure => {
-                const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
-                return waitTime >= 0;
-            })
-            .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
+    const numberOfDepartures = allDepartures.length;
 
-        if (departuresToShow.length === 0 && numberOfDepartures === 0) {
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(item);
-
-            for (let i = 1; i < 8; i++) {
-                const emptyItem = document.createElement('div');
-                emptyItem.classList.add('departure-item');
-                emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-                departureInfoElement.appendChild(emptyItem);
-            }
-        } else if (departuresToShow.length === 0) {
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(item);
-
-            for (let i = 1; i < 8; i++) {
-                const emptyItem = document.createElement('div');
-                emptyItem.classList.add('departure-item');
-                emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-                departureInfoElement.appendChild(emptyItem);
-            }
-        } else {
-            for (let i = 0; i < 8; i++) {
-                const departure = departuresToShow[i];
-                const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
-                const waitText = waitTime !== null && waitTime >= 0
-                    ? waitTime === 0
-                    ? "<span class='approaching'>À l'approche</span>"
-                    : waitTime > 60
-                    ? `${departure.Heure}`
-                    : `${Math.round(waitTime)} min`
-                    : '';
-
-                const item = document.createElement('div');
-                item.classList.add('departure-item');
-                item.innerHTML = departure ? `
-                    <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
-                    <div class="departure-destination">${departure.Destination}</div>
-                    <div class="departure-wait-time">${waitText}</div>
-                ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-                departureInfoElement.appendChild(item);
-            }
-        }
-
-        const progressBarsContainer = document.getElementById('progress-bars-container');
-        progressBarsContainer.innerHTML = '';
-        progressBarsContainer.style.justifyContent = 'center';
-        for (let i = 0; i < numberOfTables; i++) {
-            const progressBar = document.createElement('div');
-            progressBar.classList.add('progress-bar');
-            const progressBarFill = document.createElement('div');
-            progressBarFill.classList.add('progress-bar-fill');
-            progressBar.appendChild(progressBarFill);
-            progressBarsContainer.appendChild(progressBar);
-        }
-
-        startProgressBars();
+    if (numberOfDepartures >= 17) {
+        numberOfTables = 3;
+    } else if (numberOfDepartures >= 9) {
+        numberOfTables = 2;
     } else {
+        numberOfTables = 1;
+    }
+
+    const departuresToShow = allDepartures
+        .filter(departure => {
+            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
+            return waitTime >= 0;
+        })
+        .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
+
+    if (departuresToShow.length === 0 && numberOfDepartures === 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
@@ -255,7 +282,54 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
+    } else if (departuresToShow.length === 0) {
+        const item = document.createElement('div');
+        item.classList.add('departure-item');
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
+        departureInfoElement.appendChild(item);
+
+        for (let i = 1; i < 8; i++) {
+            const emptyItem = document.createElement('div');
+            emptyItem.classList.add('departure-item');
+            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(emptyItem);
+        }
+    } else {
+        for (let i = 0; i < 8; i++) {
+            const departure = departuresToShow[i];
+            const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
+            const waitText = waitTime !== null && waitTime >= 0
+                ? waitTime === 0
+                ? "<span class='approaching'>À l'approche</span>"
+                : waitTime > 60
+                ? `${departure.Heure}`
+                : `${Math.round(waitTime)} min`
+                : '';
+
+            const item = document.createElement('div');
+            item.classList.add('departure-item');
+            item.innerHTML = departure ? `
+                <div class="line-box" style="background-color: ${departure.Couleur_fond}; color: ${departure.Couleur_indice};">${departure.Ligne}</div>
+                <div class="departure-destination">${departure.Destination}</div>
+                <div class="departure-wait-time">${waitText}</div>
+            ` : '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(item);
+        }
     }
+
+    const progressBarsContainer = document.getElementById('progress-bars-container');
+    progressBarsContainer.innerHTML = '';
+    progressBarsContainer.style.justifyContent = 'center';
+    for (let i = 0; i < numberOfTables; i++) {
+        const progressBar = document.createElement('div');
+        progressBar.classList.add('progress-bar');
+        const progressBarFill = document.createElement('div');
+        progressBarFill.classList.add('progress-bar-fill');
+        progressBar.appendChild(progressBarFill);
+        progressBarsContainer.appendChild(progressBar);
+    }
+
+    startProgressBars();
 }
 
 function updateDateTime() {
