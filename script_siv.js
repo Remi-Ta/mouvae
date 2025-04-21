@@ -104,14 +104,11 @@ async function loadPeriod() {
                 return { ...departure, departureTime, adjustedDate };
             });
             console.log(`Données chargées pour la période ${selectedPeriod}:`, data);
-            populateStopSelect();
-            document.getElementById('stop-selection').style.display = 'block';
         } catch (error) {
             console.error('Erreur lors du chargement des données:', error);
         }
     } else {
         console.log('Aucun départ prévu aujourd\'hui.');
-        document.getElementById('stop-selection').style.display = 'block';
     }
 
     // Charger les services spéciaux si nécessaire
@@ -124,6 +121,10 @@ async function loadPeriod() {
     if (isFriday) {
         await loadSpecialService('melusine_ven', todayDateString);
     }
+
+    // Charger les arrêts même en jour férié
+    populateStopSelect();
+    document.getElementById('stop-selection').style.display = 'block';
 }
 
 async function loadSpecialService(service, adjustedDate) {
