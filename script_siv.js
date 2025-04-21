@@ -14,7 +14,8 @@ const urls = {
     'sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/sam.json',
     'dim': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/dim.json',
     'navette_n10': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/navette_n10.json',
-    'melusine_jeu_ven_sam': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_jeu_ven_sam.json'
+    'melusine_jeu': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_jeu.json',
+    'melusine_ven': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_ven.json'
 };
 
 async function fetchTrafficInfos() {
@@ -79,10 +80,9 @@ async function loadPeriod() {
     const tomorrowDateString = tomorrow.toLocaleDateString('fr-FR');
 
     const periodEntry = calendrier.find(entry => entry.date === todayDateString);
-    const isFriday = today.getDay() === 5;
     const isThursday = today.getDay() === 4;
+    const isFriday = today.getDay() === 5;
     const isSaturday = today.getDay() === 6;
-    const isSunday = today.getDay() === 0;
 
     if (periodEntry && periodEntry.periode) {
         selectedPeriod = periodEntry.periode;
@@ -118,8 +118,11 @@ async function loadPeriod() {
     if (isFriday || (isThursday && isPublicHoliday(today))) {
         await loadSpecialService('navette_n10', todayDateString);
     }
-    if (isThursday || isFriday || isSaturday) {
-        await loadSpecialService('melusine_jeu_ven_sam', todayDateString);
+    if (isThursday) {
+        await loadSpecialService('melusine_jeu', todayDateString);
+    }
+    if (isFriday) {
+        await loadSpecialService('melusine_ven', todayDateString);
     }
 }
 
@@ -220,8 +223,7 @@ function updateStopInfo() {
             .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
             .map(departure => {
                 return { ...departure, departureTime: new Date(departure.departureTime) };
-            })
-            .sort((a, b) => a.departureTime - b.departureTime);
+            });
     }
 
     // Ajouter les services spéciaux si disponibles
@@ -232,8 +234,15 @@ function updateStopInfo() {
                 return { ...departure, departureTime: new Date(departure.departureTime) };
             }));
     }
-    if (departuresData['melusine_jeu_ven_sam']) {
-        allDepartures = allDepartures.concat(departuresData['melusine_jeu_ven_sam']
+    if (departuresData['melusine_jeu']) {
+        allDepartures = allDepartures.concat(departuresData['melusine_jeu']
+            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
+            .map(departure => {
+                return { ...departure, departureTime: new Date(departure.departureTime) };
+            }));
+    }
+    if (departuresData['melusine_ven']) {
+        allDepartures = allDepartures.concat(departuresData['melusine_ven']
             .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
             .map(departure => {
                 return { ...departure, departureTime: new Date(departure.departureTime) };
