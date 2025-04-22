@@ -138395,7 +138395,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Gare de Niort Parvis",
-    "Heure": "12:15",
+    "Heure": "08:15",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138403,7 +138403,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Brèche",
-    "Heure": "12:18",
+    "Heure": "08:19",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138411,7 +138411,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Place Saint-Jean",
-    "Heure": "12:21",
+    "Heure": "08:22",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138419,7 +138419,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Espingole",
-    "Heure": "12:23",
+    "Heure": "08:24",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138427,7 +138427,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Port Boinot",
-    "Heure": "12:24",
+    "Heure": "08:25",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138435,7 +138435,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Genève",
-    "Heure": "12:25",
+    "Heure": "08:26",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138443,7 +138443,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Saint-Étienne",
-    "Heure": "12:25",
+    "Heure": "08:26",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138451,7 +138451,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Villon",
-    "Heure": "12:27",
+    "Heure": "08:30",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138459,7 +138459,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Bourgeois",
-    "Heure": "12:29",
+    "Heure": "08:31",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138467,7 +138467,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Lycée Horticole",
-    "Heure": "12:30",
+    "Heure": "08:32",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138475,7 +138475,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Bois Joli",
-    "Heure": "12:32",
+    "Heure": "08:34",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138483,7 +138483,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Coulonges",
-    "Heure": "12:33",
+    "Heure": "08:35",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138491,7 +138491,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Grand Croix",
-    "Heure": "12:35",
+    "Heure": "08:37",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138499,7 +138499,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Sciecq Salle des Fêtes",
-    "Heure": "12:38",
+    "Heure": "08:40",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138507,7 +138507,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Saint-Rémy Écoles",
-    "Heure": "12:44",
+    "Heure": "08:46",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138515,7 +138515,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Saint-Maxire Stade",
-    "Heure": "12:50",
+    "Heure": "08:52",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138523,7 +138523,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Route de Niort",
-    "Heure": "12:52",
+    "Heure": "08:54",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138531,7 +138531,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Saint-Maxire Centre",
-    "Heure": "12:54",
+    "Heure": "08:56",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138539,7 +138539,7 @@
     "Ligne": 22,
     "Destination": "Saint-Maxire Tout Vent",
     "Arret": "Route de Coursay",
-    "Heure": "12:56",
+    "Heure": "08:58",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138547,7 +138547,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Gare de Niort Parvis",
-    "Heure": "18:15",
+    "Heure": "10:45",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138555,7 +138555,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Brèche",
-    "Heure": "18:18",
+    "Heure": "10:49",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138563,7 +138563,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Place Saint-Jean",
-    "Heure": "18:21",
+    "Heure": "10:51",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138571,7 +138571,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Espingole",
-    "Heure": "18:23",
+    "Heure": "10:53",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138579,7 +138579,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Port Boinot",
-    "Heure": "18:24",
+    "Heure": "10:54",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138587,7 +138587,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Genève",
-    "Heure": "18:25",
+    "Heure": "10:55",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138595,7 +138595,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Saint-Étienne",
-    "Heure": "18:25",
+    "Heure": "10:55",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138603,7 +138603,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Villon",
-    "Heure": "18:27",
+    "Heure": "10:57",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138611,7 +138611,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Bourgeois",
-    "Heure": "18:29",
+    "Heure": "10:59",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138619,7 +138619,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Lycée Horticole",
-    "Heure": "18:30",
+    "Heure": "11:00",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138627,7 +138627,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Bois Joli",
-    "Heure": "18:32",
+    "Heure": "11:02",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138635,7 +138635,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Coulonges",
-    "Heure": "18:33",
+    "Heure": "11:03",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138643,7 +138643,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Grand Croix",
-    "Heure": "18:35",
+    "Heure": "11:05",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
@@ -138651,7 +138651,7 @@
     "Ligne": 22,
     "Destination": "Saint-Rémy Écoles",
     "Arret": "Sciecq Salle des Fêtes",
-    "Heure": "18:38",
+    "Heure": "11:08",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
   },
