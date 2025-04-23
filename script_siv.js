@@ -19,30 +19,36 @@ const urls = {
 };
 
 async function fetchTrafficInfos() {
-    const querySnapshot = await getDocs(collection(db, 'traffic_infos'));
-    const data = [];
-    querySnapshot.forEach((doc) => {
-        data.push(doc.data());
-    });
-    return data;
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
+        const data = await response.json();
+        return data.length ? data : [];
+    } catch (error) {
+        console.error('Erreur lors du chargement des infos trafic:', error);
+        return [];
+    }
 }
 
 async function fetchAnnouncements() {
-    const querySnapshot = await getDocs(collection(db, 'annonces'));
-    const data = [];
-    querySnapshot.forEach((doc) => {
-        data.push(doc.data());
-    });
-    return data;
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
+        const data = await response.json();
+        return data.length ? data : [];
+    } catch (error) {
+        console.error('Erreur lors du chargement des annonces:', error);
+        return [];
+    }
 }
 
 async function fetchSuspensions() {
-    const querySnapshot = await getDocs(collection(db, 'suspensions'));
-    const data = [];
-    querySnapshot.forEach((doc) => {
-        data.push(doc.data());
-    });
-    return data;
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
+        const data = await response.json();
+        return data.length ? data : [];
+    } catch (error) {
+        console.error('Erreur lors du chargement des suspensions:', error);
+        return [];
+    }
 }
 
 async function fetchCalendrier() {
