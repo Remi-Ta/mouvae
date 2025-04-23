@@ -1,8 +1,3 @@
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-
-// Initialize Firebase (assurez-vous que cette partie est déjà incluse dans votre HTML)
-const db = getFirestore(app);
-
 document.getElementById('validate-button').addEventListener('click', showStopInfo);
 
 let departuresData = {};
