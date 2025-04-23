@@ -66,6 +66,7 @@ async function updateInfo() {
     const trafficInfos = await fetchTrafficInfos();
     const announcements = await fetchAnnouncements();
     const suspensions = await fetchSuspensions();
+
     // Mettre à jour les informations sur la page
     // ...
 }
@@ -280,7 +281,7 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
-    } else if (departuresToShow.length === 0 && numberOfDepartures > 0 && numberOfTables === 1) {
+    } else if (departuresToShow.length === 0 && numberOfDepartures > 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
