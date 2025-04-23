@@ -183,7 +183,7 @@ function showStopInfo() {
         clearInterval(progressInterval);
         resetProgressBars();
         updateStopInfo();
-        document.title = `mouvàe | ${selectedStop} | Prochains passages`;
+        document.title = `Prochains départs : ${selectedStop} | mouvàe`;
         document.getElementById('progress-bars-container').style.display = 'flex';
         document.getElementById('info-container').style.display = 'block';
         startTrafficInfoCycle();
@@ -281,7 +281,7 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
-    } else if (departuresToShow.length === 0) {
+    } else if (departuresToShow.length === 0 && numberOfDepartures > 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
