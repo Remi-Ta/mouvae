@@ -66,7 +66,6 @@ async function updateInfo() {
     const trafficInfos = await fetchTrafficInfos();
     const announcements = await fetchAnnouncements();
     const suspensions = await fetchSuspensions();
-
     // Mettre à jour les informations sur la page
     // ...
 }
@@ -299,7 +298,7 @@ function updateStopInfo() {
             const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
             const waitText = waitTime !== null && waitTime >= 0
                 ? waitTime === 0
-                ? "<span class='approaching'>À l'approche</span>"
+                ? "<span class='approaching'>Imminent</span>"
                 : waitTime > 60
                 ? `${departure.Heure}`
                 : `${Math.round(waitTime)} min`
