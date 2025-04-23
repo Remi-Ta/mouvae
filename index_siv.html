@@ -6,6 +6,25 @@
     <title>Prochains départs | mouvàe</title>
     <link rel="stylesheet" href="styles_siv.css">
     <link href="https://fonts.googleapis.com/css2?family=Daikon:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGT1WS91iCXFBTv50898dgRCXU47AOOLM",
+            authDomain: "mouvae-568ff.firebaseapp.com",
+            projectId: "mouvae-568ff",
+            storageBucket: "mouvae-568ff.firebasestorage.app",
+            messagingSenderId: "423290034551",
+            appId: "1:423290034551:web:3cf67b1b98f213ab2c6972"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    </script>
 </head>
 <body>
     <div class="info-display">
