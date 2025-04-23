@@ -7,7 +7,6 @@ let currentDepartureSet = 0;
 let progressInterval;
 let numberOfTables = 3;
 let selectedPeriod = '';
-let progressBars = [];
 
 const urls = {
     'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_sco.json',
@@ -328,7 +327,6 @@ function updateStopInfo() {
         progressBarFill.classList.add('progress-bar-fill');
         progressBar.appendChild(progressBarFill);
         progressBarsContainer.appendChild(progressBar);
-        progressBars.push(progressBarFill);
     }
 
     startProgressBars();
@@ -380,11 +378,11 @@ function startDepartureRotation() {
     progressInterval = setInterval(() => {
         currentDepartureSet = (currentDepartureSet + 1) % numberOfTables;
         updateStopInfo();
-        startProgressBars(); // Restart the progress bar animation
     }, 10000);
 }
 
 function startProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar-fill');
     progressBars.forEach((bar, index) => {
         bar.style.width = '0%';
         bar.style.transition = 'width 10s linear';
@@ -398,11 +396,11 @@ function startProgressBars() {
 }
 
 function resetProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar-fill');
     progressBars.forEach(bar => {
         bar.style.width = '0%';
         bar.style.backgroundColor = '#ccc';
     });
-    progressBars = []; // Reset the progressBars array
 }
 
 async function checkForSuspensions() {
