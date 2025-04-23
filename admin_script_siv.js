@@ -1,50 +1,33 @@
-const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-const ghPagesBaseUrl = 'https://remi-ta.github.io/mouvae'; // Remplacez par l'URL de votre dépôt GitHub Pages
+import { getFirestore, collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+// Initialize Firebase (assurez-vous que cette partie est déjà incluse dans votre HTML)
+const db = getFirestore(app);
 
 async function fetchTrafficInfos() {
-    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`);
-    return await response.json();
+    const querySnapshot = await getDocs(collection(db, 'traffic_infos'));
+    const data = [];
+    querySnapshot.forEach((doc) => {
+        data.push({ ...doc.data(), id: doc.id });
+    });
+    return data;
 }
 
 async function fetchAnnouncements() {
-    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/annonces.json`);
-    return await response.json();
+    const querySnapshot = await getDocs(collection(db, 'annonces'));
+    const data = [];
+    querySnapshot.forEach((doc) => {
+        data.push({ ...doc.data(), id: doc.id });
+    });
+    return data;
 }
 
 async function fetchSuspensions() {
-    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`);
-    return await response.json();
-}
-
-async function saveToGitHub(url, data) {
-    const response = await fetch(url, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+    const querySnapshot = await getDocs(collection(db, 'suspensions'));
+    const data = [];
+    querySnapshot.forEach((doc) => {
+        data.push({ ...doc.data(), id: doc.id });
     });
-    return await response.json();
-}
-
-function showTab(tabId) {
-    const trafficTab = document.getElementById('traffic-tab');
-    const announcementTab = document.getElementById('announcement-tab');
-    const suspensionTab = document.getElementById('suspension-tab');
-
-    if (tabId === 'traffic') {
-        trafficTab.style.display = 'block';
-        announcementTab.style.display = 'none';
-        suspensionTab.style.display = 'none';
-    } else if (tabId === 'announcement') {
-        trafficTab.style.display = 'none';
-        announcementTab.style.display = 'block';
-        suspensionTab.style.display = 'none';
-    } else {
-        trafficTab.style.display = 'none';
-        announcementTab.style.display = 'none';
-        suspensionTab.style.display = 'block';
-    }
+    return data;
 }
 
 async function addTrafficInfo() {
@@ -53,8 +36,7 @@ async function addTrafficInfo() {
     const detail = document.getElementById('traffic-detail-input').value.trim();
 
     if (line && date && detail) {
-        trafficInfosMouvae.push({ line, date, detail });
-        await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`, trafficInfosMouvae);
+        await addDoc(collection(db, 'traffic_infos'), { line, date, detail });
         document.getElementById('traffic-line-input').value = '';
         document.getElementById('traffic-date-input').value = '';
         document.getElementById('traffic-detail-input').value = '';
@@ -66,8 +48,7 @@ async function addAnnouncement() {
     const input = document.getElementById('announcement-input');
     const value = input.value.trim();
     if (value) {
-        announcementsMouvae.push(value);
-        await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/annonces.json`, announcementsMouvae);
+        await addDoc(collection(db, 'annonces'), { text: value });
         input.value = '';
         updateAnnouncementList();
     }
@@ -90,8 +71,7 @@ async function addSuspension() {
     });
 
     if (periods.length > 0 && stops.length > 0 && message) {
-        suspensionsMouvae.push({ periods, stops: suspensions, message });
-        await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`, suspensionsMouvae);
+        await addDoc(collection(db, 'suspensions'), { periods, stops: suspensions, message });
         resetSuspensionForm();
         updateSuspensionList();
     }
@@ -99,7 +79,7 @@ async function addSuspension() {
 
 async function loadStops() {
     const periods = Array.from(document.getElementById('suspension-period-select').selectedOptions).map(option => option.value);
-    const response = await fetch(`${corsProxy}${ghPagesBaseUrl}/${periods[0]}.json`);
+    const response = await fetch(`https://raw.githubusercontent.com/Remi-Ta/mouvae/main/${periods[0]}.json`);
     const data = await response.json();
     availableStops = [...new Set(data.map(item => item.Arret))].sort();
     const stopSelect = document.getElementById('suspension-stop-select');
@@ -117,15 +97,15 @@ async function updateTrafficInfoList() {
     const list = document.getElementById('traffic-info-list');
     list.innerHTML = '';
     const trafficInfos = await fetchTrafficInfos();
-    trafficInfos.forEach((info, index) => {
+    trafficInfos.forEach((info) => {
         const item = document.createElement('div');
         item.classList.add('info-item');
         item.innerHTML = `
             <p><strong>Ligne(s):</strong> ${info.line}</p>
             <p><strong>Dates:</strong> ${info.date}</p>
             <p><strong>Détail:</strong> ${info.detail}</p>
-            <button class="edit" onclick="editTrafficInfo(${index})">Modifier</button>
-            <button class="delete" onclick="deleteTrafficInfo(${index})">Supprimer</button>
+            <button class="edit" onclick="editTrafficInfo('${info.id}')">Modifier</button>
+            <button class="delete" onclick="deleteTrafficInfo('${info.id}')">Supprimer</button>
         `;
         list.appendChild(item);
     });
@@ -135,13 +115,13 @@ async function updateAnnouncementList() {
     const list = document.getElementById('announcement-list');
     list.innerHTML = '';
     const announcements = await fetchAnnouncements();
-    announcements.forEach((announcement, index) => {
+    announcements.forEach((announcement) => {
         const item = document.createElement('div');
         item.classList.add('info-item');
         item.innerHTML = `
-            <p>${announcement}</p>
-            <button class="edit" onclick="editAnnouncement(${index})">Modifier</button>
-            <button class="delete" onclick="deleteAnnouncement(${index})">Supprimer</button>
+            <p>${announcement.text}</p>
+            <button class="edit" onclick="editAnnouncement('${announcement.id}')">Modifier</button>
+            <button class="delete" onclick="deleteAnnouncement('${announcement.id}')">Supprimer</button>
         `;
         list.appendChild(item);
     });
@@ -151,40 +131,41 @@ async function updateSuspensionList() {
     const list = document.getElementById('suspension-list');
     list.innerHTML = '';
     const suspensions = await fetchSuspensions();
-    suspensions.forEach((suspension, index) => {
+    suspensions.forEach((suspension) => {
         const item = document.createElement('div');
         item.classList.add('info-item');
         item.innerHTML = `
             <p><strong>Périodes:</strong> ${suspension.periods.join(', ')}</p>
             <p><strong>Arrêts:</strong> ${suspension.stops.map(stop => stop.stop).join(', ')}</p>
             <p><strong>Message:</strong> ${suspension.message}</p>
-            <button class="edit" onclick="editSuspension(${index})">Modifier</button>
-            <button class="delete" onclick="deleteSuspension(${index})">Supprimer</button>
+            <button class="edit" onclick="editSuspension('${suspension.id}')">Modifier</button>
+            <button class="delete" onclick="deleteSuspension('${suspension.id}')">Supprimer</button>
         `;
         list.appendChild(item);
     });
 }
 
-function editTrafficInfo(index) {
-    const info = trafficInfosMouvae[index];
+async function editTrafficInfo(id) {
+    const trafficInfos = await fetchTrafficInfos();
+    const info = trafficInfos.find(info => info.id === id);
     document.getElementById('traffic-line-input').value = info.line;
     document.getElementById('traffic-date-input').value = info.date;
     document.getElementById('traffic-detail-input').value = info.detail;
-    trafficInfosMouvae.splice(index, 1);
-    saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`, trafficInfosMouvae);
+    await deleteDoc(doc(db, 'traffic_infos', id));
     updateTrafficInfoList();
 }
 
-function editAnnouncement(index) {
-    const input = document.getElementById('announcement-input');
-    input.value = announcementsMouvae[index];
-    announcementsMouvae.splice(index, 1);
-    saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/annonces.json`, announcementsMouvae);
+async function editAnnouncement(id) {
+    const announcements = await fetchAnnouncements();
+    const announcement = announcements.find(announcement => announcement.id === id);
+    document.getElementById('announcement-input').value = announcement.text;
+    await deleteDoc(doc(db, 'annonces', id));
     updateAnnouncementList();
 }
 
-function editSuspension(index) {
-    const suspension = suspensionsMouvae[index];
+async function editSuspension(id) {
+    const suspensions = await fetchSuspensions();
+    const suspension = suspensions.find(suspension => suspension.id === id);
     document.getElementById('suspension-period-select').value = suspension.periods.join(', ');
     const stopSelect = document.getElementById('suspension-stop-select');
     stopSelect.innerHTML = '';
@@ -196,27 +177,23 @@ function editSuspension(index) {
         stopSelect.appendChild(option);
     });
     document.getElementById('suspension-message-input').value = suspension.message;
-    suspensionsMouvae.splice(index, 1);
-    saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`, suspensionsMouvae);
+    await deleteDoc(doc(db, 'suspensions', id));
     updateSuspensionList();
     updateSelectedStopsList();
 }
 
-async function deleteTrafficInfo(index) {
-    trafficInfosMouvae.splice(index, 1);
-    await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/traffic_infos.json`, trafficInfosMouvae);
+async function deleteTrafficInfo(id) {
+    await deleteDoc(doc(db, 'traffic_infos', id));
     updateTrafficInfoList();
 }
 
-async function deleteAnnouncement(index) {
-    announcementsMouvae.splice(index, 1);
-    await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/annonces.json`, announcementsMouvae);
+async function deleteAnnouncement(id) {
+    await deleteDoc(doc(db, 'annonces', id));
     updateAnnouncementList();
 }
 
-async function deleteSuspension(index) {
-    suspensionsMouvae.splice(index, 1);
-    await saveToGitHub(`${corsProxy}${ghPagesBaseUrl}/suspensions.json`, suspensionsMouvae);
+async function deleteSuspension(id) {
+    await deleteDoc(doc(db, 'suspensions', id));
     updateSuspensionList();
 }
 
@@ -259,6 +236,26 @@ function resetSuspensionForm() {
     document.getElementById('suspension-message-input').value = '';
     document.getElementById('suspension-stop-selection').style.display = 'none';
     updateSelectedStopsList();
+}
+
+function showTab(tabId) {
+    const trafficTab = document.getElementById('traffic-tab');
+    const announcementTab = document.getElementById('announcement-tab');
+    const suspensionTab = document.getElementById('suspension-tab');
+
+    if (tabId === 'traffic') {
+        trafficTab.style.display = 'block';
+        announcementTab.style.display = 'none';
+        suspensionTab.style.display = 'none';
+    } else if (tabId === 'announcement') {
+        trafficTab.style.display = 'none';
+        announcementTab.style.display = 'block';
+        suspensionTab.style.display = 'none';
+    } else {
+        trafficTab.style.display = 'none';
+        announcementTab.style.display = 'none';
+        suspensionTab.style.display = 'block';
+    }
 }
 
 document.getElementById('suspension-stop-select').addEventListener('change', updateSelectedStopsList);
