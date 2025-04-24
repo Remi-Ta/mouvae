@@ -329,7 +329,8 @@ function updateStopInfo() {
         progressBarsContainer.appendChild(progressBar);
     }
 
-    startProgressBars() ;
+    startProgressBars();
+}
 
 function updateDateTime() {
     const currentTimeElement = document.getElementById('current-time');
