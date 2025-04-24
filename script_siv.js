@@ -358,6 +358,9 @@ async function startTrafficInfoCycle() {
 
     updateInfo();
 
+    if (trafficInfoInterval) {
+        clearInterval(trafficInfoInterval);
+    }
     trafficInfoInterval = setInterval(updateInfo, 10000); // Réduire le temps de rotation à 10 secondes
 }
 
