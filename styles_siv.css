@@ -211,6 +211,7 @@ body {
     text-align: center;
     flex-grow: 1;
     font-size: 1.2rem;
+    color: white; /* Changer la couleur du texte en blanc */
 }
 
 #current-time {
@@ -311,16 +312,17 @@ body {
 #traffic-info-details {
     background-color: white;
     color: black;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     font-size: 0.875rem;
     font-family: 'Daikon', sans-serif;
     text-align: left;
-    height: auto;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5px;
+    overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
 }
 
 #traffic-info-details p {
@@ -446,6 +448,7 @@ body {
 
     #traffic-info-details {
         font-size: 0.75rem;
+        height: 150px; /* Augmenter la hauteur pour mieux s'adapter sur mobile */
     }
 
     #traffic-info-details p {
