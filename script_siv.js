@@ -9,6 +9,7 @@ let numberOfTables = 1; // Initialiser à 1 tableau
 let selectedPeriod = '';
 let trafficInfoIndex = 0; // Ajout d'un index pour la rotation des infos trafic
 let trafficInfoInterval; // Ajout d'un interval pour la rotation des infos trafic
+let suspensionsData = []; // Ajout pour stocker les données de suspensions
 
 const urls = {
     'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_sco.json',
@@ -35,6 +36,7 @@ async function fetchSuspensions() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/suspensions.json');
         const data = await response.json();
+        suspensionsData = data; // Stocker les données de suspensions
         return data.length ? data : [];
     } catch (error) {
         console.error('Erreur lors du chargement des suspensions:', error);
@@ -272,7 +274,7 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
-    } else if (departuresToDisplay.length === 0 && numberOfDepartures > 0 && numberOfTables === 1) {
+    } else if (departuresToDisplay.length === 0 && numberOfDepartures > 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
@@ -394,14 +396,13 @@ function resetProgressBars() {
 }
 
 async function checkForSuspensions() {
-    const suspensions = await fetchSuspensions();
     const suspensionContainer = document.getElementById('suspension-container');
     const suspensionMessage = document.getElementById('suspension-message');
     const departureInfoElement = document.getElementById('departure-info');
 
     const currentPeriod = selectedPeriod;
     const selectedStop = document.getElementById('stop-select').value;
-    const relevantSuspension = suspensions.find(suspension =>
+    const relevantSuspension = suspensionsData.find(suspension =>
         suspension.Arret === selectedStop &&
         new Date() >= new Date(`${suspension.Date_debut}T${suspension.Heure_debut}`) &&
         new Date() <= new Date(`${suspension.Date_fin}T${suspension.Heure_fin}`)
