@@ -393,6 +393,7 @@ async function checkForSuspensions() {
     const suspensions = await fetchSuspensions();
     const suspensionContainer = document.getElementById('suspension-container');
     const suspensionMessage = document.getElementById('suspension-message');
+    const departureInfoElement = document.getElementById('departure-info');
 
     const currentPeriod = selectedPeriod;
     const selectedStop = document.getElementById('stop-select').value;
@@ -406,30 +407,20 @@ async function checkForSuspensions() {
         const specificLines = relevantSuspension.Lignes.split(',').map(line => line.trim());
         if (specificLines.includes('Toutes')) {
             suspensionMessage.innerHTML = `
-                <p><strong>Date(s) : </strong> ${relevantSuspension.Date_affichage}</p>
-                <p>${relevantSuspension.Message}</p>
+                <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 5px; text-align: center;">
+                    <p><strong>Date(s) : </strong> ${relevantSuspension.Date_affichage}</p>
+                    <p>${relevantSuspension.Message}</p>
+                </div>
             `;
             suspensionContainer.style.display = 'flex';
-            document.getElementById('departure-info').style.display = 'none';
+            departureInfoElement.style.display = 'none';
             document.getElementById('departure-labels').style.display = 'none';
-            const overlay = document.createElement('div');
-            overlay.style.position = 'absolute';
-            overlay.style.top = '0';
-            overlay.style.left = '0';
-            overlay.style.width = '100%';
-            overlay.style.height = '100%';
-            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-            overlay.style.display = 'flex';
-            overlay.style.justifyContent = 'center';
-            overlay.style.alignItems = 'center';
-            overlay.style.zIndex = '1000';
-            overlay.innerHTML = `<div style="text-align: center;"><strong>${relevantSuspension.Message}</strong></div>`;
-            document.getElementById('info-container').appendChild(overlay);
         } else {
-            const departureInfoElement = document.getElementById('departure-info');
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const line = item.querySelector('.line-box').textContent;
-                return !specificLines.includes(line);
+                const destination = item.querySelector('.departure-destination').textContent;
+                const relevantDestination = relevantSuspension.Destination ? relevantSuspension.Destination.trim() : '';
+                return !(specificLines.includes(line) && (relevantDestination === '' || relevantDestination === destination));
             });
             departureInfoElement.innerHTML = '';
             departuresToShow.forEach(item => departureInfoElement.appendChild(item));
@@ -443,7 +434,7 @@ async function checkForSuspensions() {
         }
     } else {
         suspensionContainer.style.display = 'none';
-        document.getElementById('departure-info').style.display = 'block';
+        departureInfoElement.style.display = 'block';
         document.getElementById('departure-labels').style.display = 'block';
     }
 }
