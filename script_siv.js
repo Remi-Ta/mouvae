@@ -262,25 +262,11 @@ function updateStopInfo() {
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
-
-        for (let i = 1; i < 8; i++) {
-            const emptyItem = document.createElement('div');
-            emptyItem.classList.add('departure-item');
-            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(emptyItem);
-        }
     } else if (departuresToShow.length === 0 && numberOfDepartures > 0 && numberOfTables === 1) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
-
-        for (let i = 1; i < 8; i++) {
-            const emptyItem = document.createElement('div');
-            emptyItem.classList.add('departure-item');
-            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(emptyItem);
-        }
     } else {
         for (let i = 0; i < 8; i++) {
             const departure = departuresToShow[i];
