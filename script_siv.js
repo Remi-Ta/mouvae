@@ -18,31 +18,20 @@ const urls = {
     'melusine_ven': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/main/melusine_ven.json'
 };
 
-async function fetchTrafficInfos() {
+async function fetchAnnoncesTrafic() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/traffic_infos.json');
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/annonces_trafic.json');
         const data = await response.json();
         return data.length ? data : [];
     } catch (error) {
-        console.error('Erreur lors du chargement des infos trafic:', error);
-        return [];
-    }
-}
-
-async function fetchAnnouncements() {
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/annonces.json');
-        const data = await response.json();
-        return data.length ? data : [];
-    } catch (error) {
-        console.error('Erreur lors du chargement des annonces:', error);
+        console.error('Erreur lors du chargement des annonces trafic:', error);
         return [];
     }
 }
 
 async function fetchSuspensions() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/7c690e00f8ddf01ba54cf04f101288410bfb46b4/suspensions.json');
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/suspensions.json');
         const data = await response.json();
         return data.length ? data : [];
     } catch (error) {
@@ -63,8 +52,7 @@ async function fetchCalendrier() {
 }
 
 async function updateInfo() {
-    const trafficInfos = await fetchTrafficInfos();
-    const announcements = await fetchAnnouncements();
+    const annoncesTrafic = await fetchAnnoncesTrafic();
     const suspensions = await fetchSuspensions();
 
     // Mettre à jour les informations sur la page
@@ -349,23 +337,21 @@ function updateDateTime() {
 async function startTrafficInfoCycle() {
     let index = 0;
     const trafficInfoDetails = document.getElementById('traffic-info-details');
-    const trafficInfos = await fetchTrafficInfos();
-    const announcements = await fetchAnnouncements();
+    const annoncesTrafic = await fetchAnnoncesTrafic();
 
     function updateInfo() {
-        if (trafficInfos.length > 0 || announcements.length > 0) {
-            if (index % 2 === 0 && trafficInfos.length > 0) {
-                const info = trafficInfos[Math.floor(index / 2) % trafficInfos.length];
+        if (annoncesTrafic.length > 0) {
+            const info = annoncesTrafic[index % annoncesTrafic.length];
+            if (info.Type === 'Info trafic') {
                 trafficInfoDetails.innerHTML = `
-                    <p><strong>Ligne(s) : </strong> ${info.line}</p>
-                    <p><strong>Dates : </strong> ${info.date}</p>
-                    <p>${info.detail}</p>
+                    <p><strong>Date(s) : </strong> ${info.Date_affichage} ${info.Heure_affichage ? `- ${info.Heure_affichage}` : ''}</p>
+                    <p><strong>Ligne(s) : </strong> ${info.Lignes}</p>
+                    <p>${info.Message}</p>
                 `;
-            } else if (announcements.length > 0) {
-                const announcement = announcements[Math.floor(index / 2) % announcements.length];
-                trafficInfoDetails.innerHTML = `<p>${announcement}</p>`;
+            } else {
+                trafficInfoDetails.innerHTML = `<p>${info.Message}</p>`;
             }
-            index = (index + 1);
+            index++;
         }
     }
 
@@ -411,12 +397,35 @@ async function checkForSuspensions() {
     const currentPeriod = selectedPeriod;
     const selectedStop = document.getElementById('stop-select').value;
     const relevantSuspension = suspensions.find(suspension =>
-        suspension.periods.includes(currentPeriod) && suspension.stops.some(stop => stop.stop === selectedStop)
+        suspension.Arret === selectedStop &&
+        new Date() >= new Date(`${suspension.Date_debut}T${suspension.Heure_debut}`) &&
+        new Date() <= new Date(`${suspension.Date_fin}T${suspension.Heure_fin}`)
     );
 
     if (relevantSuspension) {
-        const specificLines = relevantSuspension.stops.find(stop => stop.stop === selectedStop).lines;
-        if (specificLines.length > 0) {
+        const specificLines = relevantSuspension.Lignes.split(',').map(line => line.trim());
+        if (specificLines.includes('Toutes')) {
+            suspensionMessage.innerHTML = `
+                <p><strong>Date(s) : </strong> ${relevantSuspension.Date_affichage}</p>
+                <p>${relevantSuspension.Message}</p>
+            `;
+            suspensionContainer.style.display = 'flex';
+            document.getElementById('departure-info').style.display = 'none';
+            document.getElementById('departure-labels').style.display = 'none';
+            const overlay = document.createElement('div');
+            overlay.style.position = 'absolute';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+            overlay.style.zIndex = '1000';
+            overlay.innerHTML = `<div style="text-align: center;"><strong>${relevantSuspension.Message}</strong></div>`;
+            document.getElementById('info-container').appendChild(overlay);
+        } else {
             const departureInfoElement = document.getElementById('departure-info');
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const line = item.querySelector('.line-box').textContent;
@@ -431,11 +440,6 @@ async function checkForSuspensions() {
                 emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
                 departureInfoElement.appendChild(emptyItem);
             }
-        } else {
-            suspensionMessage.textContent = relevantSuspension.message;
-            suspensionContainer.style.display = 'flex';
-            document.getElementById('departure-info').style.display = 'none';
-            document.getElementById('departure-labels').style.display = 'none';
         }
     } else {
         suspensionContainer.style.display = 'none';
