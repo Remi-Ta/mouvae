@@ -240,7 +240,13 @@ function updateStopInfo() {
 
     allDepartures.sort((a, b) => a.departureTime - b.departureTime);
 
-    const numberOfDepartures = allDepartures.length;
+    const departuresToShow = allDepartures
+        .filter(departure => {
+            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
+            return waitTime >= 0;
+        });
+
+    const numberOfDepartures = departuresToShow.length;
 
     if (numberOfDepartures >= 17) {
         numberOfTables = 3;
@@ -250,26 +256,35 @@ function updateStopInfo() {
         numberOfTables = 1;
     }
 
-    const departuresToShow = allDepartures
-        .filter(departure => {
-            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
-            return waitTime >= 0;
-        })
-        .slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
+    const departuresToDisplay = departuresToShow.slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
-    if (departuresToShow.length === 0 && numberOfDepartures === 0) {
+    if (departuresToDisplay.length === 0 && numberOfDepartures === 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
-    } else if (departuresToShow.length === 0 && numberOfDepartures > 0 && numberOfTables === 1) {
+
+        for (let i = 1; i < 8; i++) {
+            const emptyItem = document.createElement('div');
+            emptyItem.classList.add('departure-item');
+            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(emptyItem);
+        }
+    } else if (departuresToDisplay.length === 0 && numberOfDepartures > 0 && numberOfTables === 1) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
+
+        for (let i = 1; i < 8; i++) {
+            const emptyItem = document.createElement('div');
+            emptyItem.classList.add('departure-item');
+            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(emptyItem);
+        }
     } else {
         for (let i = 0; i < 8; i++) {
-            const departure = departuresToShow[i];
+            const departure = departuresToDisplay[i];
             const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
             const waitText = waitTime !== null && waitTime >= 0
                 ? waitTime === 0
