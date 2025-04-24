@@ -20,7 +20,7 @@ const urls = {
 
 async function fetchAnnoncesTrafic() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/annonces_trafic.json');
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/annonces_trafic.json');
         const data = await response.json();
         return data.length ? data : [];
     } catch (error) {
@@ -31,7 +31,7 @@ async function fetchAnnoncesTrafic() {
 
 async function fetchSuspensions() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/suspensions.json');
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/suspensions.json');
         const data = await response.json();
         return data.length ? data : [];
     } catch (error) {
