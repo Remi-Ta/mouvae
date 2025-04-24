@@ -64,6 +64,7 @@ async function updateInfo() {
 }
 
 async function loadPeriod() {
+    await fetchSuspensions(); // Charger les suspensions dès le début
     const calendrier = await fetchCalendrier();
     const today = new Date();
     const tomorrow = new Date(today);
@@ -400,7 +401,6 @@ async function checkForSuspensions() {
     const suspensionMessage = document.getElementById('suspension-message');
     const departureInfoElement = document.getElementById('departure-info');
 
-    const currentPeriod = selectedPeriod;
     const selectedStop = document.getElementById('stop-select').value;
     const relevantSuspension = suspensionsData.find(suspension =>
         suspension.Arret === selectedStop &&
