@@ -253,6 +253,9 @@ function updateStopInfo() {
 
     const numberOfDepartures = departuresToShow.length;
 
+    console.log("Nombre de départs à afficher :", numberOfDepartures);
+    console.log("Départs à afficher :", departuresToShow);
+
     if (numberOfDepartures >= 17) {
         numberOfTables = 3;
     } else if (numberOfDepartures >= 9) {
@@ -263,7 +266,10 @@ function updateStopInfo() {
 
     const departuresToDisplay = departuresToShow.slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
+    console.log("Départs à afficher dans l'ensemble actuel :", departuresToDisplay);
+
     if (departuresToDisplay.length === 0 && numberOfDepartures > 0) {
+        console.log("Condition : Service terminé.");
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
@@ -275,7 +281,8 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
-    } else if (departuresToDisplay.length === 0 && numberOfDepartures == 0) {
+    } else if (departuresToDisplay.length === 0 && numberOfDepartures === 0) {
+        console.log("Condition : Aucun départ prévu aujourd'hui.");
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
@@ -309,6 +316,7 @@ function updateStopInfo() {
             departureInfoElement.appendChild(item);
         }
     }
+}
 
     const progressBarsContainer = document.getElementById('progress-bars-container');
     progressBarsContainer.innerHTML = '';
