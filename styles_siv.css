@@ -210,7 +210,7 @@ body {
     font-family: 'Daikon', sans-serif;
     text-align: center;
     flex-grow: 1;
-    font-size: 1.2rem;
+    font-size: 21px; /* Taille du nom de l'arrêt */
     color: white; /* Changer la couleur du texte en blanc */
 }
 
@@ -281,14 +281,14 @@ body {
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 18px; /* Taille de la destination */
 }
 
 .departure-wait-time {
     font-family: 'Daikon', sans-serif;
     margin: 0 10px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 18px; /* Taille du temps d'attente */
 }
 
 #traffic-info-container {
@@ -314,7 +314,7 @@ body {
     color: black;
     padding: 10px;
     border-radius: 5px;
-    font-size: 0.875rem;
+    font-size: 12.5px; /* Taille du contenu de l'info trafic */
     font-family: 'Daikon', sans-serif;
     text-align: left;
     height: 100px;
