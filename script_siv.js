@@ -253,9 +253,6 @@ function updateStopInfo() {
 
     const numberOfDepartures = departuresToShow.length;
 
-    console.log("Nombre de départs à afficher :", numberOfDepartures);
-    console.log("Départs à afficher :", departuresToShow);
-
     if (numberOfDepartures >= 17) {
         numberOfTables = 3;
     } else if (numberOfDepartures >= 9) {
@@ -266,13 +263,10 @@ function updateStopInfo() {
 
     const departuresToDisplay = departuresToShow.slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
-    console.log("Départs à afficher dans l'ensemble actuel :", departuresToDisplay);
-
-    if (departuresToDisplay.length === 0 && numberOfDepartures > 0) {
-        console.log("Condition : Service terminé.");
+    if (departuresToDisplay.length === 0 && numberOfDepartures === 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
         for (let i = 1; i < 8; i++) {
@@ -281,11 +275,10 @@ function updateStopInfo() {
             emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
             departureInfoElement.appendChild(emptyItem);
         }
-    } else if (departuresToDisplay.length === 0 && numberOfDepartures === 0) {
-        console.log("Condition : Aucun départ prévu aujourd'hui.");
+    } else if (departuresToDisplay.length === 0 && numberOfDepartures > 0) {
         const item = document.createElement('div');
         item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
         for (let i = 1; i < 8; i++) {
@@ -404,46 +397,20 @@ function resetProgressBars() {
 }
 
 async function checkForSuspensions() {
-    console.log("Début de la fonction checkForSuspensions");
-
     const suspensionContainer = document.getElementById('suspension-container');
     const suspensionMessage = document.getElementById('suspension-message');
     const departureInfoElement = document.getElementById('departure-info');
 
-    console.log("Éléments du DOM récupérés :", {
-        suspensionContainer,
-        suspensionMessage,
-        departureInfoElement
-    });
-
     const selectedStop = document.getElementById('stop-select').value;
-    console.log("Arrêt sélectionné :", selectedStop);
-
-    const relevantSuspension = suspensionsData.find(suspension => {
-        console.log("Vérification de la suspension :", suspension);
-        const currentDate = new Date();
-        const startDate = new Date(`${suspension.Date_debut}T${suspension.Heure_debut}`);
-        const endDate = new Date(`${suspension.Date_fin}T${suspension.Heure_fin}`);
-
-        console.log("Dates comparées :", {
-            currentDate,
-            startDate,
-            endDate
-        });
-
-        return suspension.Arret === selectedStop &&
-               currentDate >= startDate &&
-               currentDate <= endDate;
-    });
-
-    console.log("Suspension pertinente trouvée :", relevantSuspension);
+    const relevantSuspension = suspensionsData.find(suspension =>
+        suspension.Arret === selectedStop &&
+        new Date() >= new Date(`${suspension.Date_debut}T${suspension.Heure_debut}`) &&
+        new Date() <= new Date(`${suspension.Date_fin}T${suspension.Heure_fin}`)
+    );
 
     if (relevantSuspension) {
         const specificLines = relevantSuspension.Lignes.split(',').map(line => line.trim());
-        console.log("Lignes spécifiques affectées :", specificLines);
-
         if (specificLines.includes('Toutes')) {
-            console.log("Toutes les lignes sont affectées");
             suspensionMessage.innerHTML = `
                 <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
                     <p><strong>CET ARRÊT N'EST PAS DESSERVI</strong></p>
@@ -457,7 +424,6 @@ async function checkForSuspensions() {
             departureInfoElement.style.display = 'none';
             document.getElementById('departure-labels').style.display = 'none';
         } else {
-            console.log("Certaines lignes sont affectées");
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const line = item.querySelector('.line-box').textContent;
                 const destination = item.querySelector('.departure-destination').textContent;
@@ -475,13 +441,10 @@ async function checkForSuspensions() {
             }
         }
     } else {
-        console.log("Aucune suspension pertinente trouvée");
         suspensionContainer.style.display = 'none';
         departureInfoElement.style.display = 'block';
         document.getElementById('departure-labels').style.display = 'block';
     }
-
-    console.log("Fin de la fonction checkForSuspensions");
 }
 
 setInterval(updateDateTime, 1000);
