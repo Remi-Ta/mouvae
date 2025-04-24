@@ -91,8 +91,8 @@ async function loadPeriod() {
                 const departureTime = new Date();
                 departureTime.setHours(hours, minutes, 0, 0);
                 let adjustedDate = todayDateString;
-                if (hours < 3) { // Si l'heure est entre 00h00 et 02h59, considérer comme le lendemain
-                    adjustedDate = tomorrowDateString;
+                if (hours < 3) { // Si l'heure est entre 00h00 et 02h59, considérer comme le jour même
+                    adjustedDate = todayDateString;
                 }
                 return { ...departure, departureTime, adjustedDate };
             });
@@ -412,8 +412,11 @@ async function checkForSuspensions() {
         const specificLines = relevantSuspension.Lignes.split(',').map(line => line.trim());
         if (specificLines.includes('Toutes')) {
             suspensionMessage.innerHTML = `
-                <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 5px; text-align: center;">
-                    <p><strong>Date(s) : </strong> ${relevantSuspension.Date_affichage}</p>
+                <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
+                    <p><strong>CET ARRÊT N'EST PAS DESSERVI</strong></p>
+                    <br><br><br><br>
+                    <p><strong>Date(s) : </strong> ${relevantSuspension.Date_affichage}${relevantSuspension.Heure_affichage ? ` - ${relevantSuspension.Heure_affichage}` : ''}</p>
+                    <br>
                     <p>${relevantSuspension.Message}</p>
                 </div>
             `;
