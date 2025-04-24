@@ -331,7 +331,6 @@ function updateStopInfo() {
     }
 
     startProgressBars();
-}
 
 function updateDateTime() {
     const currentTimeElement = document.getElementById('current-time');
