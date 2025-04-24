@@ -7,6 +7,8 @@ let currentDepartureSet = 0;
 let progressInterval;
 let numberOfTables = 1; // Initialiser à 1 tableau
 let selectedPeriod = '';
+let trafficInfoIndex = 0; // Ajout d'un index pour la rotation des infos trafic
+let trafficInfoInterval; // Ajout d'un interval pour la rotation des infos trafic
 
 const urls = {
     'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_sco.json',
@@ -335,13 +337,12 @@ function updateDateTime() {
 }
 
 async function startTrafficInfoCycle() {
-    let index = 0;
     const trafficInfoDetails = document.getElementById('traffic-info-details');
     const annoncesTrafic = await fetchAnnoncesTrafic();
 
     function updateInfo() {
         if (annoncesTrafic.length > 0) {
-            const info = annoncesTrafic[index % annoncesTrafic.length];
+            const info = annoncesTrafic[trafficInfoIndex % annoncesTrafic.length];
             if (info.Type === 'Info trafic') {
                 trafficInfoDetails.innerHTML = `
                     <p><strong>Date(s) : </strong> ${info.Date_affichage} ${info.Heure_affichage ? `- ${info.Heure_affichage}` : ''}</p>
@@ -351,13 +352,13 @@ async function startTrafficInfoCycle() {
             } else {
                 trafficInfoDetails.innerHTML = `<p>${info.Message}</p>`;
             }
-            index++;
+            trafficInfoIndex++;
         }
     }
 
     updateInfo();
 
-    setInterval(updateInfo, 17000);
+    trafficInfoInterval = setInterval(updateInfo, 10000); // Réduire le temps de rotation à 10 secondes
 }
 
 function startDepartureRotation() {
