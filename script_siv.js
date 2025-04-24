@@ -316,7 +316,6 @@ function updateStopInfo() {
             departureInfoElement.appendChild(item);
         }
     }
-}
 
     const progressBarsContainer = document.getElementById('progress-bars-container');
     progressBarsContainer.innerHTML = '';
@@ -331,6 +330,7 @@ function updateStopInfo() {
     }
 
     startProgressBars();
+}
 
 function updateDateTime() {
     const currentTimeElement = document.getElementById('current-time');
