@@ -25,14 +25,6 @@
   },
   {
     "Ligne": "N10",
-    "Destination": "Niort Cimetières",
-    "Arret": "Cimetière Buhors",
-    "Heure": "10:09",
-    "Couleur_fond": "#69a093",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": "N10",
     "Destination": "Niort Brèche",
     "Arret": "Cimetières Ancien / Cadet",
     "Heure": "10:31",
@@ -52,14 +44,6 @@
     "Destination": "Niort Brèche",
     "Arret": "Cimetière Buhors",
     "Heure": "10:36",
-    "Couleur_fond": "#69a093",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": "N10",
-    "Destination": "Niort Brèche",
-    "Arret": "Brèche",
-    "Heure": "10:45",
     "Couleur_fond": "#69a093",
     "Couleur_indice": "#ffffff"
   }
