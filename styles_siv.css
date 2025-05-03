@@ -1,133 +1,61 @@
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Black.woff') format('woff');
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Black-BF65baf2f0cfb09.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-BlackItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Bold.woff') format('woff');
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Bold-BF65baf2f118643.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ExtraLight.woff') format('woff');
-    font-weight: 200;
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Extrabold-BF65baf2f14c581.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ExtraLightItalic.woff') format('woff');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Light.woff') format('woff');
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Light-BF65baf2f14fa73.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Medium.woff') format('woff');
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Medium-BF65baf2f18f759.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Regular.woff') format('woff');
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Regular-BF65baf2f19dc5f.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-SemiBold.woff') format('woff');
+    font-family: 'Unageo';
+    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Semibold-BF65baf2f197635.woff') format('woff');
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-SemiBoldItalic.woff') format('woff');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Daikon';
-    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ecd75c28a629a1874b38ef61d13f83dd02ebb8a9/Daikon-ThinItalic.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
     font-display: swap;
 }
 
 body {
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
@@ -163,13 +91,13 @@ body {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
 }
 
 #validate-button {
     background-color: #00e8ff;
     color: #fffafa;
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     font-weight: bold;
     border: none;
     padding: 6px 12px;
@@ -207,7 +135,7 @@ body {
 
 #selected-stop {
     font-weight: bold;
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     text-align: center;
     flex-grow: 1;
     font-size: 21px; /* Taille du nom de l'arrêt */
@@ -228,7 +156,7 @@ body {
     color: black;
     font-size: 0.875rem;
     font-weight: 600;
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
 }
 
 .label-container {
@@ -271,13 +199,13 @@ body {
     text-align: center;
     line-height: 40px;
     margin: 0 10px;
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     font-size: 1.25rem;
     font-weight: bold;
 }
 
 .departure-destination {
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
@@ -285,7 +213,7 @@ body {
 }
 
 .departure-wait-time {
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     margin: 0 10px;
     font-weight: bold;
     font-size: 18px; /* Taille du temps d'attente */
@@ -303,7 +231,7 @@ body {
     text-align: center;
     color: #fffafa;
     font-size: 0.875rem;
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     margin-bottom: 5px;
     height: auto;
     font-weight: bold;
@@ -315,7 +243,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     font-size: 12.5px; /* Taille du contenu de l'info trafic */
-    font-family: 'Daikon', sans-serif;
+    font-family: 'Unageo', sans-serif;
     text-align: left;
     height: 100px;
     display: flex;
