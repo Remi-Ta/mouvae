@@ -83,7 +83,7 @@ body {
 .stop-selection label {
     margin: 0;
     white-space: nowrap;
-    font-size: 12px; /* 12 px */
+    font-size: 12.5px;
 }
 
 #stop-select {
@@ -93,7 +93,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Unageo', sans-serif;
-    font-size: 12px; /* 12 px */
+    font-size: 12.5px;
 }
 
 #validate-button {
@@ -106,7 +106,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 12px; /* 12 px */
+    font-size: 12.5px;
 }
 
 #validate-button:hover {
@@ -137,19 +137,19 @@ body {
 }
 
 #selected-stop {
-    font-weight: 800; /* Extra-bold */
+    font-weight: 800;
     font-family: 'Unageo', sans-serif;
     text-align: center;
     flex-grow: 1;
-    font-size: 23px; /* 23 px */
-    color: white; /* Changer la couleur du texte en blanc */
+    font-size: 23px; 
+    color: white;
 }
 
 #current-time {
     background-color: #00e8ff;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 17px; /* Agrandi de 1 px */
+    font-size: 17px;
     font-weight: 600;
     color: #fffafa;
 }
@@ -157,7 +157,7 @@ body {
 #departure-labels {
     margin-bottom: 10px;
     color: black;
-    font-size: 14px; /* 14 px */
+    font-size: 14px;
     font-weight: 600;
     font-family: 'Unageo', sans-serif;
 }
@@ -177,7 +177,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-    font-size: 17px; /* Agrandi de 1 px */
+    font-size: 18px;
     margin: 1px 0;
     border-radius: 5px;
     width: 100%;
@@ -203,8 +203,8 @@ body {
     line-height: 40px;
     margin: 0 10px;
     font-family: 'Unageo', sans-serif;
-    font-size: 20px; /* 20 px */
-    font-weight: 800; /* Extra-bold */
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .departure-destination {
@@ -212,14 +212,14 @@ body {
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
-    font-size: 18.5px; /* 18.5 px */
+    font-size: 18px;
 }
 
 .departure-wait-time {
     font-family: 'Unageo', sans-serif;
     margin: 0 10px;
     font-weight: bold;
-    font-size: 18.5px; /* 18.5 px */
+    font-size: 18px;
 }
 
 #traffic-info-container {
@@ -233,7 +233,7 @@ body {
     border-radius: 5px;
     text-align: center;
     color: #fffafa;
-    font-size: 15px; /* Agrandi de 1 px */
+    font-size: 15px;
     font-family: 'Unageo', sans-serif;
     margin-bottom: 5px;
     height: auto;
@@ -245,7 +245,7 @@ body {
     color: black;
     padding: 10px;
     border-radius: 5px;
-    font-size: 13.5px; /* Agrandi de 1 px */
+    font-size: 13px;
     font-family: 'Unageo', sans-serif;
     text-align: left;
     height: 100px;
@@ -253,7 +253,7 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5px;
-    overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
+    overflow-y: auto;
 }
 
 #traffic-info-details p {
@@ -321,7 +321,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 17px; /* Agrandi de 1 px */
+    font-size: 18px;
     font-weight: bold;
     padding: 20px;
     border-radius: 5px;
@@ -344,42 +344,42 @@ body {
     }
 
     #selected-stop {
-        font-size: 17px; /* Agrandi de 1 px */
+        font-size: 17px;
     }
 
     #current-time {
-        font-size: 15px; /* Agrandi de 1 px */
+        font-size: 15px;
     }
 
     #departure-labels {
-        font-size: 13px; /* Agrandi de 1 px */
+        font-size: 13px;
     }
 
     .departure-item {
-        font-size: 15px; /* Agrandi de 1 px */
+        font-size: 15px;
     }
 
     .line-box {
         width: 30px;
         height: 30px;
-        font-size: 17px; /* Agrandi de 1 px */
+        font-size: 17px;
     }
 
     .departure-destination {
-        font-size: 15px; /* Agrandi de 1 px */
+        font-size: 15px;
     }
 
     .departure-wait-time {
-        font-size: 15px; /* Agrandi de 1 px */
+        font-size: 15px;
     }
 
     #traffic-info-header {
-        font-size: 13px; /* Agrandi de 1 px */
+        font-size: 13px;
     }
 
     #traffic-info-details {
-        font-size: 13px; /* Agrandi de 1 px */
-        height: 150px; /* Augmenter la hauteur pour mieux s'adapter sur mobile */
+        font-size: 13px; 
+        height: 150px;
     }
 
     #traffic-info-details p {
@@ -387,6 +387,6 @@ body {
     }
 
     .suspension-message {
-        font-size: 15px; /* Agrandi de 1 px */
+        font-size: 15px;
     }
 }
