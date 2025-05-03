@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Black-BF65baf2f0cfb09.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Black-BF65baf2f0cfb09.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Bold-BF65baf2f118643.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Bold-BF65baf2f118643.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Extrabold-BF65baf2f14c581.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Extrabold-BF65baf2f14c581.woff') format('woff');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Light-BF65baf2f14fa73.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Light-BF65baf2f14fa73.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Medium-BF65baf2f18f759.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Medium-BF65baf2f18f759.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Regular-BF65baf2f19dc5f.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Regular-BF65baf2f19dc5f.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -48,7 +48,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Semibold-BF65baf2f197635.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/Remi-Ta/mouvae@ddcccbada4fd9651e3755bb2c3365dc097d5c1a2/Unageo-Semibold-BF65baf2f197635.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -385,6 +385,7 @@ body {
     #traffic-info-details p {
         margin: 1px 0;
     }
+
     .suspension-message {
         font-size: 15px; /* Agrandi de 1 px */
     }
