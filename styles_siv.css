@@ -83,7 +83,7 @@ body {
 .stop-selection label {
     margin: 0;
     white-space: nowrap;
-    font-size: 17px; /* Agrandi de 1 px */
+    font-size: 12px; /* 12 px */
 }
 
 #stop-select {
@@ -93,7 +93,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Unageo', sans-serif;
-    font-size: 17px; /* Agrandi de 1 px */
+    font-size: 12px; /* 12 px */
 }
 
 #validate-button {
@@ -106,7 +106,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 17px; /* Agrandi de 1 px */
+    font-size: 12px; /* 12 px */
 }
 
 #validate-button:hover {
@@ -141,7 +141,7 @@ body {
     font-family: 'Unageo', sans-serif;
     text-align: center;
     flex-grow: 1;
-    font-size: 22px; /* Agrandi de 1 px */
+    font-size: 23px; /* 23 px */
     color: white; /* Changer la couleur du texte en blanc */
 }
 
@@ -157,7 +157,7 @@ body {
 #departure-labels {
     margin-bottom: 10px;
     color: black;
-    font-size: 15px; /* Agrandi de 1 px */
+    font-size: 14px; /* 14 px */
     font-weight: 600;
     font-family: 'Unageo', sans-serif;
 }
@@ -203,7 +203,7 @@ body {
     line-height: 40px;
     margin: 0 10px;
     font-family: 'Unageo', sans-serif;
-    font-size: 19px; /* Agrandi de 1 px */
+    font-size: 20px; /* 20 px */
     font-weight: 800; /* Extra-bold */
 }
 
@@ -212,14 +212,14 @@ body {
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
-    font-size: 19px; /* Agrandi de 1 px */
+    font-size: 18.5px; /* 18.5 px */
 }
 
 .departure-wait-time {
     font-family: 'Unageo', sans-serif;
     margin: 0 10px;
     font-weight: bold;
-    font-size: 19px; /* Agrandi de 1 px */
+    font-size: 18.5px; /* 18.5 px */
 }
 
 #traffic-info-container {
