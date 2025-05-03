@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Black-BF65baf2f0cfb09.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Black-BF65baf2f0cfb09.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Bold-BF65baf2f118643.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Bold-BF65baf2f118643.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Extrabold-BF65baf2f14c581.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Extrabold-BF65baf2f14c581.woff') format('woff');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Light-BF65baf2f14fa73.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Light-BF65baf2f14fa73.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Medium-BF65baf2f18f759.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Medium-BF65baf2f18f759.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Regular-BF65baf2f19dc5f.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Regular-BF65baf2f19dc5f.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -48,7 +48,7 @@
 
 @font-face {
     font-family: 'Unageo';
-    src: url('https://github.com/Remi-Ta/mouvae/blob/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Semibold-BF65baf2f197635.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/Remi-Ta/mouvae/ede54f3c69969b1284fd2bd627fc6cdaad8f0136/Unageo-Semibold-BF65baf2f197635.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -83,6 +83,7 @@ body {
 .stop-selection label {
     margin: 0;
     white-space: nowrap;
+    font-size: 17px; /* Agrandi de 1 px */
 }
 
 #stop-select {
@@ -92,6 +93,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Unageo', sans-serif;
+    font-size: 17px; /* Agrandi de 1 px */
 }
 
 #validate-button {
@@ -104,6 +106,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 17px; /* Agrandi de 1 px */
 }
 
 #validate-button:hover {
@@ -134,11 +137,11 @@ body {
 }
 
 #selected-stop {
-    font-weight: bold;
+    font-weight: 800; /* Extra-bold */
     font-family: 'Unageo', sans-serif;
     text-align: center;
     flex-grow: 1;
-    font-size: 21px; /* Taille du nom de l'arrêt */
+    font-size: 22px; /* Agrandi de 1 px */
     color: white; /* Changer la couleur du texte en blanc */
 }
 
@@ -146,7 +149,7 @@ body {
     background-color: #00e8ff;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 17px; /* Agrandi de 1 px */
     font-weight: 600;
     color: #fffafa;
 }
@@ -154,7 +157,7 @@ body {
 #departure-labels {
     margin-bottom: 10px;
     color: black;
-    font-size: 0.875rem;
+    font-size: 15px; /* Agrandi de 1 px */
     font-weight: 600;
     font-family: 'Unageo', sans-serif;
 }
@@ -174,7 +177,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-    font-size: 1rem;
+    font-size: 17px; /* Agrandi de 1 px */
     margin: 1px 0;
     border-radius: 5px;
     width: 100%;
@@ -200,8 +203,8 @@ body {
     line-height: 40px;
     margin: 0 10px;
     font-family: 'Unageo', sans-serif;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 19px; /* Agrandi de 1 px */
+    font-weight: 800; /* Extra-bold */
 }
 
 .departure-destination {
@@ -209,14 +212,14 @@ body {
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
-    font-size: 18px; /* Taille de la destination */
+    font-size: 19px; /* Agrandi de 1 px */
 }
 
 .departure-wait-time {
     font-family: 'Unageo', sans-serif;
     margin: 0 10px;
     font-weight: bold;
-    font-size: 18px; /* Taille du temps d'attente */
+    font-size: 19px; /* Agrandi de 1 px */
 }
 
 #traffic-info-container {
@@ -230,7 +233,7 @@ body {
     border-radius: 5px;
     text-align: center;
     color: #fffafa;
-    font-size: 0.875rem;
+    font-size: 15px; /* Agrandi de 1 px */
     font-family: 'Unageo', sans-serif;
     margin-bottom: 5px;
     height: auto;
@@ -242,7 +245,7 @@ body {
     color: black;
     padding: 10px;
     border-radius: 5px;
-    font-size: 12.5px; /* Taille du contenu de l'info trafic */
+    font-size: 13.5px; /* Agrandi de 1 px */
     font-family: 'Unageo', sans-serif;
     text-align: left;
     height: 100px;
@@ -318,7 +321,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 17px; /* Agrandi de 1 px */
     font-weight: bold;
     padding: 20px;
     border-radius: 5px;
@@ -341,41 +344,41 @@ body {
     }
 
     #selected-stop {
-        font-size: 1rem;
+        font-size: 17px; /* Agrandi de 1 px */
     }
 
     #current-time {
-        font-size: 0.875rem;
+        font-size: 15px; /* Agrandi de 1 px */
     }
 
     #departure-labels {
-        font-size: 0.75rem;
+        font-size: 13px; /* Agrandi de 1 px */
     }
 
     .departure-item {
-        font-size: 0.875rem;
+        font-size: 15px; /* Agrandi de 1 px */
     }
 
     .line-box {
         width: 30px;
         height: 30px;
-        font-size: 1rem;
+        font-size: 17px; /* Agrandi de 1 px */
     }
 
     .departure-destination {
-        font-size: 0.875rem;
+        font-size: 15px; /* Agrandi de 1 px */
     }
 
     .departure-wait-time {
-        font-size: 0.875rem;
+        font-size: 15px; /* Agrandi de 1 px */
     }
 
     #traffic-info-header {
-        font-size: 0.75rem;
+        font-size: 13px; /* Agrandi de 1 px */
     }
 
     #traffic-info-details {
-        font-size: 0.75rem;
+        font-size: 13px; /* Agrandi de 1 px */
         height: 150px; /* Augmenter la hauteur pour mieux s'adapter sur mobile */
     }
 
@@ -384,6 +387,6 @@ body {
     }
 
     .suspension-message {
-        font-size: 0.875rem;
+        font-size: 15px; /* Agrandi de 1 px */
     }
 }
