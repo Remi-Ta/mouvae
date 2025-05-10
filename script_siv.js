@@ -236,15 +236,24 @@ function updateStopInfo() {
     // Trier les départs par heure
     allDepartures.sort((a, b) => a.departureTime - b.departureTime);
 
+    // Vérifier s'il y a eu des départs aujourd'hui
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const hadDeparturesToday = allDepartures.some(departure =>
+        departure.departureTime >= today && departure.departureTime < tomorrow
+    );
+
     // Filtrer les départs pertinents
     const departuresToShow = allDepartures.filter(departure => {
         const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
         return waitTime >= -5; // Garder les départs des 5 dernières minutes
     });
 
-    const numberOfDepartures = departuresToShow.length;
-
     // Déterminer le nombre de tableaux
+    const numberOfDepartures = departuresToShow.length;
     if (numberOfDepartures >= 17) {
         numberOfTables = 3;
     } else if (numberOfDepartures >= 9) {
@@ -256,7 +265,7 @@ function updateStopInfo() {
     const departuresToDisplay = departuresToShow.slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
     if (departuresToDisplay.length === 0) {
-        if (numberOfDepartures === 0) {
+        if (!hadDeparturesToday) {
             // Aucun départ prévu aujourd'hui
             const item = document.createElement('div');
             item.classList.add('departure-item');
@@ -397,6 +406,7 @@ async function checkForSuspensions() {
     const suspensionContainer = document.getElementById('suspension-container');
     const suspensionMessage = document.getElementById('suspension-message');
     const departureInfoElement = document.getElementById('departure-info');
+    const progressBarsContainer = document.getElementById('progress-bars-container');
 
     const now = new Date();
 
@@ -406,37 +416,68 @@ async function checkForSuspensions() {
     );
 
     if (activeSuspensions.length > 0) {
-        const suspension = activeSuspensions[0]; // Prendre la première suspension active
-        const specificLines = suspension.Lignes.split(',').map(line => line.trim());
+        const suspension = activeSuspensions[0];
+        const specificLines = suspension.Lignes ? suspension.Lignes.split(',') : [];
+        const specificDestinations = suspension.Destination ? suspension.Destination.split(',') : [];
 
         if (specificLines.includes('Toutes')) {
+            // Suspension totale
             suspensionMessage.innerHTML = `
                 <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
                     <p><strong>CET ARRÊT N'EST PAS DESSERVI</strong></p>
+                    <br><br>
                     <p><strong>Date(s) : </strong> ${suspension.Date_affichage}${suspension.Heure_affichage ? ` - ${suspension.Heure_affichage}` : ''}</p>
+                    <br>
                     <p>${suspension.Message}</p>
                 </div>
             `;
             suspensionContainer.style.display = 'flex';
             departureInfoElement.style.display = 'none';
             document.getElementById('departure-labels').style.display = 'none';
+            progressBarsContainer.style.display = 'flex';
         } else {
+            // Suspension partielle - masquer certains départs
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
-                const line = item.querySelector('.line-box').textContent;
-                const destination = item.querySelector('.departure-destination').textContent;
-                const relevantDestination = suspension.Destination ? suspension.Destination.trim() : '';
-                return !(specificLines.includes(line) && (relevantDestination === '' || relevantDestination === destination));
+                const lineElement = item.querySelector('.line-box');
+                const destinationElement = item.querySelector('.departure-destination');
+
+                if (!lineElement || !destinationElement) return false;
+
+                const line = lineElement.textContent.trim();
+                const destination = destinationElement.textContent.trim();
+
+                // Vérifier si la ligne ou la destination est concernée par la suspension
+                const lineSuspended = specificLines.includes(line);
+                const destinationSuspended = specificDestinations.includes(destination);
+
+                return !(lineSuspended || destinationSuspended);
             });
 
             departureInfoElement.innerHTML = '';
             departuresToShow.forEach(item => departureInfoElement.appendChild(item));
 
+            // Remplir les lignes vides
             while (departureInfoElement.children.length < 8) {
                 const emptyItem = document.createElement('div');
                 emptyItem.classList.add('departure-item');
                 emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
                 departureInfoElement.appendChild(emptyItem);
             }
+
+            // Afficher un message de suspension partielle
+            suspensionMessage.innerHTML = `
+                <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
+                    <p><strong>CERTAINS DÉPARTS SONT SUSPENDUS</strong></p>
+                    <br><br>
+                    <p><strong>Date(s) : </strong> ${suspension.Date_affichage}${suspension.Heure_affichage ? ` - ${suspension.Heure_affichage}` : ''}</p>
+                    <br>
+                    <p>${suspension.Message}</p>
+                    <p><strong>Lignes concernées :</strong> ${specificLines.join(', ')}</p>
+                    ${specificDestinations.length > 0 ? `<p><strong>Destinations concernées :</strong> ${specificDestinations.join(', ')}</p>` : ''}
+                </div>
+            `;
+            suspensionContainer.style.display = 'flex';
+            progressBarsContainer.style.display = 'flex';
         }
     } else {
         suspensionContainer.style.display = 'none';
