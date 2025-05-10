@@ -178,7 +178,7 @@ body {
     align-items: center;
     padding: 8px 0;
     font-size: 16px;
-    margin: 1px 0;
+    margin: 2px 0;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
@@ -198,10 +198,9 @@ body {
     width: 40px;
     height: 40px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     border-radius: 3px;
-    text-align: center;
     margin: 0 10px;
     font-family: 'Unageo', sans-serif;
     font-size: 20px;
@@ -234,7 +233,7 @@ body {
     border-radius: 5px;
     text-align: center;
     color: #fffafa;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Unageo', sans-serif;
     margin-bottom: 5px;
     height: auto;
@@ -268,7 +267,6 @@ body {
     margin: 10px 0;
     position: relative;
     z-index: 10;
-    order: 1;
 }
 
 .progress-bar {
@@ -391,16 +389,24 @@ body {
     }
 
     #traffic-info-header {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     #traffic-info-details {
-        font-size: 10px;
+        font-size: 11px;
         height: 60px;
+    }
+
+    #traffic-info-details p {
+        margin: 1px 0;
     }
 
     #suspension-container {
         width: 100%;
         height: 300px;
+    }
+
+    .suspension-message {
+        font-size: 14px;
     }
 }
