@@ -267,6 +267,7 @@ body {
     margin: 10px 0;
     position: relative;
     z-index: 10;
+    order: 1;
 }
 
 .progress-bar {
@@ -307,12 +308,13 @@ body {
 
 #suspension-container {
     width: 760px;
-    height: 400px;
+    height: auto;
+    min-height: 300px;
     margin: 20px auto;
     background-color: #e9e9e9;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
@@ -321,7 +323,6 @@ body {
 .suspension-message {
     width: 100%;
     height: auto;
-    max-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -396,7 +397,6 @@ body {
 
     #suspension-container {
         width: 100%;
-        height: auto;
         min-height: 200px;
     }
 }
