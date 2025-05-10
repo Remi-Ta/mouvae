@@ -176,8 +176,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
-    font-size: 17px;
+    padding: 8px 0;
+    font-size: 16px;
     margin: 1px 0;
     border-radius: 5px;
     width: 100%;
@@ -197,10 +197,11 @@ body {
 .line-box {
     width: 40px;
     height: 40px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 3px;
     text-align: center;
-    line-height: 40px;
     margin: 0 10px;
     font-family: 'Unageo', sans-serif;
     font-size: 20px;
@@ -233,7 +234,7 @@ body {
     border-radius: 5px;
     text-align: center;
     color: #fffafa;
-    font-size: 15px;
+    font-size: 12px;
     font-family: 'Unageo', sans-serif;
     margin-bottom: 5px;
     height: auto;
@@ -245,10 +246,10 @@ body {
     color: black;
     padding: 10px;
     border-radius: 5px;
-    font-size: 12.5px;
+    font-size: 12px;
     font-family: 'Unageo', sans-serif;
     text-align: left;
-    height: 100px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -308,10 +309,11 @@ body {
 
 #suspension-container {
     width: 760px;
-    height: 400px; /* Hauteur fixe de 400px */
+    height: 400px;
     margin: 20px auto;
     background-color: #e9e9e9;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -365,18 +367,19 @@ body {
     }
 
     #departure-labels {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .departure-item {
         font-size: 14px;
-        padding: 3px 0;
+        padding: 6px 0;
     }
 
     .line-box {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        margin: 0 8px;
     }
 
     .departure-destination {
@@ -387,13 +390,17 @@ body {
         font-size: 14px;
     }
 
+    #traffic-info-header {
+        font-size: 10px;
+    }
+
     #traffic-info-details {
-        overflow-y: auto;
-        height: 150px;
+        font-size: 10px;
+        height: 60px;
     }
 
     #suspension-container {
         width: 100%;
-        height: 400px; /* Hauteur fixe même sur mobile */
+        height: 300px;
     }
 }
