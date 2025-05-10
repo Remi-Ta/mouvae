@@ -204,9 +204,9 @@
     "id_arret_parent": "010",
     "commune": "Niort",
     "id_arret": "79191_010_1",
-    "lat": 46.33294,
-    "long": -0.422232,
-    "position": "46.332940,-0.422232"
+    "lat": 46.332477,
+    "long": -0.421942,
+    "position": "46.332477,-0.421942"
   },
   {
     "nom_arret": "Amourettes",
@@ -215,9 +215,9 @@
     "id_arret_parent": "010",
     "commune": "Niort",
     "id_arret": "79191_010_2",
-    "lat": 46.332477,
-    "long": -0.421942,
-    "position": "46.332477,-0.421942"
+    "lat": 46.33294,
+    "long": -0.422232,
+    "position": "46.332940,-0.422232"
   },
   {
     "nom_arret": "Ampère",
@@ -677,9 +677,9 @@
     "id_arret_parent": "034",
     "commune": "Niort",
     "id_arret": "79191_034_1",
-    "lat": 46.343394,
-    "long": -0.48378,
-    "position": "46.343394,-0.483780"
+    "lat": 46.343309,
+    "long": -0.483662,
+    "position": "46.343309,-0.483662"
   },
   {
     "nom_arret": "Boileau",
@@ -688,9 +688,9 @@
     "id_arret_parent": "034",
     "commune": "Niort",
     "id_arret": "79191_034_2",
-    "lat": 46.343309,
-    "long": -0.483662,
-    "position": "46.343309,-0.483662"
+    "lat": 46.343394,
+    "long": -0.48378,
+    "position": "46.343394,-0.483780"
   },
   {
     "nom_arret": "Bois Chamaillard",
@@ -1051,9 +1051,9 @@
     "id_arret_parent": "050",
     "commune": "Niort",
     "id_arret": "79191_050_1",
-    "lat": 46.342446,
-    "long": -0.480959,
-    "position": "46.342446,-0.480959"
+    "lat": 46.342368,
+    "long": -0.480926,
+    "position": "46.342368,-0.480926"
   },
   {
     "nom_arret": "Buissons",
@@ -1062,9 +1062,9 @@
     "id_arret_parent": "050",
     "commune": "Niort",
     "id_arret": "79191_050_2",
-    "lat": 46.342368,
-    "long": -0.480926,
-    "position": "46.342368,-0.480926"
+    "lat": 46.342446,
+    "long": -0.480959,
+    "position": "46.342446,-0.480959"
   },
   {
     "nom_arret": "Burgonce",
@@ -1535,9 +1535,9 @@
     "id_arret_parent": "073",
     "commune": "Chauray",
     "id_arret": "79081_073_2",
-    "lat": "",
-    "long": "",
-    "position": ","
+    "lat": 46.366088,
+    "long": -0.377153,
+    "position": "46.366088,-0.377153"
   },
   {
     "nom_arret": "Château Menu",
@@ -1887,9 +1887,9 @@
     "id_arret_parent": "091",
     "commune": "Niort",
     "id_arret": "79191_091_2",
-    "lat": 46.331216,
-    "long": -0.438766,
-    "position": "46.331216,-0.438766"
+    "lat": 46.331372,
+    "long": -0.43829,
+    "position": "46.331372,-0.438290"
   },
   {
     "nom_arret": "Coulon Centre",
@@ -2893,12 +2893,23 @@
     "position": "46.302031,-0.510321"
   },
   {
-    "nom_arret": "Gutenberg",
+    "nom_arret": "Guilloteau",
     "sens": 1,
-    "code_arret": "GUT1",
+    "code_arret": "GLT1",
     "id_arret_parent": 140,
     "commune": "Niort",
     "id_arret": "79191_140_1",
+    "lat": 46.332998,
+    "long": -0.457673,
+    "position": "46.332998,-0.457673"
+  },
+  {
+    "nom_arret": "Gutenberg",
+    "sens": 1,
+    "code_arret": "GUT1",
+    "id_arret_parent": 141,
+    "commune": "Niort",
+    "id_arret": "79191_141_1",
     "lat": 46.33689,
     "long": -0.404523,
     "position": "46.336890,-0.404523"
@@ -2907,9 +2918,9 @@
     "nom_arret": "Gutenberg",
     "sens": 2,
     "code_arret": "GUT2",
-    "id_arret_parent": 140,
+    "id_arret_parent": 141,
     "commune": "Niort",
-    "id_arret": "79191_140_2",
+    "id_arret": "79191_141_2",
     "lat": 46.336756,
     "long": -0.404323,
     "position": "46.336756,-0.404323"
@@ -2918,9 +2929,9 @@
     "nom_arret": "Gymnase",
     "sens": 1,
     "code_arret": "GYM1",
-    "id_arret_parent": 141,
+    "id_arret_parent": 142,
     "commune": "Niort",
-    "id_arret": "79191_141_1",
+    "id_arret": "79191_142_1",
     "lat": 46.342245,
     "long": -0.476851,
     "position": "46.342245,-0.476851"
@@ -2929,9 +2940,9 @@
     "nom_arret": "Gymnase",
     "sens": 2,
     "code_arret": "GYM2",
-    "id_arret_parent": 141,
+    "id_arret_parent": 142,
     "commune": "Niort",
-    "id_arret": "79191_141_2",
+    "id_arret": "79191_142_2",
     "lat": 46.342363,
     "long": -0.476862,
     "position": "46.342363,-0.476862"
@@ -2940,9 +2951,9 @@
     "nom_arret": "Halles",
     "sens": 1,
     "code_arret": "HAL1",
-    "id_arret_parent": 142,
+    "id_arret_parent": 143,
     "commune": "Niort",
-    "id_arret": "79191_142_1",
+    "id_arret": "79191_143_1",
     "lat": 46.324824,
     "long": -0.463717,
     "position": "46.324824,-0.463717"
@@ -2951,9 +2962,9 @@
     "nom_arret": "Halte",
     "sens": 1,
     "code_arret": "HLT1",
-    "id_arret_parent": 143,
+    "id_arret_parent": 144,
     "commune": "Niort",
-    "id_arret": "79191_143_1",
+    "id_arret": "79191_144_1",
     "lat": 46.321313,
     "long": -0.513563,
     "position": "46.321313,-0.513563"
@@ -2962,9 +2973,9 @@
     "nom_arret": "Halte",
     "sens": 2,
     "code_arret": "HLT2",
-    "id_arret_parent": 143,
+    "id_arret_parent": 144,
     "commune": "Niort",
-    "id_arret": "79191_143_2",
+    "id_arret": "79191_144_2",
     "lat": 46.321343,
     "long": -0.513649,
     "position": "46.321343,-0.513649"
@@ -2973,9 +2984,9 @@
     "nom_arret": "Hauts de Bessines",
     "sens": 1,
     "code_arret": "HAU1",
-    "id_arret_parent": 144,
+    "id_arret_parent": 145,
     "commune": "Bessines",
-    "id_arret": "79034_144_1",
+    "id_arret": "79034_145_1",
     "lat": 46.296203,
     "long": -0.500054,
     "position": "46.296203,-0.500054"
@@ -2984,9 +2995,9 @@
     "nom_arret": "Henri Fabre",
     "sens": 1,
     "code_arret": "HFA1",
-    "id_arret_parent": 145,
+    "id_arret_parent": 146,
     "commune": "Saint-Symphorien",
-    "id_arret": "79298_145_1",
+    "id_arret": "79298_146_1",
     "lat": 46.248178,
     "long": -0.474427,
     "position": "46.248178,-0.474427"
@@ -2995,9 +3006,9 @@
     "nom_arret": "Henri Sellier",
     "sens": 1,
     "code_arret": "HSE1",
-    "id_arret_parent": 146,
+    "id_arret_parent": 147,
     "commune": "Niort",
-    "id_arret": "79191_146_1",
+    "id_arret": "79191_147_1",
     "lat": 46.311503,
     "long": -0.479429,
     "position": "46.311503,-0.479429"
@@ -3006,20 +3017,20 @@
     "nom_arret": "Henri Sellier",
     "sens": 2,
     "code_arret": "HSE2",
-    "id_arret_parent": 146,
+    "id_arret_parent": 147,
     "commune": "Niort",
-    "id_arret": "79191_146_2",
-    "lat": 46.311533,
-    "long": -0.479622,
-    "position": "46.311533,-0.479622"
+    "id_arret": "79191_147_2",
+    "lat": 46.311313,
+    "long": -0.479928,
+    "position": "46.311313,-0.479928"
   },
   {
     "nom_arret": "Herbillaux",
     "sens": 1,
     "code_arret": "HRB1",
-    "id_arret_parent": 147,
+    "id_arret_parent": 148,
     "commune": "Niort",
-    "id_arret": "79191_147_1",
+    "id_arret": "79191_148_1",
     "lat": 46.33345,
     "long": -0.421776,
     "position": "46.333450,-0.421776"
@@ -3028,9 +3039,9 @@
     "nom_arret": "Herbillaux",
     "sens": 2,
     "code_arret": "HRB2",
-    "id_arret_parent": 147,
+    "id_arret_parent": 148,
     "commune": "Niort",
-    "id_arret": "79191_147_2",
+    "id_arret": "79191_148_2",
     "lat": 46.333406,
     "long": -0.421824,
     "position": "46.333406,-0.421824"
@@ -3039,9 +3050,9 @@
     "nom_arret": "Herse",
     "sens": 1,
     "code_arret": "HER1",
-    "id_arret_parent": 148,
+    "id_arret_parent": 149,
     "commune": "Niort",
-    "id_arret": "79191_148_1",
+    "id_arret": "79191_149_1",
     "lat": 46.339571,
     "long": -0.448146,
     "position": "46.339571,-0.448146"
@@ -3050,9 +3061,9 @@
     "nom_arret": "Herse",
     "sens": 2,
     "code_arret": "HER2",
-    "id_arret_parent": 148,
+    "id_arret_parent": 149,
     "commune": "Niort",
-    "id_arret": "79191_148_2",
+    "id_arret": "79191_149_2",
     "lat": 46.339997,
     "long": -0.448607,
     "position": "46.339997,-0.448607"
@@ -3061,9 +3072,9 @@
     "nom_arret": "Hôpital",
     "sens": 1,
     "code_arret": "HOP1",
-    "id_arret_parent": 149,
+    "id_arret_parent": 150,
     "commune": "Niort",
-    "id_arret": "79191_149_1",
+    "id_arret": "79191_150_1",
     "lat": 46.316697,
     "long": -0.45765,
     "position": "46.316697,-0.457650"
@@ -3072,9 +3083,9 @@
     "nom_arret": "Hôpital",
     "sens": 2,
     "code_arret": "HOP2",
-    "id_arret_parent": 149,
+    "id_arret_parent": 150,
     "commune": "Niort",
-    "id_arret": "79191_149_2",
+    "id_arret": "79191_150_2",
     "lat": 46.316875,
     "long": -0.457677,
     "position": "46.316875,-0.457677"
@@ -3083,31 +3094,31 @@
     "nom_arret": "Hôtel de Ville",
     "sens": 1,
     "code_arret": "HDV1",
-    "id_arret_parent": 150,
+    "id_arret_parent": 151,
     "commune": "Niort",
-    "id_arret": "79191_150_1",
-    "lat": 46.323919,
-    "long": -0.464129,
-    "position": "46.323919,-0.464129"
-  },
-  {
-    "nom_arret": "Hôtel de Ville",
-    "sens": 2,
-    "code_arret": "HDV2",
-    "id_arret_parent": 150,
-    "commune": "Niort",
-    "id_arret": "79191_150_2",
+    "id_arret": "79191_151_1",
     "lat": 46.324126,
     "long": -0.464687,
     "position": "46.324126,-0.464687"
   },
   {
+    "nom_arret": "Hôtel de Ville",
+    "sens": 2,
+    "code_arret": "HDV2",
+    "id_arret_parent": 151,
+    "commune": "Niort",
+    "id_arret": "79191_151_2",
+    "lat": 46.323919,
+    "long": -0.464129,
+    "position": "46.323919,-0.464129"
+  },
+  {
     "nom_arret": "Inkermann",
     "sens": 1,
     "code_arret": "INK1",
-    "id_arret_parent": 151,
+    "id_arret_parent": 152,
     "commune": "Niort",
-    "id_arret": "79191_151_1",
+    "id_arret": "79191_152_1",
     "lat": 46.314741,
     "long": -0.45367,
     "position": "46.314741,-0.453670"
@@ -3116,9 +3127,9 @@
     "nom_arret": "Inkermann",
     "sens": 2,
     "code_arret": "INK2",
-    "id_arret_parent": 151,
+    "id_arret_parent": 152,
     "commune": "Niort",
-    "id_arret": "79191_151_2",
+    "id_arret": "79191_152_2",
     "lat": 46.314526,
     "long": -0.453578,
     "position": "46.314526,-0.453578"
@@ -3127,9 +3138,9 @@
     "nom_arret": "Iris",
     "sens": 1,
     "code_arret": "IRI1",
-    "id_arret_parent": 152,
+    "id_arret_parent": 153,
     "commune": "Bessines",
-    "id_arret": "79034_152_1",
+    "id_arret": "79034_153_1",
     "lat": 46.301916,
     "long": -0.492889,
     "position": "46.301916,-0.492889"
@@ -3138,9 +3149,9 @@
     "nom_arret": "Iris",
     "sens": 2,
     "code_arret": "IRI2",
-    "id_arret_parent": 152,
+    "id_arret_parent": 153,
     "commune": "Bessines",
-    "id_arret": "79034_152_2",
+    "id_arret": "79034_153_2",
     "lat": 46.302045,
     "long": -0.492846,
     "position": "46.302045,-0.492846"
@@ -3149,9 +3160,9 @@
     "nom_arret": "Jamine",
     "sens": 1,
     "code_arret": "JAM1",
-    "id_arret_parent": 153,
+    "id_arret_parent": 154,
     "commune": "Aiffres",
-    "id_arret": "79003_153_1",
+    "id_arret": "79003_154_1",
     "lat": 46.2909,
     "long": -0.409611,
     "position": "46.290900,-0.409611"
@@ -3160,9 +3171,9 @@
     "nom_arret": "Jamine",
     "sens": 2,
     "code_arret": "JAM2",
-    "id_arret_parent": 153,
+    "id_arret_parent": 154,
     "commune": "Aiffres",
-    "id_arret": "79003_153_2",
+    "id_arret": "79003_154_2",
     "lat": 46.29079,
     "long": -0.409435,
     "position": "46.290790,-0.409435"
@@ -3171,9 +3182,9 @@
     "nom_arret": "Jean Jaurès",
     "sens": 1,
     "code_arret": "JJA1",
-    "id_arret_parent": 154,
+    "id_arret_parent": 155,
     "commune": "Niort",
-    "id_arret": "79191_154_1",
+    "id_arret": "79191_155_1",
     "lat": 46.319131,
     "long": -0.465573,
     "position": "46.319131,-0.465573"
@@ -3182,9 +3193,9 @@
     "nom_arret": "Jean Jaurès",
     "sens": 2,
     "code_arret": "JJA2",
-    "id_arret_parent": 154,
+    "id_arret_parent": 155,
     "commune": "Niort",
-    "id_arret": "79191_154_2",
+    "id_arret": "79191_155_2",
     "lat": 46.319646,
     "long": -0.465675,
     "position": "46.319646,-0.465675"
@@ -3193,9 +3204,9 @@
     "nom_arret": "Jean Moulin",
     "sens": 1,
     "code_arret": "JMO1",
-    "id_arret_parent": 155,
+    "id_arret_parent": 156,
     "commune": "Niort",
-    "id_arret": "79191_155_1",
+    "id_arret": "79191_156_1",
     "lat": 46.31025,
     "long": -0.466426,
     "position": "46.310250,-0.466426"
@@ -3204,9 +3215,9 @@
     "nom_arret": "Jean Moulin",
     "sens": 2,
     "code_arret": "JMO2",
-    "id_arret_parent": 155,
+    "id_arret_parent": 156,
     "commune": "Niort",
-    "id_arret": "79191_155_2",
+    "id_arret": "79191_156_2",
     "lat": 46.310328,
     "long": -0.466115,
     "position": "46.310328,-0.466115"
@@ -3215,9 +3226,9 @@
     "nom_arret": "Jean Perrin",
     "sens": 1,
     "code_arret": "JPE1",
-    "id_arret_parent": 156,
+    "id_arret_parent": 157,
     "commune": "Niort",
-    "id_arret": "79191_156_1",
+    "id_arret": "79191_157_1",
     "lat": 46.31415,
     "long": -0.437637,
     "position": "46.314150,-0.437637"
@@ -3226,9 +3237,9 @@
     "nom_arret": "Jean Perrin",
     "sens": 2,
     "code_arret": "JPE2",
-    "id_arret_parent": 156,
+    "id_arret_parent": 157,
     "commune": "Niort",
-    "id_arret": "79191_156_2",
+    "id_arret": "79191_157_2",
     "lat": 46.314205,
     "long": -0.437921,
     "position": "46.314205,-0.437921"
@@ -3237,9 +3248,9 @@
     "nom_arret": "Jean Richard",
     "sens": 1,
     "code_arret": "JRI1",
-    "id_arret_parent": 157,
+    "id_arret_parent": 158,
     "commune": "Bessines",
-    "id_arret": "79034_157_1",
+    "id_arret": "79034_158_1",
     "lat": 46.296206,
     "long": -0.533008,
     "position": "46.296206,-0.533008"
@@ -3248,9 +3259,9 @@
     "nom_arret": "Jean Richard",
     "sens": 2,
     "code_arret": "JRI2",
-    "id_arret_parent": 157,
+    "id_arret_parent": 158,
     "commune": "Bessines",
-    "id_arret": "79034_157_2",
+    "id_arret": "79034_158_2",
     "lat": 46.296214,
     "long": -0.533126,
     "position": "46.296214,-0.533126"
@@ -3259,9 +3270,9 @@
     "nom_arret": "Jousselin",
     "sens": 1,
     "code_arret": "JOU1",
-    "id_arret_parent": 158,
+    "id_arret_parent": 159,
     "commune": "Niort",
-    "id_arret": "79191_158_1",
+    "id_arret": "79191_159_1",
     "lat": 46.336521,
     "long": -0.424483,
     "position": "46.336521,-0.424483"
@@ -3270,9 +3281,9 @@
     "nom_arret": "Jousselin",
     "sens": 2,
     "code_arret": "JOU2",
-    "id_arret_parent": 158,
+    "id_arret_parent": 159,
     "commune": "Niort",
-    "id_arret": "79191_158_2",
+    "id_arret": "79191_159_2",
     "lat": 46.336906,
     "long": -0.424038,
     "position": "46.336906,-0.424038"
@@ -3281,9 +3292,9 @@
     "nom_arret": "Jules Ferry",
     "sens": 1,
     "code_arret": "JUL1",
-    "id_arret_parent": 159,
+    "id_arret_parent": 160,
     "commune": "Niort",
-    "id_arret": "79191_159_1",
+    "id_arret": "79191_160_1",
     "lat": 46.331397,
     "long": -0.457955,
     "position": "46.331397,-0.457955"
@@ -3292,9 +3303,9 @@
     "nom_arret": "Justices",
     "sens": 1,
     "code_arret": "JUS1",
-    "id_arret_parent": 160,
+    "id_arret_parent": 161,
     "commune": "Niort",
-    "id_arret": "79191_160_1",
+    "id_arret": "79191_161_1",
     "lat": 46.341155,
     "long": -0.44014,
     "position": "46.341155,-0.440140"
@@ -3303,9 +3314,9 @@
     "nom_arret": "Justices",
     "sens": 2,
     "code_arret": "JUS2",
-    "id_arret_parent": 160,
+    "id_arret_parent": 161,
     "commune": "Niort",
-    "id_arret": "79191_160_2",
+    "id_arret": "79191_161_2",
     "lat": 46.341185,
     "long": -0.440015,
     "position": "46.341185,-0.440015"
@@ -3314,9 +3325,9 @@
     "nom_arret": "L’Autremont",
     "sens": 1,
     "code_arret": "LAU1",
-    "id_arret_parent": 161,
+    "id_arret_parent": 162,
     "commune": "Coulon",
-    "id_arret": "79100_161_1",
+    "id_arret": "79100_162_1",
     "lat": 46.321511,
     "long": -0.589494,
     "position": "46.321511,-0.589494"
@@ -3325,23 +3336,12 @@
     "nom_arret": "L’Autremont",
     "sens": 2,
     "code_arret": "LAU2",
-    "id_arret_parent": 161,
+    "id_arret_parent": 162,
     "commune": "Coulon",
-    "id_arret": "79100_161_2",
+    "id_arret": "79100_162_2",
     "lat": 46.32137,
     "long": -0.590033,
     "position": "46.321370,-0.590033"
-  },
-  {
-    "nom_arret": "La Bruyère",
-    "sens": 1,
-    "code_arret": "LAB1",
-    "id_arret_parent": 162,
-    "commune": "Niort",
-    "id_arret": "79191_162_1",
-    "lat": 46.332998,
-    "long": -0.457673,
-    "position": "46.332998,-0.457673"
   },
   {
     "nom_arret": "La Clielle",
@@ -6573,9 +6573,9 @@
     "id_arret_parent": 322,
     "commune": "Niort",
     "id_arret": "79191_322_1",
-    "lat": 46.331089,
-    "long": -0.420406,
-    "position": "46.331089,-0.420406"
+    "lat": 46.331101,
+    "long": -0.420223,
+    "position": "46.331101,-0.420223"
   },
   {
     "nom_arret": "Vigneau",
@@ -6584,9 +6584,9 @@
     "id_arret_parent": 322,
     "commune": "Niort",
     "id_arret": "79191_322_2",
-    "lat": 46.331101,
-    "long": -0.420223,
-    "position": "46.331101,-0.420223"
+    "lat": 46.331089,
+    "long": -0.420406,
+    "position": "46.331089,-0.420406"
   },
   {
     "nom_arret": "Villechanoux",
@@ -6661,9 +6661,9 @@
     "id_arret_parent": 326,
     "commune": "Niort",
     "id_arret": "79191_326_1",
-    "lat": 46.31972,
-    "long": -0.48552,
-    "position": "46.319720,-0.485520"
+    "lat": 46.317967,
+    "long": -0.492426,
+    "position": "46.317967,-0.492426"
   },
   {
     "nom_arret": "Wellingborough",
@@ -6672,9 +6672,9 @@
     "id_arret_parent": 326,
     "commune": "Niort",
     "id_arret": "79191_326_2",
-    "lat": 46.319742,
-    "long": -0.485628,
-    "position": "46.319742,-0.485628"
+    "lat": 46.317985,
+    "long": -0.492583,
+    "position": "46.317985,-0.492583"
   },
   {
     "nom_arret": "ZA Le Luc",
