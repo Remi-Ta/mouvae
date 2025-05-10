@@ -5,11 +5,12 @@ let selectedStop = '';
 let displayedTime = new Date();
 let currentDepartureSet = 0;
 let progressInterval;
-let numberOfTables = 1; // Initialiser à 1 tableau
+let numberOfTables = 1;
 let selectedPeriod = '';
-let trafficInfoIndex = 0; // Ajout d'un index pour la rotation des infos trafic
-let trafficInfoInterval; // Ajout d'un interval pour la rotation des infos trafic
-let suspensionsData = []; // Ajout pour stocker les données de suspensions
+let trafficInfoIndex = 0;
+let trafficInfoInterval;
+let suspensionsData = [];
+let hadDeparturesToday = false;
 
 const urls = {
     'lav_sco': 'https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/lav_sco.json',
@@ -36,7 +37,7 @@ async function fetchSuspensions() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/suspensions.json');
         const data = await response.json();
-        suspensionsData = data; // Stocker les données de suspensions
+        suspensionsData = data;
         return data.length ? data : [];
     } catch (error) {
         console.error('Erreur lors du chargement des suspensions:', error);
@@ -55,16 +56,27 @@ async function fetchCalendrier() {
     }
 }
 
+function isAnnouncementActive(announcement) {
+    const now = new Date();
+    const startDateTime = new Date(`${announcement.Date_debut}T${announcement.Heure_debut}`);
+    const endDateTime = new Date(`${announcement.Date_fin}T${announcement.Heure_fin}`);
+    return now >= startDateTime && now <= endDateTime;
+}
+
+function isSuspensionActive(suspension) {
+    const now = new Date();
+    const startDateTime = new Date(`${suspension.Date_debut}T${suspension.Heure_debut}`);
+    const endDateTime = new Date(`${suspension.Date_fin}T${suspension.Heure_fin}`);
+    return now >= startDateTime && now <= endDateTime;
+}
+
 async function updateInfo() {
     const annoncesTrafic = await fetchAnnoncesTrafic();
     const suspensions = await fetchSuspensions();
-
-    // Mettre à jour les informations sur la page
-    // ...
 }
 
 async function loadPeriod() {
-    await fetchSuspensions(); // Charger les suspensions dès le début
+    await fetchSuspensions();
     const calendrier = await fetchCalendrier();
     const today = new Date();
     const tomorrow = new Date(today);
@@ -79,32 +91,28 @@ async function loadPeriod() {
 
     if (periodEntry && periodEntry.periode) {
         selectedPeriod = periodEntry.periode;
-        console.log(`Chargement des données pour la période ${selectedPeriod}...`);
         try {
             const response = await fetch(urls[selectedPeriod]);
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
+            if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
             departuresData[selectedPeriod] = data.map(departure => {
                 const [hours, minutes] = departure.Heure.split(':').map(Number);
                 const departureTime = new Date();
                 departureTime.setHours(hours, minutes, 0, 0);
-                let adjustedDate = todayDateString;
-                if (hours < 3) { // Si l'heure est entre 00h00 et 02h59, considérer comme le jour même
-                    adjustedDate = todayDateString;
+
+                // Gestion des heures après minuit
+                if (hours < 3) {
+                    departureTime.setDate(departureTime.getDate() + 1);
                 }
-                return { ...departure, departureTime, adjustedDate };
+
+                return { ...departure, departureTime };
             });
-            console.log(`Données chargées pour la période ${selectedPeriod}:`, data);
         } catch (error) {
             console.error('Erreur lors du chargement des données:', error);
         }
-    } else {
-        console.log('Aucun départ prévu aujourd\'hui.');
     }
 
-    // Charger les services spéciaux si nécessaire
+    // Charger les services spéciaux
     if (isFriday || (isThursday && isPublicHoliday(today))) {
         await loadSpecialService('navette_n10', todayDateString);
     }
@@ -115,7 +123,6 @@ async function loadPeriod() {
         await loadSpecialService('melusine_ven', todayDateString);
     }
 
-    // Charger les arrêts même en jour férié
     populateStopSelect();
     document.getElementById('stop-selection').style.display = 'block';
 }
@@ -123,45 +130,43 @@ async function loadPeriod() {
 async function loadSpecialService(service, adjustedDate) {
     try {
         const response = await fetch(urls[service]);
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
+        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         departuresData[service] = data.map(departure => {
             const [hours, minutes] = departure.Heure.split(':').map(Number);
             const departureTime = new Date();
             departureTime.setHours(hours, minutes, 0, 0);
-            return { ...departure, departureTime, adjustedDate };
+
+            // Gestion des heures après minuit
+            if (hours < 3) {
+                departureTime.setDate(departureTime.getDate() + 1);
+            }
+
+            return { ...departure, departureTime };
         });
-        console.log(`Données chargées pour le service spécial ${service}:`, data);
     } catch (error) {
-        console.error(`Erreur lors du chargement des données pour le service spécial ${service}:`, error);
+        console.error(`Erreur lors du chargement des données pour ${service}:`, error);
     }
 }
 
 function isPublicHoliday(date) {
-    // Implémentez cette fonction pour vérifier si une date est un jour férié
-    // Vous pouvez utiliser un fichier JSON ou une API pour obtenir les jours fériés
-    return false; // Par défaut, retourne false
+    // À implémenter avec une liste de jours fériés
+    return false;
 }
 
 async function populateStopSelect() {
     const stopSelect = document.getElementById('stop-select');
     const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/arrets.json');
     const data = await response.json();
-
-    // Extraire les noms d'arrêts uniques
     const uniqueStops = [...new Set(data.map(item => item.nom_arret))];
 
     stopSelect.innerHTML = '';
-
     uniqueStops.sort(compareStops).forEach(stop => {
         const option = document.createElement('option');
         option.value = stop;
         option.textContent = stop;
         stopSelect.appendChild(option);
     });
-    console.log(`Arrêts chargés:`, uniqueStops);
 }
 
 function compareStops(a, b) {
@@ -212,47 +217,34 @@ function updateStopInfo() {
 
     let allDepartures = [];
 
+    // Collecter tous les départs pertinents
     if (selectedPeriod) {
         allDepartures = departuresData[selectedPeriod]
-            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
-            .map(departure => {
-                return { ...departure, departureTime: new Date(departure.departureTime) };
-            });
+            .filter(departure => departure.Arret === selectedStop)
+            .map(departure => ({ ...departure, departureTime: new Date(departure.departureTime) }));
     }
 
-    // Ajouter les services spéciaux si disponibles
-    if (departuresData['navette_n10']) {
-        allDepartures = allDepartures.concat(departuresData['navette_n10']
-            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
-            .map(departure => {
-                return { ...departure, departureTime: new Date(departure.departureTime) };
-            }));
-    }
-    if (departuresData['melusine_jeu']) {
-        allDepartures = allDepartures.concat(departuresData['melusine_jeu']
-            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
-            .map(departure => {
-                return { ...departure, departureTime: new Date(departure.departureTime) };
-            }));
-    }
-    if (departuresData['melusine_ven']) {
-        allDepartures = allDepartures.concat(departuresData['melusine_ven']
-            .filter(departure => departure.Arret === selectedStop && (departure.adjustedDate === todayDateString || departure.adjustedDate === tomorrowDateString))
-            .map(departure => {
-                return { ...departure, departureTime: new Date(departure.departureTime) };
-            }));
-    }
+    // Ajouter les services spéciaux
+    ['navette_n10', 'melusine_jeu', 'melusine_ven'].forEach(service => {
+        if (departuresData[service]) {
+            allDepartures = allDepartures.concat(departuresData[service]
+                .filter(departure => departure.Arret === selectedStop)
+                .map(departure => ({ ...departure, departureTime: new Date(departure.departureTime) })));
+        }
+    });
 
+    // Trier les départs par heure
     allDepartures.sort((a, b) => a.departureTime - b.departureTime);
 
-    const departuresToShow = allDepartures
-        .filter(departure => {
-            const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
-            return waitTime >= 0;
-        });
+    // Filtrer les départs pertinents
+    const departuresToShow = allDepartures.filter(departure => {
+        const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
+        return waitTime >= -5; // Garder les départs des 5 dernières minutes
+    });
 
     const numberOfDepartures = departuresToShow.length;
 
+    // Déterminer le nombre de tableaux
     if (numberOfDepartures >= 17) {
         numberOfTables = 3;
     } else if (numberOfDepartures >= 9) {
@@ -263,24 +255,22 @@ function updateStopInfo() {
 
     const departuresToDisplay = departuresToShow.slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
-    if (departuresToDisplay.length === 0 && numberOfDepartures === 0) {
-        const item = document.createElement('div');
-        item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
-        departureInfoElement.appendChild(item);
-
-        for (let i = 1; i < 8; i++) {
-            const emptyItem = document.createElement('div');
-            emptyItem.classList.add('departure-item');
-            emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(emptyItem);
+    if (departuresToDisplay.length === 0) {
+        if (numberOfDepartures === 0) {
+            // Aucun départ prévu aujourd'hui
+            const item = document.createElement('div');
+            item.classList.add('departure-item');
+            item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(item);
+        } else {
+            // Service terminé
+            const item = document.createElement('div');
+            item.classList.add('departure-item');
+            item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
+            departureInfoElement.appendChild(item);
         }
-    } else if (departuresToDisplay.length === 0 && numberOfDepartures > 0) {
-        const item = document.createElement('div');
-        item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
-        departureInfoElement.appendChild(item);
 
+        // Remplir les lignes vides
         for (let i = 1; i < 8; i++) {
             const emptyItem = document.createElement('div');
             emptyItem.classList.add('departure-item');
@@ -288,15 +278,16 @@ function updateStopInfo() {
             departureInfoElement.appendChild(emptyItem);
         }
     } else {
+        // Afficher les départs
         for (let i = 0; i < 8; i++) {
             const departure = departuresToDisplay[i];
             const waitTime = departure ? (departure.departureTime - displayedTime) / 1000 / 60 : null;
             const waitText = waitTime !== null && waitTime >= 0
                 ? waitTime === 0
-                ? "<span class='approaching'>Imminent</span>"
-                : waitTime > 60
-                ? `${departure.Heure}`
-                : `${Math.round(waitTime)} min`
+                    ? "<span class='approaching'>Imminent</span>"
+                    : waitTime > 60
+                        ? `${departure.Heure}`
+                        : `${Math.round(waitTime)} min`
                 : '';
 
             const item = document.createElement('div');
@@ -310,6 +301,7 @@ function updateStopInfo() {
         }
     }
 
+    // Mise à jour des barres de progression
     const progressBarsContainer = document.getElementById('progress-bars-container');
     progressBarsContainer.innerHTML = '';
     progressBarsContainer.style.justifyContent = 'center';
@@ -343,9 +335,12 @@ async function startTrafficInfoCycle() {
     const trafficInfoDetails = document.getElementById('traffic-info-details');
     const annoncesTrafic = await fetchAnnoncesTrafic();
 
+    // Filtrer les annonces actives
+    const activeAnnonces = annoncesTrafic.filter(isAnnouncementActive);
+
     function updateInfo() {
-        if (annoncesTrafic.length > 0) {
-            const info = annoncesTrafic[trafficInfoIndex % annoncesTrafic.length];
+        if (activeAnnonces.length > 0) {
+            const info = activeAnnonces[trafficInfoIndex % activeAnnonces.length];
             if (info.Type === 'Info trafic') {
                 trafficInfoDetails.innerHTML = `
                     <p><strong>Date(s) : </strong> ${info.Date_affichage} ${info.Heure_affichage ? `- ${info.Heure_affichage}` : ''}</p>
@@ -356,6 +351,8 @@ async function startTrafficInfoCycle() {
                 trafficInfoDetails.innerHTML = `<p>${info.Message}</p>`;
             }
             trafficInfoIndex++;
+        } else {
+            trafficInfoDetails.innerHTML = `<p>Aucune information trafic actuelle.</p>`;
         }
     }
 
@@ -364,7 +361,7 @@ async function startTrafficInfoCycle() {
     if (trafficInfoInterval) {
         clearInterval(trafficInfoInterval);
     }
-    trafficInfoInterval = setInterval(updateInfo, 10000); // Réduire le temps de rotation à 10 secondes
+    trafficInfoInterval = setInterval(updateInfo, 10000);
 }
 
 function startDepartureRotation() {
@@ -401,23 +398,23 @@ async function checkForSuspensions() {
     const suspensionMessage = document.getElementById('suspension-message');
     const departureInfoElement = document.getElementById('departure-info');
 
-    const selectedStop = document.getElementById('stop-select').value;
-    const relevantSuspension = suspensionsData.find(suspension =>
-        suspension.Arret === selectedStop &&
-        new Date() >= new Date(`${suspension.Date_debut}T${suspension.Heure_debut}`) &&
-        new Date() <= new Date(`${suspension.Date_fin}T${suspension.Heure_fin}`)
+    const now = new Date();
+
+    // Filtrer les suspensions actives pour l'arrêt sélectionné
+    const activeSuspensions = suspensionsData.filter(suspension =>
+        suspension.Arret === selectedStop && isSuspensionActive(suspension)
     );
 
-    if (relevantSuspension) {
-        const specificLines = relevantSuspension.Lignes.split(',').map(line => line.trim());
+    if (activeSuspensions.length > 0) {
+        const suspension = activeSuspensions[0]; // Prendre la première suspension active
+        const specificLines = suspension.Lignes.split(',').map(line => line.trim());
+
         if (specificLines.includes('Toutes')) {
             suspensionMessage.innerHTML = `
                 <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
                     <p><strong>CET ARRÊT N'EST PAS DESSERVI</strong></p>
-                    <br><br><br><br>
-                    <p><strong>Date(s) : </strong> ${relevantSuspension.Date_affichage}${relevantSuspension.Heure_affichage ? ` - ${relevantSuspension.Heure_affichage}` : ''}</p>
-                    <br>
-                    <p>${relevantSuspension.Message}</p>
+                    <p><strong>Date(s) : </strong> ${suspension.Date_affichage}${suspension.Heure_affichage ? ` - ${suspension.Heure_affichage}` : ''}</p>
+                    <p>${suspension.Message}</p>
                 </div>
             `;
             suspensionContainer.style.display = 'flex';
@@ -427,9 +424,10 @@ async function checkForSuspensions() {
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const line = item.querySelector('.line-box').textContent;
                 const destination = item.querySelector('.departure-destination').textContent;
-                const relevantDestination = relevantSuspension.Destination ? relevantSuspension.Destination.trim() : '';
+                const relevantDestination = suspension.Destination ? suspension.Destination.trim() : '';
                 return !(specificLines.includes(line) && (relevantDestination === '' || relevantDestination === destination));
             });
+
             departureInfoElement.innerHTML = '';
             departuresToShow.forEach(item => departureInfoElement.appendChild(item));
 
