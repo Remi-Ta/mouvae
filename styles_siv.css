@@ -253,7 +253,7 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5px;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 #traffic-info-details p {
@@ -304,8 +304,8 @@ body {
 }
 
 #suspension-container {
-    width: 100%;
-    height: auto;
+    width: 760px;
+    height: 400px;
     margin: 20px auto;
     background-color: #e9e9e9;
     display: flex;
@@ -319,36 +319,46 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: normal;
     padding: 20px;
     border-radius: 5px;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.suspension-message p {
+    margin: 5px 0;
 }
 
 @media (max-width: 768px) {
     .info-display {
         padding: 10px;
+        max-width: 100%;
     }
 
     .stop-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     #stop-name-time {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     #selected-stop {
-        font-size: 17px;
+        font-size: 18px;
+        margin-right: 10px;
     }
 
     #current-time {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     #departure-labels {
@@ -356,37 +366,32 @@ body {
     }
 
     .departure-item {
-        font-size: 15px;
+        font-size: 14px;
+        padding: 3px 0;
     }
 
     .line-box {
         width: 30px;
         height: 30px;
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .departure-destination {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .departure-wait-time {
-        font-size: 15px;
-    }
-
-    #traffic-info-header {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     #traffic-info-details {
-        font-size: 12.5px;
+        overflow-y: auto;
         height: 150px;
     }
 
-    #traffic-info-details p {
-        margin: 1px 0;
-    }
-
-    .suspension-message {
-        font-size: 15px;
+    #suspension-container {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
     }
 }
