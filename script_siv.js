@@ -24,8 +24,10 @@ const urls = {
 
 async function fetchAnnoncesTrafic() {
     try {
+        console.log("Chargement des annonces trafic...");
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/annonces_trafic.json');
         const data = await response.json();
+        console.log("Annonces trafic chargées:", data.length, "éléments");
         return data.length ? data : [];
     } catch (error) {
         console.error('Erreur lors du chargement des annonces trafic:', error);
@@ -35,9 +37,11 @@ async function fetchAnnoncesTrafic() {
 
 async function fetchSuspensions() {
     try {
+        console.log("Chargement des suspensions...");
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/suspensions.json');
         const data = await response.json();
         suspensionsData = data;
+        console.log("Suspensions chargées:", data.length, "éléments");
         return data.length ? data : [];
     } catch (error) {
         console.error('Erreur lors du chargement des suspensions:', error);
@@ -47,8 +51,10 @@ async function fetchSuspensions() {
 
 async function fetchCalendrier() {
     try {
+        console.log("Chargement du calendrier...");
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/calendrier.json');
         const data = await response.json();
+        console.log("Calendrier chargé:", data.length, "éléments");
         return data;
     } catch (error) {
         console.error('Erreur lors du chargement du calendrier:', error);
@@ -92,6 +98,7 @@ async function loadPeriod() {
     if (periodEntry && periodEntry.periode) {
         selectedPeriod = periodEntry.periode;
         try {
+            console.log(`Chargement des données pour la période ${selectedPeriod}...`);
             const response = await fetch(urls[selectedPeriod]);
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
@@ -107,9 +114,12 @@ async function loadPeriod() {
 
                 return { ...departure, departureTime };
             });
+            console.log(`Données chargées pour ${selectedPeriod}:`, data.length, "départs");
         } catch (error) {
             console.error('Erreur lors du chargement des données:', error);
         }
+    } else {
+        console.log('Aucun départ prévu aujourd\'hui.');
     }
 
     // Charger les services spéciaux
@@ -129,6 +139,7 @@ async function loadPeriod() {
 
 async function loadSpecialService(service, adjustedDate) {
     try {
+        console.log(`Chargement du service spécial ${service}...`);
         const response = await fetch(urls[service]);
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
@@ -144,6 +155,7 @@ async function loadSpecialService(service, adjustedDate) {
 
             return { ...departure, departureTime };
         });
+        console.log(`Données chargées pour ${service}:`, data.length, "départs");
     } catch (error) {
         console.error(`Erreur lors du chargement des données pour ${service}:`, error);
     }
@@ -155,18 +167,24 @@ function isPublicHoliday(date) {
 }
 
 async function populateStopSelect() {
+    console.log("Chargement des arrêts...");
     const stopSelect = document.getElementById('stop-select');
-    const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/arrets.json');
-    const data = await response.json();
-    const uniqueStops = [...new Set(data.map(item => item.nom_arret))];
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/arrets.json');
+        const data = await response.json();
+        const uniqueStops = [...new Set(data.map(item => item.nom_arret))];
 
-    stopSelect.innerHTML = '';
-    uniqueStops.sort(compareStops).forEach(stop => {
-        const option = document.createElement('option');
-        option.value = stop;
-        option.textContent = stop;
-        stopSelect.appendChild(option);
-    });
+        stopSelect.innerHTML = '';
+        uniqueStops.sort(compareStops).forEach(stop => {
+            const option = document.createElement('option');
+            option.value = stop;
+            option.textContent = stop;
+            stopSelect.appendChild(option);
+        });
+        console.log("Arrêts chargés:", uniqueStops.length, "arrêts");
+    } catch (error) {
+        console.error('Erreur lors du chargement des arrêts:', error);
+    }
 }
 
 function compareStops(a, b) {
@@ -177,6 +195,7 @@ function compareStops(a, b) {
 function showStopInfo() {
     selectedStop = document.getElementById('stop-select').value;
     if (selectedStop) {
+        console.log("Arrêt sélectionné:", selectedStop);
         currentDepartureSet = 0;
         clearInterval(progressInterval);
         resetProgressBars();
@@ -431,12 +450,19 @@ async function checkForSuspensions() {
                     <p>${suspension.Message}</p>
                 </div>
             `;
+            console.log("Suspension totale active:", suspension);
+
             suspensionContainer.style.display = 'flex';
             departureInfoElement.style.display = 'none';
             document.getElementById('departure-labels').style.display = 'none';
             progressBarsContainer.style.display = 'flex';
         } else {
             // Suspension partielle - masquer certains départs
+            console.log("Suspension partielle active:", suspension);
+            console.log("Lignes concernées:", specificLines);
+            console.log("Destinations concernées:", specificDestinations);
+
+            // Filtrer les départs affichés
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const lineElement = item.querySelector('.line-box');
                 const destinationElement = item.querySelector('.departure-destination');
@@ -453,6 +479,7 @@ async function checkForSuspensions() {
                 return !(lineSuspended || destinationSuspended);
             });
 
+            // Mettre à jour l'affichage
             departureInfoElement.innerHTML = '';
             departuresToShow.forEach(item => departureInfoElement.appendChild(item));
 
@@ -464,20 +491,8 @@ async function checkForSuspensions() {
                 departureInfoElement.appendChild(emptyItem);
             }
 
-            // Afficher un message de suspension partielle
-            suspensionMessage.innerHTML = `
-                <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
-                    <p><strong>CERTAINS DÉPARTS SONT SUSPENDUS</strong></p>
-                    <br><br>
-                    <p><strong>Date(s) : </strong> ${suspension.Date_affichage}${suspension.Heure_affichage ? ` - ${suspension.Heure_affichage}` : ''}</p>
-                    <br>
-                    <p>${suspension.Message}</p>
-                    <p><strong>Lignes concernées :</strong> ${specificLines.join(', ')}</p>
-                    ${specificDestinations.length > 0 ? `<p><strong>Destinations concernées :</strong> ${specificDestinations.join(', ')}</p>` : ''}
-                </div>
-            `;
-            suspensionContainer.style.display = 'flex';
-            progressBarsContainer.style.display = 'flex';
+            // Afficher un message de suspension partielle dans la console
+            console.log(`Suspension partielle: Lignes ${specificLines.join(', ')} ${specificDestinations.length > 0 ? `et destinations ${specificDestinations.join(', ')}` : ''} suspendues`);
         }
     } else {
         suspensionContainer.style.display = 'none';
