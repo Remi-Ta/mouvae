@@ -183,11 +183,6 @@ async function populateStopSelect() {
     }
 }
 
-function compareStops(a, b) {
-    const cleanString = str => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    return cleanString(a).localeCompare(cleanString(b));
-}
-
 function showStopInfo() {
     selectedStop = document.getElementById('stop-select').value;
     if (selectedStop) {
