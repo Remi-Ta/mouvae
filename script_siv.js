@@ -109,7 +109,6 @@ async function loadPeriod() {
                 return { ...departure, departureTime };
             });
             console.log(`Données chargées pour ${selectedPeriod}:`, data.length, "départs");
-            console.log("Détails des départs:", data);
         } catch (error) {
             console.error('Erreur lors du chargement des données:', error);
         }
@@ -150,7 +149,6 @@ async function loadSpecialService(service, adjustedDate) {
             return { ...departure, departureTime };
         });
         console.log(`Données chargées pour ${service}:`, data.length, "départs");
-        console.log("Détails des départs:", data);
     } catch (error) {
         console.error(`Erreur lors du chargement des données pour ${service}:`, error);
     }
@@ -177,7 +175,6 @@ async function populateStopSelect() {
             stopSelect.appendChild(option);
         });
         console.log("Arrêts chargés:", uniqueStops.length, "arrêts");
-        console.log("Liste des arrêts:", uniqueStops);
     } catch (error) {
         console.error('Erreur lors du chargement des arrêts:', error);
     }
