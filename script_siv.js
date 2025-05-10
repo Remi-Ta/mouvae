@@ -24,10 +24,8 @@ const urls = {
 
 async function fetchAnnoncesTrafic() {
     try {
-        console.log("Chargement des annonces trafic...");
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/annonces_trafic.json');
         const data = await response.json();
-        console.log("Annonces trafic chargées:", data.length, "éléments");
         return data.length ? data : [];
     } catch (error) {
         console.error('Erreur lors du chargement des annonces trafic:', error);
@@ -37,7 +35,6 @@ async function fetchAnnoncesTrafic() {
 
 async function fetchSuspensions() {
     try {
-        console.log("Chargement des suspensions...");
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/refs/heads/main/suspensions.json');
         const data = await response.json();
         suspensionsData = data;
@@ -51,10 +48,8 @@ async function fetchSuspensions() {
 
 async function fetchCalendrier() {
     try {
-        console.log("Chargement du calendrier...");
         const response = await fetch('https://raw.githubusercontent.com/Remi-Ta/mouvae/main/calendrier.json');
         const data = await response.json();
-        console.log("Calendrier chargé:", data.length, "éléments");
         return data;
     } catch (error) {
         console.error('Erreur lors du chargement du calendrier:', error);
@@ -98,7 +93,6 @@ async function loadPeriod() {
     if (periodEntry && periodEntry.periode) {
         selectedPeriod = periodEntry.periode;
         try {
-            console.log(`Chargement des données pour la période ${selectedPeriod}...`);
             const response = await fetch(urls[selectedPeriod]);
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
@@ -115,6 +109,7 @@ async function loadPeriod() {
                 return { ...departure, departureTime };
             });
             console.log(`Données chargées pour ${selectedPeriod}:`, data.length, "départs");
+            console.log("Détails des départs:", data);
         } catch (error) {
             console.error('Erreur lors du chargement des données:', error);
         }
@@ -139,7 +134,6 @@ async function loadPeriod() {
 
 async function loadSpecialService(service, adjustedDate) {
     try {
-        console.log(`Chargement du service spécial ${service}...`);
         const response = await fetch(urls[service]);
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
@@ -156,6 +150,7 @@ async function loadSpecialService(service, adjustedDate) {
             return { ...departure, departureTime };
         });
         console.log(`Données chargées pour ${service}:`, data.length, "départs");
+        console.log("Détails des départs:", data);
     } catch (error) {
         console.error(`Erreur lors du chargement des données pour ${service}:`, error);
     }
@@ -182,6 +177,7 @@ async function populateStopSelect() {
             stopSelect.appendChild(option);
         });
         console.log("Arrêts chargés:", uniqueStops.length, "arrêts");
+        console.log("Liste des arrêts:", uniqueStops);
     } catch (error) {
         console.error('Erreur lors du chargement des arrêts:', error);
     }
@@ -196,6 +192,10 @@ function showStopInfo() {
     selectedStop = document.getElementById('stop-select').value;
     if (selectedStop) {
         console.log("Arrêt sélectionné:", selectedStop);
+        // Réinitialiser les logs
+        console.clear();
+        console.log("Nouvel arrêt sélectionné:", selectedStop);
+
         currentDepartureSet = 0;
         clearInterval(progressInterval);
         resetProgressBars();
@@ -425,6 +425,7 @@ async function checkForSuspensions() {
     const suspensionContainer = document.getElementById('suspension-container');
     const suspensionMessage = document.getElementById('suspension-message');
     const departureInfoElement = document.getElementById('departure-info');
+    const departureLabels = document.getElementById('departure-labels');
     const progressBarsContainer = document.getElementById('progress-bars-container');
 
     const now = new Date();
@@ -439,65 +440,41 @@ async function checkForSuspensions() {
         const specificLines = suspension.Lignes ? suspension.Lignes.split(',') : [];
         const specificDestinations = suspension.Destination ? suspension.Destination.split(',') : [];
 
+        // Masquer tous les éléments normaux
+        departureInfoElement.style.display = 'none';
+        departureLabels.style.display = 'none';
+        progressBarsContainer.style.display = 'none';
+
+        // Afficher le message de suspension
+        suspensionMessage.innerHTML = `
+            <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
+                <p><strong>CET ARRÊT N'EST PAS DESSERVI</strong></p>
+                <br><br>
+                <p><strong>Date(s) : </strong> ${suspension.Date_affichage}${suspension.Heure_affichage ? ` - ${suspension.Heure_affichage}` : ''}</p>
+                <br>
+                <p>${suspension.Message}</p>
+            </div>
+        `;
+
+        // Afficher le conteneur de suspension
+        suspensionContainer.style.display = 'flex';
+
+        // Log dans la console
+        console.log("Suspension active:", suspension);
         if (specificLines.includes('Toutes')) {
-            // Suspension totale
-            suspensionMessage.innerHTML = `
-                <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 5px; text-align: center;">
-                    <p><strong>CET ARRÊT N'EST PAS DESSERVI</strong></p>
-                    <br><br>
-                    <p><strong>Date(s) : </strong> ${suspension.Date_affichage}${suspension.Heure_affichage ? ` - ${suspension.Heure_affichage}` : ''}</p>
-                    <br>
-                    <p>${suspension.Message}</p>
-                </div>
-            `;
-            console.log("Suspension totale active:", suspension);
-
-            suspensionContainer.style.display = 'flex';
-            departureInfoElement.style.display = 'none';
-            document.getElementById('departure-labels').style.display = 'none';
-            progressBarsContainer.style.display = 'flex';
+            console.log("Suspension totale pour l'arrêt:", selectedStop);
         } else {
-            // Suspension partielle - masquer certains départs
-            console.log("Suspension partielle active:", suspension);
-            console.log("Lignes concernées:", specificLines);
-            console.log("Destinations concernées:", specificDestinations);
-
-            // Filtrer les départs affichés
-            const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
-                const lineElement = item.querySelector('.line-box');
-                const destinationElement = item.querySelector('.departure-destination');
-
-                if (!lineElement || !destinationElement) return false;
-
-                const line = lineElement.textContent.trim();
-                const destination = destinationElement.textContent.trim();
-
-                // Vérifier si la ligne ou la destination est concernée par la suspension
-                const lineSuspended = specificLines.includes(line);
-                const destinationSuspended = specificDestinations.includes(destination);
-
-                return !(lineSuspended || destinationSuspended);
-            });
-
-            // Mettre à jour l'affichage
-            departureInfoElement.innerHTML = '';
-            departuresToShow.forEach(item => departureInfoElement.appendChild(item));
-
-            // Remplir les lignes vides
-            while (departureInfoElement.children.length < 8) {
-                const emptyItem = document.createElement('div');
-                emptyItem.classList.add('departure-item');
-                emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-                departureInfoElement.appendChild(emptyItem);
+            console.log("Suspension partielle pour les lignes:", specificLines);
+            if (specificDestinations.length > 0) {
+                console.log("Et destinations:", specificDestinations);
             }
-
-            // Afficher un message de suspension partielle dans la console
-            console.log(`Suspension partielle: Lignes ${specificLines.join(', ')} ${specificDestinations.length > 0 ? `et destinations ${specificDestinations.join(', ')}` : ''} suspendues`);
         }
     } else {
+        // Rétablir l'affichage normal
         suspensionContainer.style.display = 'none';
         departureInfoElement.style.display = 'block';
-        document.getElementById('departure-labels').style.display = 'block';
+        departureLabels.style.display = 'block';
+        progressBarsContainer.style.display = 'flex';
     }
 }
 
