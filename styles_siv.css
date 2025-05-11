@@ -337,3 +337,10 @@ body {
 .suspension-message p {
     margin: 5px 0;
 }
+
+/* Ajout pour le défilement sur mobile */
+@media (max-width: 768px) {
+    #traffic-info-details {
+        overflow-y: auto;
+    }
+}
