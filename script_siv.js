@@ -261,7 +261,7 @@ function updateStopInfo() {
         const item = document.createElement('div');
         item.classList.add('departure-item');
         item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>' +
-            (allDepartures.length > 0 ? 'Service terminé' : 'Aucun service prévu aujourd\'hui.') +
+            (allDepartures.length > 0 ? 'Service terminé.' : 'Aucun service prévu aujourd\'hui.') +
             '</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
