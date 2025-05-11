@@ -260,7 +260,9 @@ function updateStopInfo() {
         // Aucun départ à afficher
         const item = document.createElement('div');
         item.classList.add('departure-item');
-        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>' +
+            (allDepartures.length > 0 ? 'Service terminé' : 'Aucun service prévu aujourd\'hui.') +
+            '</strong></div><div class="departure-wait-time"></div>';
         departureInfoElement.appendChild(item);
 
         // Remplir les lignes vides
