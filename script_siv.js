@@ -414,8 +414,8 @@ async function checkForSuspensions() {
 
     if (activeSuspensions.length > 0) {
         const suspension = activeSuspensions[0];
-        const specificLines = suspension.Lignes ? suspension.Lignes.split(',') : [];
-        const specificDestinations = suspension.Destination ? suspension.Destination.split(',') : [];
+        const specificLines = suspension.Lignes ? suspension.Lignes.split(',').map(line => line.trim()) : [];
+        const specificDestinations = suspension.Destination ? suspension.Destination.split(',').map(dest => dest.trim()) : [];
 
         if (specificLines.includes('Toutes')) {
             // Suspension totale
@@ -434,7 +434,7 @@ async function checkForSuspensions() {
             departureLabels.style.display = 'none';
             progressBarsContainer.style.display = 'none';
         } else {
-            // Suspension partielle - masquer certains départs
+            // Suspension partielle - masquer uniquement les départs concernés
             const departuresToShow = Array.from(departureInfoElement.children).filter(item => {
                 const lineElement = item.querySelector('.line-box');
                 const destinationElement = item.querySelector('.departure-destination');
@@ -446,9 +446,10 @@ async function checkForSuspensions() {
 
                 // Vérifier si la ligne ou la destination est concernée par la suspension
                 const lineSuspended = specificLines.includes(line);
-                const destinationSuspended = specificDestinations.includes(destination);
+                const destinationSuspended = specificDestinations.length > 0 && specificDestinations.includes(destination);
 
-                return !(lineSuspended || destinationSuspended);
+                // Si la ligne est suspendue ET (soit aucune destination spécifique, soit la destination est suspendue)
+                return !(lineSuspended && (specificDestinations.length === 0 || destinationSuspended));
             });
 
             // Si aucun départ n'est disponible après suspension
@@ -466,6 +467,18 @@ async function checkForSuspensions() {
                     emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
                     departureInfoElement.appendChild(emptyItem);
                 }
+            } else {
+                // Sinon, afficher les départs restants
+                departureInfoElement.innerHTML = '';
+                departuresToShow.forEach(item => departureInfoElement.appendChild(item));
+
+                // Remplir les lignes vides
+                while (departureInfoElement.children.length < 8) {
+                    const emptyItem = document.createElement('div');
+                    emptyItem.classList.add('departure-item');
+                    emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
+                    departureInfoElement.appendChild(emptyItem);
+                }
             }
         }
     } else {
@@ -476,7 +489,6 @@ async function checkForSuspensions() {
         progressBarsContainer.style.display = 'flex';
     }
 }
-
 setInterval(updateDateTime, 1000);
 
 updateDateTime();
