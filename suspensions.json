@@ -1,65 +1,5 @@
 [
   {
-    "Arret": "Place Chanzy",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-23",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 24/03 au 23/05",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux rue Du Guesclin, les arrêts « Place Chanzy » et « Saint-André » ne sont pas desservis. Reportez-vous à « Alsace-Lorraine », « Brèche (Quai C) » et « Victor Hugo » desservis sur l’itinéraire de déviation."
-  },
-  {
-    "Arret": "Saint-André",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-23",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 24/03 au 23/05",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux rue Du Guesclin, les arrêts « Place Chanzy » et « Saint-André » ne sont pas desservis. Reportez-vous à « Alsace-Lorraine », « Brèche (Quai C) » et « Victor Hugo » desservis sur l’itinéraire de déviation."
-  },
-  {
-    "Arret": "Donjon",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "10:25:00",
-    "Date_fin": "2025-04-24",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Le 24/04",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux rue Basse, les arrêts « Donjon », « Rue Basse » et « Roulière » ne sont pas desservis. Itinéraire de déviation via « Hôtel de Ville », « Temple », « Brèche (Quai C) » et « Alsace-Lorraine »."
-  },
-  {
-    "Arret": "Rue Basse",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "10:25:00",
-    "Date_fin": "2025-04-24",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Le 24/04",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux rue Basse, les arrêts « Donjon », « Rue Basse » et « Roulière » ne sont pas desservis. Itinéraire de déviation via « Hôtel de Ville », « Temple », « Brèche (Quai C) » et « Alsace-Lorraine »."
-  },
-  {
-    "Arret": "Roulière",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "10:25:00",
-    "Date_fin": "2025-04-24",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Le 24/04",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux rue Basse, les arrêts « Donjon », « Rue Basse » et « Roulière » ne sont pas desservis. Itinéraire de déviation via « Hôtel de Ville », « Temple », « Brèche (Quai C) » et « Alsace-Lorraine »."
-  },
-  {
     "Arret": "Place du Port",
     "Date_debut": "2025-04-24",
     "Heure_debut": "00:00:00",
@@ -84,42 +24,6 @@
     "Message": ""
   },
   {
-    "Arret": "Alsace-Lorraine",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-23",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 24/03 au 23/05",
-    "Heure_affichage": "",
-    "Lignes": "5, 18",
-    "Destination": "",
-    "Message": ""
-  },
-  {
-    "Arret": "Strasbourg",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-23",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 24/03 au 23/05",
-    "Heure_affichage": "",
-    "Lignes": "5, 18",
-    "Destination": "",
-    "Message": ""
-  },
-  {
-    "Arret": "Brémaudière",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-23",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 24/03 au 23/05",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux au Pontreau, vers CAF (L5) et Saint-Gelais (L18), les arrêts « Alsace-Lorraine », « Strasbourg » et « Brémaudière » ne sont pas desservis. Déviation via l’avenue de Paris. Prise en charge à Curie sur le quai C."
-  },
-  {
     "Arret": "Denfert Rochereau",
     "Date_debut": "2025-03-24",
     "Heure_debut": "00:00:00",
@@ -129,7 +33,7 @@
     "Heure_affichage": "",
     "Lignes": "Toutes",
     "Destination": "",
-    "Message": "En raison de travaux au Pontreau, vers Saint-Liguaire / ITEP (L5), Lycée Paul Guérin (L11) et Niort (L18), l’arrêt « Denfert Rochereau » n’est pas desservi. Reportez-vous à l’arrêt provisoire rue du Vieux Fourneau."
+    "Message": "Vers Saint-Liguaire / ITEP (L5), Lycée Paul Guérin (L11) et Niort (L18), l’arrêt « Denfert Rochereau » n’est pas desservi. Reportez-vous à l’arrêt provisoire rue du Vieux Fourneau."
   },
   {
     "Arret": "Petit Vigneau",
@@ -141,7 +45,7 @@
     "Heure_affichage": "",
     "Lignes": "Toutes",
     "Destination": "",
-    "Message": "Fermeture de la rue d’Antes : arrêts « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée Paul Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (poteau provisoire)."
+    "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
   },
   {
     "Arret": "Bel Air",
@@ -153,7 +57,7 @@
     "Heure_affichage": "",
     "Lignes": "Toutes",
     "Destination": "",
-    "Message": "Fermeture de la rue d’Antes : arrêts « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée Paul Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (poteau provisoire)."
+    "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
   },
   {
     "Arret": "Follereau",
@@ -165,7 +69,7 @@
     "Heure_affichage": "",
     "Lignes": "Toutes",
     "Destination": "",
-    "Message": "Fermeture de la rue d’Antes : arrêts « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée Paul Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (poteau provisoire)."
+    "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
   },
   {
     "Arret": "Tourterelles",
@@ -177,42 +81,54 @@
     "Heure_affichage": "",
     "Lignes": "Toutes",
     "Destination": "",
-    "Message": "Fermeture de la rue d’Antes : arrêts « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée Paul Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (poteau provisoire)."
+    "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
   },
   {
-    "Arret": "Mairie de Beauvoir",
-    "Date_debut": "2025-04-22",
+    "Arret": "Strasbourg",
+    "Date_debut": "2025-04-24",
     "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-03",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 22/04 au 03/05",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux, les arrêts « Mairie de Beauvoir » et « Prissé Église » ne sont plus desservis. Terminus de la ligne à « Gendarmerie » (côté abri)."
-  },
-  {
-    "Arret": "Prissé Église",
-    "Date_debut": "2025-04-22",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-03",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 22/04 au 03/05",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux, les arrêts « Mairie de Beauvoir » et « Prissé Église » ne sont plus desservis. Terminus de la ligne à « Gendarmerie » (côté abri)."
-  },
-  {
-    "Arret": "Herse",
-    "Date_debut": "2025-04-22",
-    "Heure_debut": "09:30:00",
     "Date_fin": "2026-08-30",
     "Heure_fin": "23:59:00",
     "Date_affichage": "Jusqu’à nouvel ordre",
     "Heure_affichage": "",
-    "Lignes": 11,
-    "Destination": "Niort Lycée Paul Guérin, Niort Brèche",
-    "Message": ""
+    "Lignes": "Toutes",
+    "Destination": "",
+    "Message": "L’arrêt « Strasbourg » n’est pas desservi. Reportez-vous à « Alsace-Lorraine ». Arrêt provisoire rue de la Burgonce pour la ligne 11."
+  },
+  {
+    "Arret": "Halles",
+    "Date_debut": "2025-05-12",
+    "Heure_debut": "08:59:00",
+    "Date_fin": "2025-05-13",
+    "Heure_fin": "18:01:00",
+    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
+    "Heure_affichage": "",
+    "Lignes": "N1",
+    "Destination": "Pré Leroy",
+    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
+  },
+  {
+    "Arret": "Hôtel de Ville",
+    "Date_debut": "2025-05-12",
+    "Heure_debut": "08:59:00",
+    "Date_fin": "2025-05-13",
+    "Heure_fin": "18:01:00",
+    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
+    "Heure_affichage": "",
+    "Lignes": "N1",
+    "Destination": "Brèche",
+    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
+  },
+  {
+    "Arret": "Temple",
+    "Date_debut": "2025-05-12",
+    "Heure_debut": "08:59:00",
+    "Date_fin": "2025-05-13",
+    "Heure_fin": "18:01:00",
+    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
+    "Heure_affichage": "",
+    "Lignes": "Toutes",
+    "Destination": "",
+    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
   }
 ]
