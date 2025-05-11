@@ -235,7 +235,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "08:54",
+    "Heure": "08:55",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -243,14 +243,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "08:56",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "08:57",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -258,7 +250,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "08:58",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -266,7 +258,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "08:59",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -274,15 +266,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "09:01",
+    "Arret": "Henri Sellier",
+    "Heure": "09:00",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "09:02",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -290,8 +282,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "09:03",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "09:04",
+    "Heure": "09:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -299,7 +299,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "09:04",
+    "Heure": "09:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -539,7 +539,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "09:34",
+    "Heure": "09:35",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -547,14 +547,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "09:36",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "09:37",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -562,7 +554,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "09:38",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -570,7 +562,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "09:39",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -578,15 +570,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "09:41",
+    "Arret": "Henri Sellier",
+    "Heure": "09:40",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "09:42",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -594,8 +586,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "09:43",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "09:44",
+    "Heure": "09:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -603,7 +603,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "09:44",
+    "Heure": "09:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -843,7 +843,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "10:14",
+    "Heure": "10:15",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -851,14 +851,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "10:16",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "10:17",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -866,7 +858,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "10:18",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -874,7 +866,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "10:19",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -882,15 +874,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "10:21",
+    "Arret": "Henri Sellier",
+    "Heure": "10:20",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "10:22",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -898,8 +890,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "10:23",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "10:24",
+    "Heure": "10:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -907,7 +907,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "10:24",
+    "Heure": "10:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1147,7 +1147,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "10:54",
+    "Heure": "10:55",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1155,14 +1155,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "10:56",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "10:57",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1170,7 +1162,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "10:58",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1178,7 +1170,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "10:59",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1186,15 +1178,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "11:01",
+    "Arret": "Henri Sellier",
+    "Heure": "11:00",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "11:02",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1202,8 +1194,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "11:03",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "11:04",
+    "Heure": "11:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1211,7 +1211,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "11:04",
+    "Heure": "11:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1451,7 +1451,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "11:34",
+    "Heure": "11:35",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1459,14 +1459,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "11:36",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "11:37",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1474,7 +1466,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "11:38",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1482,7 +1474,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "11:39",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1490,15 +1482,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "11:41",
+    "Arret": "Henri Sellier",
+    "Heure": "11:40",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "11:42",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1506,8 +1498,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "11:43",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "11:44",
+    "Heure": "11:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1515,7 +1515,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "11:44",
+    "Heure": "11:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1755,7 +1755,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "12:14",
+    "Heure": "12:15",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1763,14 +1763,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "12:16",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "12:17",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1778,7 +1770,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "12:18",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1786,7 +1778,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "12:19",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1794,15 +1786,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "12:21",
+    "Arret": "Henri Sellier",
+    "Heure": "12:20",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "12:22",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -1810,8 +1802,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "12:23",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "12:24",
+    "Heure": "12:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -1819,7 +1819,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "12:24",
+    "Heure": "12:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2059,7 +2059,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "12:54",
+    "Heure": "12:55",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2067,14 +2067,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "12:56",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "12:57",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2082,7 +2074,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "12:58",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2090,7 +2082,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "12:59",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2098,15 +2090,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "13:01",
+    "Arret": "Henri Sellier",
+    "Heure": "13:00",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "13:02",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2114,8 +2106,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "13:03",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "13:04",
+    "Heure": "13:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2123,7 +2123,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "13:04",
+    "Heure": "13:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2363,7 +2363,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "13:34",
+    "Heure": "13:35",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2371,14 +2371,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "13:36",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "13:37",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2386,7 +2378,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "13:38",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2394,7 +2386,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "13:39",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2402,15 +2394,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "13:41",
+    "Arret": "Henri Sellier",
+    "Heure": "13:40",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "13:42",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2418,8 +2410,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "13:43",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "13:44",
+    "Heure": "13:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2427,7 +2427,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "13:44",
+    "Heure": "13:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2667,7 +2667,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "14:14",
+    "Heure": "14:15",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2675,14 +2675,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "14:16",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "14:17",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2690,7 +2682,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "14:18",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2698,7 +2690,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "14:19",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2706,15 +2698,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "14:21",
+    "Arret": "Henri Sellier",
+    "Heure": "14:20",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "14:22",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2722,8 +2714,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "14:23",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "14:24",
+    "Heure": "14:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2731,7 +2731,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "14:24",
+    "Heure": "14:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2971,7 +2971,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "14:54",
+    "Heure": "14:55",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -2979,14 +2979,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "14:56",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "14:57",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -2994,7 +2986,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "14:58",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3002,7 +2994,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "14:59",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3010,15 +3002,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "15:01",
+    "Arret": "Henri Sellier",
+    "Heure": "15:00",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "15:02",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3026,8 +3018,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "15:03",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "15:04",
+    "Heure": "15:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3035,7 +3035,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "15:04",
+    "Heure": "15:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3275,7 +3275,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "15:34",
+    "Heure": "15:35",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3283,14 +3283,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "15:36",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "15:37",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3298,7 +3290,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "15:38",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3306,7 +3298,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "15:39",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3314,15 +3306,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "15:41",
+    "Arret": "Henri Sellier",
+    "Heure": "15:40",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "15:42",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3330,8 +3322,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "15:43",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "15:44",
+    "Heure": "15:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3339,7 +3339,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "15:44",
+    "Heure": "15:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3579,7 +3579,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "16:14",
+    "Heure": "16:15",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3587,14 +3587,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "16:16",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "16:17",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3602,7 +3594,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "16:18",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3610,7 +3602,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "16:19",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3618,15 +3610,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "16:21",
+    "Arret": "Henri Sellier",
+    "Heure": "16:20",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "16:22",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3634,8 +3626,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "16:23",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "16:24",
+    "Heure": "16:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3643,7 +3643,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "16:24",
+    "Heure": "16:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3883,7 +3883,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "16:54",
+    "Heure": "16:55",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3891,14 +3891,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "16:56",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "16:57",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3906,7 +3898,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "16:58",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3914,7 +3906,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "16:59",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3922,15 +3914,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "17:01",
+    "Arret": "Henri Sellier",
+    "Heure": "17:00",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "17:02",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -3938,8 +3930,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "17:03",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "17:04",
+    "Heure": "17:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -3947,7 +3947,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "17:04",
+    "Heure": "17:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4187,7 +4187,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "17:34",
+    "Heure": "17:35",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4195,14 +4195,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "17:36",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "17:37",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4210,7 +4202,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "17:38",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4218,7 +4210,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "17:39",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4226,15 +4218,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "17:41",
+    "Arret": "Henri Sellier",
+    "Heure": "17:40",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "17:42",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4242,8 +4234,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "17:43",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "17:44",
+    "Heure": "17:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4251,7 +4251,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "17:44",
+    "Heure": "17:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4491,7 +4491,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "18:14",
+    "Heure": "18:15",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4499,14 +4499,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "18:16",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "18:17",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4514,7 +4506,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "18:18",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4522,7 +4514,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "18:19",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4530,15 +4522,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "18:21",
+    "Arret": "Henri Sellier",
+    "Heure": "18:20",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "18:22",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4546,8 +4538,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "18:23",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "18:24",
+    "Heure": "18:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4555,7 +4555,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "18:24",
+    "Heure": "18:25",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4795,7 +4795,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "18:54",
+    "Heure": "18:55",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4803,14 +4803,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "18:56",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "18:57",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4818,7 +4810,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "18:58",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4826,7 +4818,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "18:59",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4834,15 +4826,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "19:01",
+    "Arret": "Henri Sellier",
+    "Heure": "19:00",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "19:02",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -4850,8 +4842,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "19:03",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "19:04",
+    "Heure": "19:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -4859,7 +4859,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "19:04",
+    "Heure": "19:05",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -5099,7 +5099,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Langevin",
-    "Heure": "19:34",
+    "Heure": "19:35",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -5107,14 +5107,6 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Pôle Atlantique",
-    "Heure": "19:36",
-    "Couleur_fond": "#f50f1e",
-    "Couleur_indice": "#ffffff"
-  },
-  {
-    "Ligne": 1,
-    "Destination": "Hauts de Bessines",
-    "Arret": "Bonnevay",
     "Heure": "19:37",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -5122,7 +5114,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Siegfried",
+    "Arret": "Bonnevay",
     "Heure": "19:38",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -5130,7 +5122,7 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Henri Sellier",
+    "Arret": "Siegfried",
     "Heure": "19:39",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -5138,15 +5130,15 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Portes du Marais",
-    "Heure": "19:41",
+    "Arret": "Henri Sellier",
+    "Heure": "19:40",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
-    "Arret": "Mude",
+    "Arret": "Portes du Marais",
     "Heure": "19:42",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
@@ -5154,8 +5146,16 @@
   {
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
+    "Arret": "Mude",
+    "Heure": "19:43",
+    "Couleur_fond": "#f50f1e",
+    "Couleur_indice": "#ffffff"
+  },
+  {
+    "Ligne": 1,
+    "Destination": "Hauts de Bessines",
     "Arret": "Ebaupin – Bel Horizon",
-    "Heure": "19:44",
+    "Heure": "19:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
@@ -5163,7 +5163,7 @@
     "Ligne": 1,
     "Destination": "Hauts de Bessines",
     "Arret": "Iris",
-    "Heure": "19:44",
+    "Heure": "19:45",
     "Couleur_fond": "#f50f1e",
     "Couleur_indice": "#ffffff"
   },
