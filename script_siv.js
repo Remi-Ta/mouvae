@@ -238,20 +238,10 @@ function updateStopInfo() {
     // Trier les départs par heure
     allDepartures.sort((a, b) => a.departureTime - b.departureTime);
 
-    // Vérifier s'il y a eu des départs aujourd'hui
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-
-    const hadDeparturesToday = allDepartures.some(departure =>
-        departure.departureTime >= today && departure.departureTime < tomorrow
-    );
-
     // Filtrer les départs pertinents
     const departuresToShow = allDepartures.filter(departure => {
         const waitTime = (departure.departureTime - displayedTime) / 1000 / 60;
-        return waitTime >= -5; // Garder les départs des 5 dernières minutes
+        return waitTime >= 0; // Ne garder que les départs futurs
     });
 
     // Déterminer le nombre de tableaux
@@ -267,19 +257,11 @@ function updateStopInfo() {
     const departuresToDisplay = departuresToShow.slice(currentDepartureSet * 8, currentDepartureSet * 8 + 8);
 
     if (departuresToDisplay.length === 0) {
-        if (!hadDeparturesToday) {
-            // Aucun départ prévu aujourd'hui
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(item);
-        } else {
-            // Service terminé
-            const item = document.createElement('div');
-            item.classList.add('departure-item');
-            item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Service terminé.</strong></div><div class="departure-wait-time"></div>';
-            departureInfoElement.appendChild(item);
-        }
+        // Aucun départ à afficher
+        const item = document.createElement('div');
+        item.classList.add('departure-item');
+        item.innerHTML = '<div class="line-box"></div><div class="departure-destination"><strong>Aucun départ prévu aujourd\'hui.</strong></div><div class="departure-wait-time"></div>';
+        departureInfoElement.appendChild(item);
 
         // Remplir les lignes vides
         for (let i = 1; i < 8; i++) {
@@ -479,18 +461,6 @@ async function checkForSuspensions() {
 
                 // Remplir les lignes vides
                 for (let i = 1; i < 8; i++) {
-                    const emptyItem = document.createElement('div');
-                    emptyItem.classList.add('departure-item');
-                    emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
-                    departureInfoElement.appendChild(emptyItem);
-                }
-            } else {
-                // Sinon, afficher les départs restants
-                departureInfoElement.innerHTML = '';
-                departuresToShow.forEach(item => departureInfoElement.appendChild(item));
-
-                // Remplir les lignes vides
-                while (departureInfoElement.children.length < 8) {
                     const emptyItem = document.createElement('div');
                     emptyItem.classList.add('departure-item');
                     emptyItem.innerHTML = '<div class="line-box"></div><div class="departure-destination"></div><div class="departure-wait-time"></div>';
