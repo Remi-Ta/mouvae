@@ -249,7 +249,7 @@ body {
     font-size: 12.5px;
     font-family: 'Unageo', sans-serif;
     text-align: left;
-    height: 100px; /* Taille fixe de 100px */
+    height: 100px; /* Hauteur fixe de 100px */
     display: flex;
     flex-direction: column;
     justify-content: center;
