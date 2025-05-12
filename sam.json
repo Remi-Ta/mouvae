@@ -59242,7 +59242,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "07:21",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -59490,7 +59490,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "08:01",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -59954,7 +59954,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "09:21",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -60418,7 +60418,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "10:41",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -60882,7 +60882,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "12:01",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -61130,7 +61130,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "12:41",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -61378,7 +61378,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "13:21",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -61626,7 +61626,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "14:01",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -62306,7 +62306,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "16:01",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -62554,7 +62554,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "16:41",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -63018,7 +63018,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "18:01",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -63266,7 +63266,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "18:41",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -63514,7 +63514,7 @@
   {
     "Ligne": 5,
     "Destination": "La Roussille ITEP",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "19:21",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -63778,7 +63778,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "07:09",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -64018,7 +64018,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "07:49",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -64258,7 +64258,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "08:29",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -64706,7 +64706,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "09:49",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -65154,7 +65154,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "11:09",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -65602,7 +65602,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "12:29",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -65842,7 +65842,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "13:09",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -66082,7 +66082,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "13:49",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -66322,7 +66322,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "14:29",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -66978,7 +66978,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "16:29",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -67218,7 +67218,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "17:09",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -67666,7 +67666,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "18:29",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -67906,7 +67906,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "19:09",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -68146,7 +68146,7 @@
   {
     "Ligne": 5,
     "Destination": "CAF – Dreyfus",
-    "Arret": "8 mai",
+    "Arret": 45785,
     "Heure": "19:49",
     "Couleur_fond": "#ff9100",
     "Couleur_indice": "#ffffff"
@@ -102251,7 +102251,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "08:03",
+    "Heure": "08:02",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102259,7 +102259,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "08:04",
+    "Heure": "08:03",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102267,7 +102267,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "08:05",
+    "Heure": "08:04",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102371,7 +102371,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "08:58",
+    "Heure": "08:57",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102379,7 +102379,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "08:59",
+    "Heure": "08:58",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102387,7 +102387,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "09:00",
+    "Heure": "08:59",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102491,7 +102491,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "09:53",
+    "Heure": "09:52",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102499,7 +102499,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "09:54",
+    "Heure": "09:53",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102507,7 +102507,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "09:55",
+    "Heure": "09:54",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102611,7 +102611,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "10:48",
+    "Heure": "10:47",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102619,7 +102619,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "10:49",
+    "Heure": "10:48",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102627,7 +102627,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "10:50",
+    "Heure": "10:49",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102731,7 +102731,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "11:43",
+    "Heure": "11:42",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102739,7 +102739,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "11:44",
+    "Heure": "11:43",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102747,7 +102747,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "11:45",
+    "Heure": "11:44",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102851,7 +102851,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "12:38",
+    "Heure": "12:37",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102859,7 +102859,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "12:39",
+    "Heure": "12:38",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102867,7 +102867,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "12:40",
+    "Heure": "12:39",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102971,7 +102971,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "13:33",
+    "Heure": "13:32",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102979,7 +102979,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "13:34",
+    "Heure": "13:33",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -102987,7 +102987,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "13:35",
+    "Heure": "13:34",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103091,7 +103091,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "14:28",
+    "Heure": "14:27",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103099,7 +103099,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "14:29",
+    "Heure": "14:28",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103107,7 +103107,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "14:30",
+    "Heure": "14:29",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103211,7 +103211,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "15:23",
+    "Heure": "15:22",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103219,7 +103219,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "15:24",
+    "Heure": "15:23",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103227,7 +103227,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "15:25",
+    "Heure": "15:24",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103331,7 +103331,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "16:18",
+    "Heure": "16:17",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103339,7 +103339,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "16:19",
+    "Heure": "16:18",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103347,7 +103347,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "16:20",
+    "Heure": "16:19",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103451,7 +103451,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "17:13",
+    "Heure": "17:12",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103459,7 +103459,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "17:14",
+    "Heure": "17:13",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103467,7 +103467,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "17:15",
+    "Heure": "17:14",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103571,7 +103571,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
-    "Heure": "18:08",
+    "Heure": "18:07",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103579,7 +103579,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Vigneau",
-    "Heure": "18:09",
+    "Heure": "18:08",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103587,7 +103587,7 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "18:10",
+    "Heure": "18:09",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103691,6 +103691,14 @@
     "Ligne": 13,
     "Destination": "30 Ormeaux",
     "Arret": "Amourettes",
+    "Heure": "19:02",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "30 Ormeaux",
+    "Arret": "Vigneau",
     "Heure": "19:03",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -103698,16 +103706,8 @@
   {
     "Ligne": 13,
     "Destination": "30 Ormeaux",
-    "Arret": "Vigneau",
-    "Heure": "19:04",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "30 Ormeaux",
     "Arret": "Couzinet",
-    "Heure": "19:05",
+    "Heure": "19:04",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103715,7 +103715,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "08:13",
+    "Heure": "08:14",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103723,14 +103723,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "08:15",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "08:16",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -103738,8 +103730,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "08:17",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "08:18",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103835,7 +103835,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "09:08",
+    "Heure": "09:09",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103843,14 +103843,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "09:10",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "09:11",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -103858,8 +103850,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "09:12",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "09:13",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103955,7 +103955,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "10:03",
+    "Heure": "10:04",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -103963,14 +103963,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "10:05",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "10:06",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -103978,8 +103970,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "10:07",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "10:08",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104075,7 +104075,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "10:58",
+    "Heure": "10:59",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104083,14 +104083,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "11:00",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "11:01",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104098,8 +104090,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "11:02",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "11:03",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104195,7 +104195,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "11:53",
+    "Heure": "11:54",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104203,14 +104203,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "11:55",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "11:56",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104218,8 +104210,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "11:57",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "11:58",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104315,7 +104315,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "12:48",
+    "Heure": "12:49",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104323,14 +104323,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "12:50",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "12:51",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104338,8 +104330,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "12:52",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "12:53",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104435,7 +104435,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "13:43",
+    "Heure": "13:44",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104443,14 +104443,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "13:45",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "13:46",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104458,8 +104450,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "13:47",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "13:48",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104555,7 +104555,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "14:38",
+    "Heure": "14:39",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104563,14 +104563,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "14:40",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "14:41",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104578,8 +104570,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "14:42",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "14:43",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104675,7 +104675,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "15:33",
+    "Heure": "15:34",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104683,14 +104683,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "15:35",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "15:36",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104698,8 +104690,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "15:37",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "15:38",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104795,7 +104795,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "16:28",
+    "Heure": "16:29",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104803,14 +104803,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "16:30",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "16:31",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104818,8 +104810,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "16:32",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "16:33",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104915,7 +104915,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "17:23",
+    "Heure": "17:24",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -104923,14 +104923,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "17:25",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "17:26",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -104938,8 +104930,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "17:27",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "17:28",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -105035,7 +105035,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "18:18",
+    "Heure": "18:19",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -105043,14 +105043,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "18:20",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "18:21",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -105058,8 +105050,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "18:22",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "18:23",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -105155,7 +105155,7 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "30 Ormeaux",
-    "Heure": "19:13",
+    "Heure": "19:14",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -105163,14 +105163,6 @@
     "Ligne": 13,
     "Destination": "Cholette",
     "Arret": "Couzinet",
-    "Heure": "19:15",
-    "Couleur_fond": "#bc95f5",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 13,
-    "Destination": "Cholette",
-    "Arret": "Vigneau",
     "Heure": "19:16",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
@@ -105178,8 +105170,16 @@
   {
     "Ligne": 13,
     "Destination": "Cholette",
-    "Arret": "Amourettes",
+    "Arret": "Vigneau",
     "Heure": "19:17",
+    "Couleur_fond": "#bc95f5",
+    "Couleur_indice": "#000000"
+  },
+  {
+    "Ligne": 13,
+    "Destination": "Cholette",
+    "Arret": "Amourettes",
+    "Heure": "19:18",
     "Couleur_fond": "#bc95f5",
     "Couleur_indice": "#000000"
   },
@@ -112713,7 +112713,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Gelais Écoles",
     "Heure": "09:05",
     "Couleur_fond": "#01b0bc",
@@ -112721,7 +112721,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Gelais Église",
     "Heure": "09:06",
     "Couleur_fond": "#01b0bc",
@@ -112729,7 +112729,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Tournay",
     "Heure": "09:08",
     "Couleur_fond": "#01b0bc",
@@ -112737,7 +112737,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Les Champs",
     "Heure": "09:10",
     "Couleur_fond": "#01b0bc",
@@ -112745,7 +112745,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Châtaigniers",
     "Heure": "09:12",
     "Couleur_fond": "#01b0bc",
@@ -112753,7 +112753,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Échiré Centre",
     "Heure": "09:14",
     "Couleur_fond": "#01b0bc",
@@ -112761,7 +112761,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bizard",
     "Heure": "09:16",
     "Couleur_fond": "#01b0bc",
@@ -112769,7 +112769,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "ZA Le Luc",
     "Heure": "09:19",
     "Couleur_fond": "#01b0bc",
@@ -112777,7 +112777,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "La Mineraie",
     "Heure": "09:21",
     "Couleur_fond": "#01b0bc",
@@ -112785,7 +112785,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Leclerc",
     "Heure": "09:23",
     "Couleur_fond": "#01b0bc",
@@ -112793,7 +112793,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Epinettes",
     "Heure": "09:24",
     "Couleur_fond": "#01b0bc",
@@ -112801,7 +112801,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Curie",
     "Heure": "09:26",
     "Couleur_fond": "#01b0bc",
@@ -112809,7 +112809,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Coubertin",
     "Heure": "09:27",
     "Couleur_fond": "#01b0bc",
@@ -112817,7 +112817,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Pontreau",
     "Heure": "09:28",
     "Couleur_fond": "#01b0bc",
@@ -112825,7 +112825,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Denfert Rochereau",
     "Heure": "09:29",
     "Couleur_fond": "#01b0bc",
@@ -112833,7 +112833,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Alsace-Lorraine",
     "Heure": "09:30",
     "Couleur_fond": "#01b0bc",
@@ -112841,7 +112841,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Brèche",
     "Heure": "09:32",
     "Couleur_fond": "#01b0bc",
@@ -112849,7 +112849,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Gelais Écoles",
     "Heure": "13:00",
     "Couleur_fond": "#01b0bc",
@@ -112857,7 +112857,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Gelais Église",
     "Heure": "13:01",
     "Couleur_fond": "#01b0bc",
@@ -112865,7 +112865,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Tournay",
     "Heure": "13:03",
     "Couleur_fond": "#01b0bc",
@@ -112873,7 +112873,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Les Champs",
     "Heure": "13:05",
     "Couleur_fond": "#01b0bc",
@@ -112881,7 +112881,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Châtaigniers",
     "Heure": "13:07",
     "Couleur_fond": "#01b0bc",
@@ -112889,7 +112889,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Échiré Centre",
     "Heure": "13:09",
     "Couleur_fond": "#01b0bc",
@@ -112897,7 +112897,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bizard",
     "Heure": "13:11",
     "Couleur_fond": "#01b0bc",
@@ -112905,7 +112905,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "ZA Le Luc",
     "Heure": "13:14",
     "Couleur_fond": "#01b0bc",
@@ -112913,7 +112913,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "La Mineraie",
     "Heure": "13:16",
     "Couleur_fond": "#01b0bc",
@@ -112921,7 +112921,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Leclerc",
     "Heure": "13:18",
     "Couleur_fond": "#01b0bc",
@@ -112929,7 +112929,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Epinettes",
     "Heure": "13:19",
     "Couleur_fond": "#01b0bc",
@@ -112937,7 +112937,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Curie",
     "Heure": "13:21",
     "Couleur_fond": "#01b0bc",
@@ -112945,7 +112945,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Coubertin",
     "Heure": "13:22",
     "Couleur_fond": "#01b0bc",
@@ -112953,7 +112953,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Pontreau",
     "Heure": "13:23",
     "Couleur_fond": "#01b0bc",
@@ -112961,7 +112961,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Denfert Rochereau",
     "Heure": "13:24",
     "Couleur_fond": "#01b0bc",
@@ -112969,7 +112969,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Alsace-Lorraine",
     "Heure": "13:25",
     "Couleur_fond": "#01b0bc",
@@ -112977,7 +112977,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Brèche",
     "Heure": "13:27",
     "Couleur_fond": "#01b0bc",
@@ -112985,7 +112985,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Gelais Écoles",
     "Heure": "17:25",
     "Couleur_fond": "#01b0bc",
@@ -112993,7 +112993,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Gelais Église",
     "Heure": "17:26",
     "Couleur_fond": "#01b0bc",
@@ -113001,7 +113001,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Tournay",
     "Heure": "17:28",
     "Couleur_fond": "#01b0bc",
@@ -113009,7 +113009,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Les Champs",
     "Heure": "17:30",
     "Couleur_fond": "#01b0bc",
@@ -113017,7 +113017,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Châtaigniers",
     "Heure": "17:32",
     "Couleur_fond": "#01b0bc",
@@ -113025,7 +113025,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Échiré Centre",
     "Heure": "17:34",
     "Couleur_fond": "#01b0bc",
@@ -113033,7 +113033,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bizard",
     "Heure": "17:36",
     "Couleur_fond": "#01b0bc",
@@ -113041,7 +113041,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "ZA Le Luc",
     "Heure": "17:39",
     "Couleur_fond": "#01b0bc",
@@ -113049,7 +113049,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "La Mineraie",
     "Heure": "17:41",
     "Couleur_fond": "#01b0bc",
@@ -113057,7 +113057,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Leclerc",
     "Heure": "17:43",
     "Couleur_fond": "#01b0bc",
@@ -113065,7 +113065,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Epinettes",
     "Heure": "17:44",
     "Couleur_fond": "#01b0bc",
@@ -113073,7 +113073,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Curie",
     "Heure": "17:46",
     "Couleur_fond": "#01b0bc",
@@ -113081,7 +113081,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Coubertin",
     "Heure": "17:47",
     "Couleur_fond": "#01b0bc",
@@ -113089,7 +113089,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Pontreau",
     "Heure": "17:48",
     "Couleur_fond": "#01b0bc",
@@ -113097,7 +113097,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Denfert Rochereau",
     "Heure": "17:49",
     "Couleur_fond": "#01b0bc",
@@ -113105,7 +113105,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Alsace-Lorraine",
     "Heure": "17:50",
     "Couleur_fond": "#01b0bc",
@@ -113113,7 +113113,7 @@
   },
   {
     "Ligne": 18,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Brèche",
     "Heure": "17:52",
     "Couleur_fond": "#01b0bc",
@@ -113122,7 +113122,7 @@
   {
     "Ligne": 18,
     "Destination": "Saint-Gelais Écoles",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "08:25",
     "Couleur_fond": "#01b0bc",
     "Couleur_indice": "#ffffff"
@@ -113242,7 +113242,7 @@
   {
     "Ligne": 18,
     "Destination": "Saint-Gelais Écoles",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "12:20",
     "Couleur_fond": "#01b0bc",
     "Couleur_indice": "#ffffff"
@@ -113362,7 +113362,7 @@
   {
     "Ligne": 18,
     "Destination": "Saint-Gelais Écoles",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "18:00",
     "Couleur_fond": "#01b0bc",
     "Couleur_indice": "#ffffff"
@@ -113954,14 +113954,6 @@
   {
     "Ligne": 19,
     "Destination": "Mairie de Saint-Hilaire-la-Palud",
-    "Arret": "Mairie de Saint-Hilaire-la-Palud",
-    "Heure": "13:00",
-    "Couleur_fond": "#fb7ed3",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 19,
-    "Destination": "Mairie de Saint-Hilaire-la-Palud",
     "Arret": "Pôle Atlantique",
     "Heure": "18:25",
     "Couleur_fond": "#fb7ed3",
@@ -114108,14 +114100,6 @@
     "Destination": "Mairie de Saint-Hilaire-la-Palud",
     "Arret": "Carrefour des Bateliers",
     "Heure": "19:05",
-    "Couleur_fond": "#fb7ed3",
-    "Couleur_indice": "#000000"
-  },
-  {
-    "Ligne": 19,
-    "Destination": "Mairie de Saint-Hilaire-la-Palud",
-    "Arret": "Mairie de Saint-Hilaire-la-Palud",
-    "Heure": "19:10",
     "Couleur_fond": "#fb7ed3",
     "Couleur_indice": "#000000"
   },
@@ -114505,7 +114489,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Tout Vent",
     "Heure": "08:13",
     "Couleur_fond": "#0953a9",
@@ -114513,7 +114497,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Route de Coursay",
     "Heure": "08:14",
     "Couleur_fond": "#0953a9",
@@ -114521,7 +114505,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Maxire Centre",
     "Heure": "08:16",
     "Couleur_fond": "#0953a9",
@@ -114529,7 +114513,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Route de Niort",
     "Heure": "08:18",
     "Couleur_fond": "#0953a9",
@@ -114537,7 +114521,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Maxire Stade",
     "Heure": "08:20",
     "Couleur_fond": "#0953a9",
@@ -114545,7 +114529,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Rémy Écoles",
     "Heure": "08:26",
     "Couleur_fond": "#0953a9",
@@ -114553,7 +114537,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Sciecq Salle des Fêtes",
     "Heure": "08:32",
     "Couleur_fond": "#0953a9",
@@ -114561,7 +114545,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Grand Croix",
     "Heure": "08:35",
     "Couleur_fond": "#0953a9",
@@ -114569,7 +114553,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Coulonges",
     "Heure": "08:37",
     "Couleur_fond": "#0953a9",
@@ -114577,7 +114561,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bois Joli",
     "Heure": "08:38",
     "Couleur_fond": "#0953a9",
@@ -114585,7 +114569,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Lycée Horticole",
     "Heure": "08:40",
     "Couleur_fond": "#0953a9",
@@ -114593,7 +114577,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bourgeois",
     "Heure": "08:41",
     "Couleur_fond": "#0953a9",
@@ -114601,7 +114585,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Villon",
     "Heure": "08:43",
     "Couleur_fond": "#0953a9",
@@ -114609,7 +114593,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Genève",
     "Heure": "08:46",
     "Couleur_fond": "#0953a9",
@@ -114617,7 +114601,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Étienne",
     "Heure": "08:46",
     "Couleur_fond": "#0953a9",
@@ -114625,7 +114609,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Port Boinot",
     "Heure": "08:47",
     "Couleur_fond": "#0953a9",
@@ -114633,7 +114617,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Espingole",
     "Heure": "08:48",
     "Couleur_fond": "#0953a9",
@@ -114641,7 +114625,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Place Saint-Jean",
     "Heure": "08:50",
     "Couleur_fond": "#0953a9",
@@ -114649,7 +114633,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Brèche",
     "Heure": "08:52",
     "Couleur_fond": "#0953a9",
@@ -114657,7 +114641,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Tout Vent",
     "Heure": "13:13",
     "Couleur_fond": "#0953a9",
@@ -114665,7 +114649,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Route de Coursay",
     "Heure": "13:14",
     "Couleur_fond": "#0953a9",
@@ -114673,7 +114657,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Maxire Centre",
     "Heure": "13:16",
     "Couleur_fond": "#0953a9",
@@ -114681,7 +114665,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Route de Niort",
     "Heure": "13:18",
     "Couleur_fond": "#0953a9",
@@ -114689,7 +114673,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Maxire Stade",
     "Heure": "13:20",
     "Couleur_fond": "#0953a9",
@@ -114697,7 +114681,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Rémy Écoles",
     "Heure": "13:26",
     "Couleur_fond": "#0953a9",
@@ -114705,7 +114689,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Sciecq Salle des Fêtes",
     "Heure": "13:32",
     "Couleur_fond": "#0953a9",
@@ -114713,7 +114697,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Grand Croix",
     "Heure": "13:35",
     "Couleur_fond": "#0953a9",
@@ -114721,7 +114705,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Coulonges",
     "Heure": "13:37",
     "Couleur_fond": "#0953a9",
@@ -114729,7 +114713,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bois Joli",
     "Heure": "13:38",
     "Couleur_fond": "#0953a9",
@@ -114737,7 +114721,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Lycée Horticole",
     "Heure": "13:40",
     "Couleur_fond": "#0953a9",
@@ -114745,7 +114729,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Bourgeois",
     "Heure": "13:41",
     "Couleur_fond": "#0953a9",
@@ -114753,7 +114737,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Villon",
     "Heure": "13:43",
     "Couleur_fond": "#0953a9",
@@ -114761,7 +114745,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Genève",
     "Heure": "13:46",
     "Couleur_fond": "#0953a9",
@@ -114769,7 +114753,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Saint-Étienne",
     "Heure": "13:46",
     "Couleur_fond": "#0953a9",
@@ -114777,7 +114761,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Port Boinot",
     "Heure": "13:47",
     "Couleur_fond": "#0953a9",
@@ -114785,7 +114769,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Espingole",
     "Heure": "13:48",
     "Couleur_fond": "#0953a9",
@@ -114793,7 +114777,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Place Saint-Jean",
     "Heure": "13:50",
     "Couleur_fond": "#0953a9",
@@ -114801,7 +114785,7 @@
   },
   {
     "Ligne": 22,
-    "Destination": "Gare de Niort Parvis",
+    "Destination": "Gare de Niort",
     "Arret": "Brèche",
     "Heure": "13:52",
     "Couleur_fond": "#0953a9",
@@ -114810,7 +114794,7 @@
   {
     "Ligne": 22,
     "Destination": "Tout Vent",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "12:15",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
@@ -114962,7 +114946,7 @@
   {
     "Ligne": 22,
     "Destination": "Tout Vent",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "18:15",
     "Couleur_fond": "#0953a9",
     "Couleur_indice": "#ffffff"
@@ -115562,7 +115546,7 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "21:35",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
@@ -115578,7 +115562,7 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "21:55",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"

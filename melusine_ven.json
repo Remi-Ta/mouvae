@@ -2,7 +2,7 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "21:35",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
@@ -18,7 +18,7 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "21:55",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
@@ -34,7 +34,7 @@
   {
     "Ligne": "☾",
     "Destination": "Mélusine",
-    "Arret": "Gare de Niort Parvis",
+    "Arret": "Gare de Niort",
     "Heure": "22:55",
     "Couleur_fond": "#262262",
     "Couleur_indice": "#ffffff"
