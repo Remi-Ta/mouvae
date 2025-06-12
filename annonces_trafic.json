@@ -1,69 +1,14 @@
 [
   {
-    "Type": "Annonce",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "",
-    "Heure_affichage": "",
-    "Lignes": "",
-    "Message": "Bienvenue sur le réseau « mouvàe » ! Suivez toute l’actualité sur mouvae.fr, l’appli mobile et les réseaux sociaux."
-  },
-  {
     "Type": "Info trafic",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Jusqu’à nouvel ordre",
+    "Date_debut": "2025-05-12",
+    "Heure_debut": "08:59:00",
+    "Date_fin": "2025-05-13",
+    "Heure_fin": "18:01:00",
+    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
     "Heure_affichage": "",
     "Lignes": "N1",
-    "Message": "En raison de travaux boulevard Main, les arrêts « Port Boinot » et « Place du Port » ne sont pas desservis."
-  },
-  {
-    "Type": "Info trafic",
-    "Date_debut": "2025-04-14",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-07-11",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 14/04 au 11/07",
-    "Heure_affichage": "",
-    "Lignes": 11,
-    "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
-  },
-  {
-    "Type": "Annonce",
-    "Date_debut": "2025-05-06",
-    "Heure_debut": "10:18:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "",
-    "Heure_affichage": "",
-    "Lignes": "",
-    "Message": "La rue du Maréchal Leclerc est rouverte à la circulation des lignes 5 et 18. Les aménagements de la voirie étant non achevés, certains arrêts de bus ne sont pas totalement accessibles. + d’infos sur mouvae.fr"
-  },
-  {
-    "Type": "Info trafic",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Jusqu’à nouvel ordre",
-    "Heure_affichage": "",
-    "Lignes": "5, 18",
-    "Message": "L’arrêt « Strasbourg » n’est pas desservi. Reportez-vous à « Alsace-Lorraine »."
-  },
-  {
-    "Type": "Info trafic",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Jusqu’à nouvel ordre",
-    "Heure_affichage": "",
-    "Lignes": 11,
-    "Message": "L’arrêt « Strasbourg » n’est pas desservi. Reportez-vous au poteau provisoire rue de la Burgonce."
+    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
   },
   {
     "Type": "Info trafic",
@@ -89,6 +34,50 @@
   },
   {
     "Type": "Info trafic",
+    "Date_debut": "2025-04-24",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-01",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Jusqu’à nouvel ordre",
+    "Heure_affichage": "",
+    "Lignes": "N1",
+    "Message": "En raison de travaux boulevard Main, les arrêts « Port Boinot » et « Place du Port » ne sont pas desservis."
+  },
+  {
+    "Type": "Annonce",
+    "Date_debut": "2025-05-06",
+    "Heure_debut": "10:18:00",
+    "Date_fin": "2025-06-01",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "",
+    "Heure_affichage": "",
+    "Lignes": "",
+    "Message": "La rue du Maréchal Leclerc est rouverte à la circulation des lignes 5 et 18. Les aménagements de la voirie étant non achevés, certains arrêts de bus ne sont pas totalement accessibles. + d’infos sur mouvae.fr"
+  },
+  {
+    "Type": "Info trafic",
+    "Date_debut": "2025-04-24",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-01",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Jusqu’à nouvel ordre",
+    "Heure_affichage": "",
+    "Lignes": "5, 18",
+    "Message": "L’arrêt « Strasbourg » n’est pas desservi. Reportez-vous à « Alsace-Lorraine »."
+  },
+  {
+    "Type": "Info trafic",
+    "Date_debut": "2025-03-24",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-01",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Jusqu’à nouvel ordre",
+    "Heure_affichage": "",
+    "Lignes": 11,
+    "Message": "L’arrêt « Strasbourg » n’est pas desservi. Reportez-vous au poteau provisoire rue de la Burgonce."
+  },
+  {
+    "Type": "Info trafic",
     "Date_debut": "2025-06-09",
     "Heure_debut": "00:00:00",
     "Date_fin": "2025-06-13",
@@ -100,13 +89,68 @@
   },
   {
     "Type": "Info trafic",
-    "Date_debut": "2025-05-12",
-    "Heure_debut": "08:59:00",
-    "Date_fin": "2025-05-13",
-    "Heure_fin": "18:01:00",
-    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
+    "Date_debut": "2025-06-14",
+    "Heure_debut": "13:00:00",
+    "Date_fin": "2025-06-14",
+    "Heure_fin": "19:00:00",
+    "Date_affichage": "Le 14 juin, de 13h à 19h",
+    "Heure_affichage": "",
+    "Lignes": "1, 3, 4, 5, 6, 10, 12",
+    "Message": "Fête du Sport : les quais A et B de la Brèche sont reportés avenue Bujault."
+  },
+  {
+    "Type": "Info trafic",
+    "Date_debut": "2025-06-16",
+    "Heure_debut": "09:00:00",
+    "Date_fin": "2025-06-16",
+    "Heure_fin": "16:00:00",
+    "Date_affichage": "Le 16 juin, de 9h à 16h",
     "Heure_affichage": "",
     "Lignes": "N1",
-    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
+    "Message": "Les arrêts Hôtel de Ville et Temple ne sont pas desservis."
+  },
+  {
+    "Type": "Info trafic",
+    "Date_debut": "2025-06-23",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-25",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Du 23 au 25 juin",
+    "Heure_affichage": "",
+    "Lignes": 20,
+    "Message": "Les arrêts « Mairie de Beauvoir » et « Prissé Église » ne sont pas desservis. Terminus à « Gendarmerie »."
+  },
+  {
+    "Type": "Info trafic",
+    "Date_debut": "2025-05-19",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-27",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Du 19/05 au 27/06",
+    "Heure_affichage": "",
+    "Lignes": 14,
+    "Message": "Les arrêts Plaisance et Villechanoux sont reportés aux arrêts provisoires rue Jean Cocteau et Chiron Courtinet."
+  },
+  {
+    "Type": "Info trafic",
+    "Date_debut": "2025-04-14",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-07-11",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Du 14/04 au 11/07",
+    "Heure_affichage": "",
+    "Lignes": 11,
+    "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
+  },
+  {
+    "Type": "Annonce",
+    "Date_debut": "2025-04-24",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2026-08-30",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "",
+    "Heure_affichage": "",
+    "Lignes": "",
+    "Message": "Bienvenue sur le réseau « mouvàe » ! Suivez toute l’actualité sur mouvae.fr, l’appli mobile et les réseaux sociaux."
   }
 ]

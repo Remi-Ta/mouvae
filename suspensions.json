@@ -1,41 +1,5 @@
 [
   {
-    "Arret": "Place du Port",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Jusqu’à nouvel ordre",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "En raison de travaux boulevard Main, les arrêts « Port Boinot » et « Place du Port » ne sont pas desservis."
-  },
-  {
-    "Arret": "Port Boinot",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Jusqu’à nouvel ordre",
-    "Heure_affichage": "",
-    "Lignes": "N1",
-    "Destination": "",
-    "Message": ""
-  },
-  {
-    "Arret": "Denfert Rochereau",
-    "Date_debut": "2025-03-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2025-05-23",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Du 24/03 au 23/05",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "Vers Saint-Liguaire / ITEP (L5), Lycée Paul Guérin (L11) et Niort (L18), l’arrêt « Denfert Rochereau » n’est pas desservi. Reportez-vous à l’arrêt provisoire rue du Vieux Fourneau."
-  },
-  {
     "Arret": "Petit Vigneau",
     "Date_debut": "2025-04-14",
     "Heure_debut": "00:00:00",
@@ -84,51 +48,51 @@
     "Message": "Fermeture rue d’Antes : « Petit Vigneau », « Bel Air », « Follereau » et « Tourterelles » non desservis. Direction Lycée P. Guérin, l’arrêt « Cholette » est reporté à l’abribus (côté stade). Direction Surimeau, l’arrêt « Château Menu » est reporté rue de la Mineraie (provisoire)."
   },
   {
-    "Arret": "Strasbourg",
-    "Date_debut": "2025-04-24",
-    "Heure_debut": "00:00:00",
-    "Date_fin": "2026-08-30",
-    "Heure_fin": "23:59:00",
-    "Date_affichage": "Jusqu’à nouvel ordre",
-    "Heure_affichage": "",
-    "Lignes": "Toutes",
-    "Destination": "",
-    "Message": "L’arrêt « Strasbourg » n’est pas desservi. Reportez-vous à « Alsace-Lorraine ». Arrêt provisoire rue de la Burgonce pour la ligne 11."
-  },
-  {
-    "Arret": "Halles",
-    "Date_debut": "2025-05-12",
-    "Heure_debut": "08:59:00",
-    "Date_fin": "2025-05-13",
-    "Heure_fin": "18:01:00",
-    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
-    "Heure_affichage": "",
-    "Lignes": "N1",
-    "Destination": "Pré Leroy",
-    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
-  },
-  {
     "Arret": "Hôtel de Ville",
-    "Date_debut": "2025-05-12",
-    "Heure_debut": "08:59:00",
-    "Date_fin": "2025-05-13",
-    "Heure_fin": "18:01:00",
-    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
+    "Date_debut": "2025-06-16",
+    "Heure_debut": "09:00:00",
+    "Date_fin": "2025-06-16",
+    "Heure_fin": "16:00:00",
+    "Date_affichage": "Le 16 juin, de 9h à 16h",
     "Heure_affichage": "",
     "Lignes": "N1",
     "Destination": "Brèche",
-    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
+    "Message": "Les arrêts Hôtel de Ville et Temple ne sont pas desservis."
   },
   {
     "Arret": "Temple",
-    "Date_debut": "2025-05-12",
-    "Heure_debut": "08:59:00",
-    "Date_fin": "2025-05-13",
-    "Heure_fin": "18:01:00",
-    "Date_affichage": "Du 12 mai 9h au 13 mai 18h",
+    "Date_debut": "2025-06-16",
+    "Heure_debut": "09:00:00",
+    "Date_fin": "2025-06-16",
+    "Heure_fin": "16:00:00",
+    "Date_affichage": "Le 16 juin, de 9h à 16h",
     "Heure_affichage": "",
     "Lignes": "Toutes",
     "Destination": "",
-    "Message": "Fermeture rue de l’Arsenal. Direction Pré Leroy : l’arrêt « Halles » est reporté au poteau provisoire rue Brisson. Direction Brèche : « Hôtel de Ville » et « Temple » ne sont pas desservis."
+    "Message": "Les arrêts Hôtel de Ville et Temple ne sont pas desservis."
+  },
+  {
+    "Arret": "Mairie de Beauvoir",
+    "Date_debut": "2025-06-23",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-25",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Du 23 au 25 juin",
+    "Heure_affichage": "",
+    "Lignes": "Toutes",
+    "Destination": "",
+    "Message": "Les arrêts « Mairie de Beauvoir » et « Prissé Église » ne sont pas desservis. Terminus à « Gendarmerie »."
+  },
+  {
+    "Arret": "Prissé Église",
+    "Date_debut": "2025-06-23",
+    "Heure_debut": "00:00:00",
+    "Date_fin": "2025-06-25",
+    "Heure_fin": "23:59:00",
+    "Date_affichage": "Du 23 au 25 juin",
+    "Heure_affichage": "",
+    "Lignes": "Toutes",
+    "Destination": "",
+    "Message": "Les arrêts « Mairie de Beauvoir » et « Prissé Église » ne sont pas desservis. Terminus à « Gendarmerie »."
   }
 ]
